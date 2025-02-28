@@ -462,7 +462,10 @@ margin: 0;
   border-bottom: 2px solid #EFEFEF;
 }
 
-/* ------ user-auth 클래스 >> login.html  ------ */
+/* ------ 
+user-auth 클래스 적용 파일
+: login.html/ find-id.html  
+------ */
 #main.user-auth {
   padding-top: 80px;
 }
@@ -478,6 +481,36 @@ margin: 0;
   font-size: 32px;
   font-weight: 500;
   letter-spacing: -0.36px;
+  font-family: "IBM Plex Sans KR", serif;
+  font-weight: 600;
+  font-style: normal;
+}
+#home .user-auth .user-auth-wrap .tab-view {
+  display: flex;
+}
+#home .user-auth .user-auth-wrap .tab-view li {
+  flex: 1;
+  padding: 17px 0;
+  font-size: 18px;
+  border-bottom: 2px solid;
+}
+#home .user-auth .user-auth-wrap .tab-view li:first-child {
+  color: #5228F4;
+  border-color: #5228F4;
+}
+#home .user-auth .user-auth-wrap .tab-view li:not(:first-child) {
+  color: #CECECE;
+  border: none;
+}
+#home .user-auth .user-auth-wrap .guide-title {
+  font-size: 18px;
+  margin: 40px 0;
+}
+#home .user-auth .user-auth-wrap .guide-title span {
+  display: block;
+  margin-top: 8px;
+  color: #868686;
+  font-size: 16px;
 }
 #home .user-auth .user-auth-wrap .input_wrap {
   margin-top: max(3.5vw, 30px);
@@ -502,15 +535,10 @@ margin: 0;
   color: #CECECE;
 }
 #home .user-auth button.finishBtn {
-  border-color: #004BBA;
-  background: #004BBA;
-  color: #fff;
-}
-/*login.html*/
-#home .user-auth .login-wrap .main-title {
-  font-family: "IBM Plex Sans KR", serif;
-  font-weight: 600;
-  font-style: normal;
+  padding: 14px 0;
+  margin-bottom: 12px;
+  color: #FEFEFE;
+  background: #5228F4;
 }
 #home .user-auth .input_wrap .password_container {
   display: block;
@@ -591,12 +619,6 @@ margin: 0;
   font-size: 16px;
   font-weight: 400;
   border-radius: 10px;
-}
-#home .user-auth button.loginBtn {
-  color: #FEFEFE;
-  background: #5228F4;
-  padding: 14px 0;
-  margin-bottom: 12px;
 }
 @media (max-width: 480px) {
   #home .user-auth .user-auth-wrap .main-title {
