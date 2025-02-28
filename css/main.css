@@ -84,25 +84,37 @@ body {
   color: #292929;
 }
 #home button {
-  background: transparent;
   cursor: pointer;
   letter-spacing: -0.36px;
-  border: none;
   background: #fefefe;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 10px;
+  border: 1px solid;
 }
 #home fieldset {
 border: none;  
 padding: 0;    
 margin: 0;     
 }
+#home label {
+  display: block;
+}
 #home input {
   background: #fefefe;
+  border-radius: 10px;
 }
 #home .inner {
   width: 100%;
   max-width: 1248px;
   padding: 0 24px;
   margin: 0 auto;
+}
+#home .m-top20 {
+  margin-top: 20px;
+}
+#home .mob-br {
+  display: none;
 }
 @supports (-webkit-appearance:none) {
     input {
@@ -187,7 +199,7 @@ margin: 0;
   color: #FEFEFE;
   background: #5228F4;
 }
-/**/
+/* 로그인 후 네비게이션 스타일 예정*/
 #home .header .content .nav .gnb {
   display: flex;
   gap: 40px;
@@ -473,20 +485,22 @@ user-auth 클래스 적용 파일
   width: 100%;
   max-width: 580px;
   margin: 0 auto;
-  margin-top: max(10.5vw, 80px);
+  margin-top: max(9vw, 80px);
   margin-bottom: 238px;
   text-align: center;
 }
 #home .user-auth .user-auth-wrap .main-title {
-  font-size: 32px;
-  font-weight: 500;
-  letter-spacing: -0.36px;
-  font-family: "IBM Plex Sans KR", serif;
+  font-size: 50px;
   font-weight: 600;
+  letter-spacing: -0.36px;
+  font-family: "IBM Plex Sans KR";
   font-style: normal;
 }
 #home .user-auth .user-auth-wrap .tab-view {
   display: flex;
+  max-width: 452px;
+  margin: 0 auto;
+  margin-top: 10px;
 }
 #home .user-auth .user-auth-wrap .tab-view li {
   flex: 1;
@@ -508,49 +522,46 @@ user-auth 클래스 적용 파일
 }
 #home .user-auth .user-auth-wrap .guide-title span {
   display: block;
-  margin-top: 8px;
+  line-height: 160%;
+  margin-top: 14px;
   color: #868686;
   font-size: 16px;
 }
 #home .user-auth .user-auth-wrap .input_wrap {
   margin-top: max(3.5vw, 30px);
 }
-#home .user-auth .input_wrap .input_container input {
+#home .user-auth .find-wrap .input_wrap {
+  margin: 0;
+}
+#home .user-auth .input_container {
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}
+#home .user-auth .input_container label {
+  flex: 1;
+}
+#home .user-auth .input_container input {
   width: 100%;
   padding: 15px 16px;
   box-sizing: border-box;
   border: 1px solid #EFEFEF;
   font-size: 18px;
-  font-weight: 500;
-  color: #222;
+  font-weight: 400;
+  color: #292929;
   letter-spacing: -0.36px;
-  border-radius: 10px;
 }
-#home .user-auth .input_wrap .input_container input:focus {
-  outline: none;
+#home .user-auth .input_container input:focus {
+  outline: 1px solid #5228F4;
 }
-#home .user-auth .input_wrap .input_container input::placeholder {
+#home .user-auth .input_container input::placeholder {
   font-size: 16px;
   font-weight: 400;
   color: #CECECE;
 }
-#home .user-auth button.finishBtn {
-  padding: 14px 0;
-  margin-bottom: 12px;
-  color: #FEFEFE;
-  background: #5228F4;
-}
 #home .user-auth .input_wrap .password_container {
   display: block;
   position: relative;
-  margin-top: 20px;
-}
-#home .user-auth .password_container .eyeBtn {
-  position: absolute;
-  top: 50%;
-  right: 16px;
-  transform: translateY(-50%);
-  cursor: pointer;
 }
 #home .user-auth .keep_login {
   width: fit-content;
@@ -613,29 +624,80 @@ user-auth 클래스 적용 파일
 #home .user-auth .user-auth-wrap .btn_wrap {
   margin-top: 20px;
 }
-#home .user-auth .btn_wrap button {
-  display: block;
+#home .user-auth .find-result-wrap .btn_wrap {
+  margin-top: max(7vw, 30px);
+}
+#home .user-auth .eyeBtn {
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+#home .user-auth .find-wrap .input_container button {
+  width: 140px;
+}
+#home .user-auth .codeBtn {
+  background: #FAF9FE;
+  border-color: #5228F4;
+  color: #5228F4;
+}
+#home .user-auth .checkBtn {
+  border-color: #D3D3D3;
+  color: #D3D3D3;
+  background: #FAFAFA;
+}
+#home .user-auth .finishBtn {
   width: 100%;
-  font-size: 16px;
-  font-weight: 400;
+  padding: 17.5px 0;
+  margin-bottom: 12px;
+  color: #FEFEFE;
+  background: #5228F4;
+}
+#home .find-result-wrap .id-result {
+  padding: 29.5px 20px;
+  background: #FAF9FE;
+  border: 1px solid #EFEAFF;
   border-radius: 10px;
+}
+#home .find-result-wrap .id-result b {
+  color: #5228F4;
+}
+@media (max-width: 767px) {
+  #home .user-auth .user-auth-wrap .main-title {
+    font-size: 38px;
+  }
 }
 @media (max-width: 480px) {
   #home .user-auth .user-auth-wrap .main-title {
     font-size: 24px;
   }
-  #home .user-auth .input_wrap .input_container input::placeholder {
+  #home .user-auth .input_container input::placeholder {
     font-size: 14px;
   }
   #home .user-auth ul.user_account a {
     font-size: 14px;
   }
-  #home .user-auth .btn_wrap button {
+  #home .user-auth button {
     font-size: 14px;
   }
   #home .user-auth ul.user_account li::after {
     width: 2px;
     height: 30px;
+  }
+  #home .user-auth .user-auth-wrap .tab-view li {
+    font-size: 14px;
+    padding: 16px 0;
+  }
+  #home .user-auth .find-wrap .input_container button {
+    width: 114px;
+  }
+  #home .user-auth .user-auth-wrap .guide-title {
+    font-size: 14px;
+    margin: 30px 0;
+  }
+  #home .find-result-wrap .id-result {
+    font-size: 14px;
   }
 }
 
@@ -812,6 +874,11 @@ user-auth 클래스 적용 파일
   }
   #home .footer .footer-info01 .company-info .info {
     font-size: 12px;
+  }
+}
+@media (max-width: 480px) {
+  #home .footer .footer-logo {
+    max-width: 72px;
   }
 }
 
