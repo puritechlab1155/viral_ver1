@@ -163,63 +163,78 @@
     <script src="js/script.js"></script>
 
     <script>
-    //-- 인증번호 전송 버튼 클릭 이벤트
-    let countdowns = new Map();
+        //-- 인증번호 전송 버튼 클릭 이벤트
+        let countdowns = new Map();
 
-    document.querySelectorAll(".codeBtn").forEach((btn) => {
-        btn.addEventListener("click", function() {
-            if (countdowns.has(btn)) return;
+        document.querySelectorAll(".codeBtn").forEach((btn) => {
+            btn.addEventListener("click", function() {
+                if (countdowns.has(btn)) return;
 
-            alert("인증번호가 전송되었습니다.");
+                alert("인증번호가 전송되었습니다.");
 
-            let timeLeft = 180;
-            btn.disabled = true;
-            btn.textContent = `남은 시간 : ${timeLeft}초`;
-
-            // 개별 버튼의 카운트다운 실행
-            let countdown = setInterval(function() {
-                timeLeft--;
+                let timeLeft = 180;
+                btn.disabled = true;
                 btn.textContent = `남은 시간 : ${timeLeft}초`;
 
-                if (timeLeft <= 0) {
-                    clearInterval(countdown);
-                    btn.disabled = false;
-                    btn.textContent = "인증번호 받기";
-                    countdowns.delete(btn);
+                // 개별 버튼의 카운트다운 실행
+                let countdown = setInterval(function() {
+                    timeLeft--;
+                    btn.textContent = `남은 시간 : ${timeLeft}초`;
 
-                    // 타이머 종료 후 .checkBtn 스타일 원래대로 복구 (선택 사항)
-                    if (checkBtn) {
-                        checkBtn.classList.remove("codeBtn");
+                    if (timeLeft <= 0) {
+                        clearInterval(countdown);
+                        btn.disabled = false;
+                        btn.textContent = "인증번호 받기";
+                        countdowns.delete(btn);
+
+                        // 타이머 종료 후 .checkBtn 스타일 원래대로 복구 (선택 사항)
+                        if (checkBtn) {
+                            checkBtn.classList.remove("codeBtn");
+                        }
                     }
-                }
-            }, 1000);
+                }, 1000);
 
-            countdowns.set(btn, countdown);
+                countdowns.set(btn, countdown);
+            });
         });
-    });
 
-    // -- 인증번호 입력란 포커스 시 확인 버튼 활성화 스타일
-    const checkBtn = document.querySelector(".checkBtn");
-    const codeInput = document.querySelector("#code");
+        // -- 인증번호 입력란 포커스 시 확인 버튼 활성화 스타일
+        const checkBtn = document.querySelector(".checkBtn");
+        const codeInput = document.querySelector("#code");
 
-    codeInput.addEventListener("focus", function() {
-        checkBtn.style.borderColor = "#5228F4";
-        checkBtn.style.color = "#5228F4";
-        checkBtn.style.background = "#FAFAFA";
-    });
-
-    codeInput.addEventListener("blur", function() {
-        checkBtn.style.borderColor = ""; // 기본값으로 되돌리기
-        checkBtn.style.color = ""; 
-        checkBtn.style.background = "";
-    });
-
-    // -- 휴대전화, 인증번호 인풋 숫자만 입력
-    document.querySelectorAll("#phone, #code").forEach((input) => {
-        input.addEventListener("input", function () {
-            this.value = this.value.replace(/[^0-9]/g, ""); // 숫자만 입력 가능
+        codeInput.addEventListener("focus", function() {
+            checkBtn.style.borderColor = "#5228F4";
+            checkBtn.style.color = "#5228F4";
+            checkBtn.style.background = "#FAFAFA";
         });
-    });
+
+        codeInput.addEventListener("blur", function() {
+            if (codeInput.value.length === 0) {
+                checkBtn.style.borderColor = ""; // 기본값으로 되돌리기
+                checkBtn.style.color = ""; 
+                checkBtn.style.background = "";
+            }
+        });
+
+        // -- 인증번호 입력 시 확인 버튼 스타일 변경
+        codeInput.addEventListener("input", function() {
+            if (codeInput.value.length > 0) {
+                checkBtn.style.borderColor = "#5228F4";
+                checkBtn.style.color = "#5228F4";
+                checkBtn.style.background = "#FAFAFA";
+            } else {
+                checkBtn.style.borderColor = "";
+                checkBtn.style.color = "";
+                checkBtn.style.background = "";
+            }
+        });
+
+        // -- 휴대전화, 인증번호 인풋 숫자만 입력
+        document.querySelectorAll("#phone, #code").forEach((input) => {
+            input.addEventListener("input", function () {
+                this.value = this.value.replace(/[^0-9]/g, ""); // 숫자만 입력 가능
+            });
+        });
 
 
     </script>
