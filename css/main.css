@@ -473,10 +473,7 @@ margin: 0;
   border-bottom: 2px solid #EFEFEF;
 }
 
-/* ------ 
-user-auth 클래스 적용 파일
-: login.html/ find-id.html  
------- */
+/* ------ user-auth 스타일 ------ */
 #main.user-auth {
   padding-top: 80px;
 }
@@ -662,6 +659,49 @@ user-auth 클래스 적용 파일
 #home .find-result-wrap .id-result b {
   color: #5228F4;
 }
+#home .user-auth-wrap .all-check {
+  padding: 20px 28px;
+  color: #5228F4;
+}
+#home .user-auth-wrap .keep-wrap {
+  overflow: hidden;
+  background: #FAF9FE;
+  border: 1px solid #EFEAFF;
+  border-radius: 14px;
+}
+#home .user-auth-wrap .keep-wrap label {
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+}
+#home .user-auth-wrap .keep-wrap .checkBox svg {
+  margin-right: 10px;
+  float: left;
+}
+#home .user-auth-wrap .separate-check {
+  padding: 20px 0;
+}
+#home .user-auth-wrap .separate-item {
+  padding: 18px 0;
+}
+#home .user-auth-wrap .separate-agree {
+  padding: 0 28px;
+  margin-bottom: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#home .user-auth-wrap .separate-check .terms-content {
+  padding: 0 28px;
+  height: 242px;
+  overflow-y: auto;
+  box-sizing: border-box;
+  text-align: left;
+}
+#home .user-auth-wrap .separate-check .terms-content p {
+  line-height: 160%;
+}
+
 @media (max-width: 767px) {
   #home .user-auth .user-auth-wrap .main-title {
     font-size: 38px;
