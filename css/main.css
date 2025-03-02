@@ -1,4 +1,3 @@
-/* ------ 기본값 ------ */
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
@@ -272,7 +271,7 @@ margin: 0;
   background: #999;
   margin: 0 14px;
 }
-/* 로그인, 로그아윳 상태 시 나타나는 스타일 */
+/* 로그인, 로그아웃 상태 시 나타나는 스타일 */
 #home .header .content .login-before { /* 로그아웃 상태 시 나타남 */
   /* display: none; */
 }
@@ -508,11 +507,11 @@ user-auth 클래스 적용 파일
   font-size: 18px;
   border-bottom: 2px solid;
 }
-#home .user-auth .user-auth-wrap .tab-view li:first-child {
+#home .user-auth .user-auth-wrap .tab-view .tab-active {
   color: #5228F4;
   border-color: #5228F4;
 }
-#home .user-auth .user-auth-wrap .tab-view li:not(:first-child) {
+#home .user-auth .user-auth-wrap .tab-view .tab-disb {
   color: #CECECE;
   border: none;
 }
@@ -667,10 +666,16 @@ user-auth 클래스 적용 파일
   #home .user-auth .user-auth-wrap .main-title {
     font-size: 38px;
   }
+  #home .find-pw .mob-br {
+    display: block;
+  }
 }
 @media (max-width: 480px) {
   #home .user-auth .user-auth-wrap .main-title {
     font-size: 24px;
+  }
+  #home .user-auth .input_container input {
+    font-size: 14px;
   }
   #home .user-auth .input_container input::placeholder {
     font-size: 14px;
@@ -826,6 +831,7 @@ user-auth 클래스 적용 파일
   letter-spacing: -0.28px;
 }
 @media (max-width: 767px) {
+  /*푸터*/
   #home .footer .inner {
     padding: 0;
   }
@@ -883,7 +889,7 @@ user-auth 클래스 적용 파일
 }
 
 /* footer 모달 팝업 */
-#home .modal-content p { line-height: 1.5;}
+/* #home .modal-content p { line-height: 1.5;}
 #home .mt_15 { margin-top: 15px; }
 #home .modal {
   display: none;
@@ -931,7 +937,7 @@ user-auth 클래스 적용 파일
 }
 #home .modal ul li a:hover {
   color: #007bff;
-}
+} */
 
 
 

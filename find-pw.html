@@ -36,18 +36,26 @@
 
         <main id="main" class="user-auth">
             <div class= "inner"> 
-                <div class="user-auth-wrap find-wrap">
+                <div class="user-auth-wrap find-wrap find-pw">
                     <h3 class="main-title">아이디 / 비밀번호 찾기</h3>
                     <ul class="tab-view">
-                        <li class="tab-active">아이디 찾기</li>
-                        <li class="tab-disb">비밀번호 찾기</li> 
+                        <li class="tab-disb">아이디 찾기</li>
+                        <li class="tab-active">비밀번호 찾기</li> 
                     </ul>
                     <div class="guide-title">
                         등록된 휴대폰 번호로 찾기
-                        <span>가입 당시 입력한 휴대번호를 통해 인증 후 아이디를 찾아주세요.</span>
+                        <span>
+                            가입 당시 입력한 휴대전화번호를 통해 인증 후<br class="mob-br">
+                            새 비밀번호로 변경해주세요.
+                        </span>
                     </div>
                     <div class="input_wrap">
                         <div class="input_container">
+                            <label for="id" class="input_title">
+                                <input type="text" id="id" placeholder="아이디">
+                            </label>
+                        </div>
+                        <div class="input_container m-top20">
                             <label for="phone" class="input_title">
                                 <input type="tel" id="phone" placeholder="휴대전화">
                             </label>
@@ -61,7 +69,7 @@
                         </div>
                     </div>
                     <div class="btn_wrap">
-                        <button type="button" class="finishBtn" onclick="location.href='find-id-complete.html'">아이디 찾기</button>
+                        <button type="button" class="finishBtn" onclick="location.href='find-id-complete.html'">비밀번호 찾기</button>
                     </div>
                 </div>
             </div>
