@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viral | 회원가입</title>
+
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+</head>
+<body>
+    <section id="home">
+        <header id="header" class="header sub-header">
+            <div class="inner">
+                <div class="content">
+                    <div class="left-content">
+                        <h1 class="logo">
+                            <a href="index.html">
+                                <img class="logo-img" src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </a>
+                        </h1>
+                        <span class="beta-badge">Beta</span>
+                    </div>
+                    <ul class="right-content">
+                        <li>
+                            <a class="loginBtn" href="login.html">로그인</a>
+                        </li> 
+                        <li>
+                            <a class="signupBtn" href="register-hp.html">회원가입</a>
+                        </li> 
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main id="main" class="user-auth">
+            <div class= "inner"> 
+                <div class="user-auth-wrap">
+                    <h3 class="main-title">본인인증</h3>
+                    <div class="guide-title">
+                        <span>입력한 휴대폰 번호로 인증 후 회원가입이 진행됩니다. </span>
+                    </div>
+                    <div class="input_wrap">
+                        <div class="input_container">
+                            <label for="name" class="input_title">
+                                <input type="text" id="name" placeholder="이름">
+                            </label>
+                        </div>
+                        <div class="input_container m-top20">
+                            <label for="phone" class="input_title">
+                                <input type="tel" id="phone" placeholder="휴대전화">
+                            </label>
+                            <button class="codeBtn" type="button">인증번호 전송</button>
+                        </div>
+                        <div class="input_container m-top20">
+                            <label for="code" class="password_container">
+                                <input id="code" type="text" placeholder="인증번호">
+                            </label>
+                            <button class="checkBtn" type="button">확인</button>
+                        </div>
+                    </div>
+                    <div class="btn_wrap">
+                        <button type="button" class="finishBtn" onclick="location.href='register-agree.html'">다음</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer id="footer" class="footer">
+            <div class="content">
+                <div class="footer-info01 footer-info">
+                    <div class="inner">
+                        <div class="company-info">
+                            <ul class="info info01">
+                                <li>(주)바이럴</li>
+                                <li>대표 : 가나다</li>
+                                <li class="info-mg">주소 : 서울특별시 서울구 서울로 123 가나다라타워 3층 바이럴</li>
+                                <li>사업자등록번호 : 000 - 00 - 00000</li>
+                                <li class="info-mg">통신판매업 신고번호 : 제 0000 - 서울서울 - 0000호</li>
+                                <li>
+                                    abcdefg@gmail.com
+                                    <span>010-0101-0101</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="site-map">
+                            <ul class="site">
+                                <li>
+                                    <a href="#">프로젝트</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 영상</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 카드뉴스</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">비디오 템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">카드뉴스 템플릿</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">구독하기</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">공지사항</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">고객센터</a>
+                                </li>
+                            </ul>
+                        </ul><!-- //partner-site -->
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="footer-info02 footer-info">
+                    <div class="inner">
+                        <div class="left-content">
+                            <div class="footer-logo">
+                                <img src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </div>
+                            <div class="support-links">
+                                <div class="link" id="terms-btn">
+                                    <a href="#">이용약관</a>
+                                </div>
+                                <div class="link" id="privacy-btn">
+                                    <a href="#">개인정보처리방침</a>
+                                </div>
+                            </div><!-- //support-links -->
+                        </div>
+                        <div class="copyright">
+                            ©Viral 2025 All rights reserved.
+                        </div>
+                    </div>
+                </div><!-- //footer-info01 -->
+            </div>
+            
+        </footer>
+    </section>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        //-- 인증번호 전송 버튼 클릭 이벤트
+        let countdowns = new Map();
+
+        document.querySelectorAll(".codeBtn").forEach((btn) => {
+            btn.addEventListener("click", function() {
+                if (countdowns.has(btn)) return;
+
+                alert("인증번호가 전송되었습니다.");
+
+                let timeLeft = 180;
+                btn.disabled = true;
+                btn.textContent = `남은 시간 : ${timeLeft}초`;
+
+                // 개별 버튼의 카운트다운 실행
+                let countdown = setInterval(function() {
+                    timeLeft--;
+                    btn.textContent = `남은 시간 : ${timeLeft}초`;
+
+                    if (timeLeft <= 0) {
+                        clearInterval(countdown);
+                        btn.disabled = false;
+                        btn.textContent = "인증번호 받기";
+                        countdowns.delete(btn);
+
+                        // 타이머 종료 후 .checkBtn 스타일 원래대로 복구 (선택 사항)
+                        if (checkBtn) {
+                            checkBtn.classList.remove("codeBtn");
+                        }
+                    }
+                }, 1000);
+
+                countdowns.set(btn, countdown);
+            });
+        });
+
+        // -- 인증번호 입력란 포커스 시 확인 버튼 활성화 스타일
+        const checkBtn = document.querySelector(".checkBtn");
+        const codeInput = document.querySelector("#code");
+
+        codeInput.addEventListener("focus", function() {
+            checkBtn.style.borderColor = "#5228F4";
+            checkBtn.style.color = "#5228F4";
+            checkBtn.style.background = "#FAFAFA";
+        });
+
+        codeInput.addEventListener("blur", function() {
+            if (codeInput.value.length === 0) {
+                checkBtn.style.borderColor = ""; // 기본값으로 되돌리기
+                checkBtn.style.color = ""; 
+                checkBtn.style.background = "";
+            }
+        });
+
+        // -- 인증번호 입력 시 확인 버튼 스타일 변경
+        codeInput.addEventListener("input", function() {
+            if (codeInput.value.length > 0) {
+                checkBtn.style.borderColor = "#5228F4";
+                checkBtn.style.color = "#5228F4";
+                checkBtn.style.background = "#FAFAFA";
+            } else {
+                checkBtn.style.borderColor = "";
+                checkBtn.style.color = "";
+                checkBtn.style.background = "";
+            }
+        });
+
+        // -- 휴대전화, 인증번호 인풋 숫자만 입력
+        document.querySelectorAll("#phone, #code").forEach((input) => {
+            input.addEventListener("input", function () {
+                this.value = this.value.replace(/[^0-9]/g, ""); // 숫자만 입력 가능
+            });
+        });
+
+
+    </script>
+</body>
+</html>

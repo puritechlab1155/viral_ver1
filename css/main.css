@@ -633,7 +633,7 @@ user-auth 클래스 적용 파일
   transform: translateY(-50%);
   cursor: pointer;
 }
-#home .user-auth .find-wrap .input_container button {
+#home .user-auth .input_container button {
   width: 140px;
 }
 #home .user-auth .codeBtn {
@@ -694,7 +694,7 @@ user-auth 클래스 적용 파일
     font-size: 14px;
     padding: 16px 0;
   }
-  #home .user-auth .find-wrap .input_container button {
+  #home .user-auth .input_container button {
     width: 114px;
   }
   #home .user-auth .user-auth-wrap .guide-title {
