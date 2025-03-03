@@ -67,7 +67,7 @@
                                             <path d="M6 9.4L9 13L14 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </span>
-                                    이용약관 동의 <span class="red">(필수)</span>
+                                    이용약관 동의 <span class="necessity">(필수)</span>
                                 </label>
                                 <div class="drop-icon">
                                     <img src="img/user-auth/right-arrow.svg" alt="arrow-drop-icon">
@@ -95,7 +95,7 @@
                                             <path d="M6 9.4L9 13L14 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </span>
-                                    개인정보 수집 및 이용 동의 <span class="red">(필수)</span>
+                                    개인정보 수집 및 이용 동의 <span class="necessity">(필수)</span>
                                 </label>
                                 <div class="drop-icon">
                                     <img src="img/user-auth/right-arrow.svg" alt="arrow-drop-icon">
@@ -123,7 +123,7 @@
                                             <path d="M6 9.4L9 13L14 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </span>
-                                    만 14세 이상입니다. <span class="red">(필수)</span>
+                                    만 14세 이상입니다. <span class="necessity">(필수)</span>
                                 </label>
                                 <div class="drop-icon">
                                     <img src="img/user-auth/right-arrow.svg" alt="arrow-drop-icon">
@@ -151,7 +151,7 @@
                                             <path d="M6 9.4L9 13L14 7" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                                         </svg>
                                     </span>
-                                    마케팅 활용 동의<span class="red">(선택)</span>
+                                    마케팅 활용 동의<span class="necessity">(선택)</span>
                                 </label>
                                 <div class="drop-icon">
                                     <img src="img/user-auth/right-arrow.svg" alt="arrow-drop-icon">
@@ -265,7 +265,54 @@
     <script src="js/script.js"></script>
 
     <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const allAgreeCheckbox = document.getElementById("all-agree");
+            const individualCheckboxes = document.querySelectorAll(".individual-agree");
+            const allAgreeSvg = allAgreeCheckbox.nextElementSibling.querySelector("rect");
+            const dropIcons = document.querySelectorAll(".drop-icon");
 
+            function updateSvgColor(svgElement, isChecked) {
+                svgElement.setAttribute("fill", isChecked ? "#5228F4" : "#d3d3d3");
+            }
+
+            // 전체 동의 체크박스 클릭 이벤트
+            allAgreeCheckbox.addEventListener("change", function () {
+                individualCheckboxes.forEach((checkbox) => {
+                    checkbox.checked = allAgreeCheckbox.checked;
+                    const svgRect = checkbox.nextElementSibling.querySelector("rect");
+                    updateSvgColor(svgRect, checkbox.checked);
+                });
+                updateSvgColor(allAgreeSvg, allAgreeCheckbox.checked);
+            });
+
+            // 개별 체크박스 클릭 이벤트
+            individualCheckboxes.forEach((checkbox) => {
+                checkbox.addEventListener("change", function () {
+                    const svgRect = checkbox.nextElementSibling.querySelector("rect");
+                    updateSvgColor(svgRect, checkbox.checked);
+
+                    // 개별 체크박스가 모두 체크되었는지 확인
+                    const allChecked = [...individualCheckboxes].every((cb) => cb.checked);
+                    allAgreeCheckbox.checked = allChecked;
+                    updateSvgColor(allAgreeSvg, allChecked);
+                });
+            });
+
+            // 드롭다운 아이콘 클릭 이벤트
+            dropIcons.forEach((icon) => {
+                icon.addEventListener("click", function () {
+                    const termsContent = this.parentElement.nextElementSibling;
+
+                    if (termsContent.style.display === "none") {
+                        termsContent.style.display = "block";
+                        this.style.transform = "rotate(-90deg)";
+                    } else {
+                        termsContent.style.display = "none";
+                        this.style.transform = "rotate(0deg)";
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
