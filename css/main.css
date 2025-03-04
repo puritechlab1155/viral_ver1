@@ -1,69 +1,9 @@
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;300;400;500;600;700&display=swap');
-@font-face {
-  font-family: "Pretendard-Thin";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Thin.woff") format("woff");
-  font-weight: 100;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Pretendard-ExtraLight";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraLight.woff") format("woff");
-  font-weight: 200;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Pretendard-Light";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Light.woff") format("woff");
-  font-weight: 300;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Pretendard-Regular";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
-  font-weight: 400;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Pretendard-Medium";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Medium.woff") format("woff");
-  font-weight: 500;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Pretendard-SemiBold";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-SemiBold.woff") format("woff");
-  font-weight: 600;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Pretendard-Bold";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Bold.woff") format("woff");
-  font-weight: 700;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Pretendard-ExtraBold";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-ExtraBold.woff") format("woff");
-  font-weight: 800;
-  font-style: normal;
-}
-@font-face {
-  font-family: "Pretendard-Black";
-  src: url("https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Black.woff") format("woff");
-  font-weight: 900;
-  font-style: normal;
-}
-@font-face {
-  font-family: "RIDIBatang";
-  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.0/RIDIBatang.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
 
 *{
-  font-family: 'Pretendard Variable';
+  font-family: 'Pretendard Variable' !important;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
@@ -217,7 +157,6 @@ margin: 0;
 }
 #home .header .content .nav .gnb-item a {
   color: #222;
-  font-family: "Pretendard-SemiBold";
   font-size: 15px;
   font-weight: 600;
   letter-spacing: -0.3px;
@@ -225,7 +164,7 @@ margin: 0;
 }
 #home .header .content .nav .gnb-item:hover a {
   color: #9A2626;
-  font-family: "Pretendard-ExtraBold";
+  font-size: 700;
 }
 #home .header .content .nav .gnb-training {
   position: relative;
@@ -250,7 +189,6 @@ margin: 0;
   text-align: center;
   transition: all 300ms;
   color: rgba(255, 255, 255, 0.7);
-  font-family: "Pretendard-Regular";
   font-size: 15px;
   font-weight: 400;
   letter-spacing: -0.3px;
@@ -258,7 +196,7 @@ margin: 0;
 #home .header .content .nav .gnb-training .gnb-sub .gnb-sub-item:hover a {
   background: #fff;
   color: #222;
-  font-family: "Pretendard-SemiBold";
+  font-weight: 600;
 }
 #home .header .content .nav .gnb-training:hover .gnb-sub {
   max-height: 500px;
@@ -269,7 +207,6 @@ margin: 0;
 }
 #home .header .content .login-link a {
   color: #222;
-  font-family: "Pretendard-SemiBold";
   font-size: 16px;
   font-weight: 600;
   line-height: 160%; /* 25.6px */
@@ -721,6 +658,10 @@ margin: 0;
 #home .user-auth-wrap .separate-check .terms-content p {
   line-height: 160%;
 }
+#home .user-auth-wrap .separate-check .terms-content p span {
+  display: inline-block;
+  font-size: 12px;
+}
 #home .register-form .user-auth-wrap .guide-title {
   margin: 40px 0 20px;
 }
@@ -778,6 +719,9 @@ margin: 0;
   #home .user-auth-wrap .separate-check .terms-content {
     font-size: 14px;
   }
+  #home .user-auth-wrap .separate-check .terms-content p span {
+    font-size: 10px;
+  }
   #home .user-auth-wrap .separate-agree .drop-icon img {
     transform: scale(0.8);
   }
@@ -823,7 +767,6 @@ margin: 0;
 #home .footer .footer-info01 .site-map {
   display: flex;
   gap: 0 4vw;
-  font-family: "Pretendard-SemiBold";
   font-size: 14px;
   font-weight: 600;
   line-height: 160%; /* 22.4px */
@@ -879,7 +822,6 @@ margin: 0;
 }
 #home .footer .footer-info01 .company-info .info {
   color: #B8B8B8;
-  font-family: "Pretendard-Regular";
   font-size: 14px;
   font-weight: 400;
   line-height: 160%; 
@@ -901,7 +843,6 @@ margin: 0;
 }
 #home .footer .footer-info02 .copyright {
   color: #B8B8B8;
-  font-family: "Pretendard-Regular";
   font-size: 16px;
   font-weight: 400;
   line-height: 160%; 
