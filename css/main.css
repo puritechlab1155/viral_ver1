@@ -637,12 +637,12 @@ margin: 0;
 #home .user-auth .input_container button {
   width: 140px;
 }
-#home .user-auth .codeBtn {
+#home .user-auth .focusBtn {
   background: #FAF9FE;
   border-color: #5228F4;
   color: #5228F4;
 }
-#home .user-auth .checkBtn {
+#home .user-auth .n-focusBtn {
   border-color: #D3D3D3;
   color: #D3D3D3;
   background: #FAFAFA;
@@ -721,7 +721,15 @@ margin: 0;
 #home .user-auth-wrap .separate-check .terms-content p {
   line-height: 160%;
 }
-
+#home .register-form .user-auth-wrap .guide-title {
+  margin: 40px 0 20px;
+}
+#home .register-form .guide-title span {
+  margin-bottom: 40px;
+}
+#home .register-form .user-auth-wrap .input_wrap {
+  margin-top: 0;
+}
 @media (max-width: 767px) {
   #home .user-auth .user-auth-wrap .main-title {
     font-size: 38px;
