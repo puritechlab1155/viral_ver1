@@ -355,10 +355,14 @@ margin: 0;
 #home .gnb .gnb-sub {
   display: none;
 }
-#home .gnb .gnb-training .gnb-sub .gnb-sub-item a{
+#home .gnb .gnb-training .gnb-sub .gnb-sub-item a {
   padding-left: 70px;
   font-size: 18px;
   color: #AFAFAF;
+}
+#home .gnb .gnb-training .gnb-sub .gnb-sub-item .focus-sub {
+  color: #5228F4;
+  font-weight: 600;
 }
 #home .gnb-training .drop-arrow {
   width: 28px;
