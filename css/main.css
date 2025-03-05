@@ -133,6 +133,9 @@ margin: 0;
   align-items: center;
   gap: 10px;
 }
+#home .header .content .log-befor {
+  display: none;
+}
 #home .header .content .right-content li a {
   display: block;
   padding: 7px 20px;
@@ -148,117 +151,78 @@ margin: 0;
   color: #FEFEFE;
   background: #5228F4;
 }
-/* 로그인 후 네비게이션 스타일 예정*/
-#home .header .content .nav .gnb {
-  display: flex;
-  gap: 40px;
-  height: 80px;
-  align-items: center;
-}
-#home .header .content .nav .gnb-item a {
-  color: #222;
-  font-size: 15px;
-  font-weight: 600;
-  letter-spacing: -0.3px;
-  transition: all 300ms;
-}
-#home .header .content .nav .gnb-item:hover a {
-  color: #9A2626;
-  font-size: 700;
-}
-#home .header .content .nav .gnb-training {
-  position: relative;
-}
-#home .header .content .nav .gnb-training .gnb-sub {
-  max-height: 0;
-  overflow: hidden;
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  top: 49px;
-  transition: max-height 300ms;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-#home .header .content .nav .gnb-training .gnb-sub .gnb-sub-item a {
-  display: block;
-  padding: 10px;
-  background: rgba(34, 34, 34, 0.5);
-  width: 80px;
-  text-align: center;
-  transition: all 300ms;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 15px;
-  font-weight: 400;
-  letter-spacing: -0.3px;
-}
-#home .header .content .nav .gnb-training .gnb-sub .gnb-sub-item:hover a {
-  background: #fff;
-  color: #222;
-  font-weight: 600;
-}
-#home .header .content .nav .gnb-training:hover .gnb-sub {
-  max-height: 500px;
-}
-#home .header .content .login-link {
-  display: flex;
-  align-items: center;
-}
-#home .header .content .login-link a {
-  color: #222;
-  font-size: 16px;
-  font-weight: 600;
-  line-height: 160%; /* 25.6px */
-  letter-spacing: -0.32px;
-}
-#home .header .content .login-link .line {
-  width: 1px;
-  height: 10px;
-  background: #999;
-  margin: 0 14px;
-}
-/* 로그인, 로그아웃 상태 시 나타나는 스타일 */
-#home .header .content .login-before { /* 로그아웃 상태 시 나타남 */
-  /* display: none; */
-}
-#home .header .content .login-complete { /* 로그인 상태 시 나타남 */
-  display: none;
-}
-#home .mobile_display .login-link-m {
-  display: flex;
-  gap: 16px;
-  justify-content: flex-end;
-  align-items: center;
-}
-#home .mobile_display .login-link-m li {
-  position: relative;
-}
-#home .mobile_display .login-link-m li:first-child::after {
-  content: '';
-  display: block;
-  width: 1px;
-  height: 12px;
-  background: #999;
-  position: absolute;
-  top: 50%;
-  right: -8px;
-  transform: translateY(-50%);
-}
-#home .mobile_display .login-link-m a {
-  font-size: 16px;
-  font-weight: 600;
-  color: #222;
-}
-#home .pc_display {
-  display: block;
-}
-#home .mobile_display {
-  display: none;
-}
+
 /* sub-header */
 #home .sub-header {
   box-shadow: 0 2px 0 #EFEFEF;
+}
+
+/* 로그인 시 변경 및 추가되는 헤더 스타일 */
+#home .header .inner {
+  max-width: 1812px;
+}
+#home .header .content .left-content .offcanvas-open {
+  width: 24px;
+  height: 18px;
+  margin-right: 18px;
+  border: none;
+  border-radius: 0;
+  position: relative;
+  /* display: none; */
+}
+#home .header .content .left-content .offcanvas-open span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  border-radius: 50px;
+  background: #292929;
+  position: absolute;
+  left: 0;
+}
+#home .header .left-content .offcanvas-open span:nth-child(1) {
+  top: 0;
+}
+#home .header .left-content .offcanvas-open span:nth-child(2) {
+  top: 50%;
+}
+#home .header .left-content .offcanvas-open span:nth-child(3) {
+  top: 100%;
+}
+#home .header .content .log-after {
+  /* display: none; */
+}
+#home .header .content .log-after li a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+#home .header .content .log-after .add-icon {
+  width: 24px;
+  height: 24px;
+  margin-left: 24px;
+  position: relative;
+  cursor: pointer;
+  /* display: none; */
+}
+#home .header .content .log-after .add-icon span {
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background: #292929;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#home .header .content .log-after .add-icon span:nth-child(1) {
+  top: 0;
+}
+#home .header .content .log-after .add-icon span:nth-child(2) {
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+#home .header .content .log-after .add-icon span:nth-child(3) {
+  bottom: 0%;
 }
 
 @media (max-width: 928px) {
@@ -267,137 +231,6 @@ margin: 0;
   }
 }
 @media (max-width: 767px) {
-  #home .pc_display {
-      display: none;
-  }
-  #home .mobile_display {
-      display: block;
-  }
-  #home .header {
-      background: #FEFEFE;
-      position: fixed;
-  }
-  /*mobile*/
-  #home .mobile_display {
-      width: 100%;
-      overflow: hidden;
-      position: absolute;
-      top: 0;
-      right: 0;
-      z-index: 888;
-  }
-  #home .header .offcanvas-open {
-      width: 27px;
-      height: 20px;
-      float: right;
-      margin: 24px;
-      position: relative;
-      z-index: 1005;
-  }
-  #home .header .offcanvas-open span {
-      display: block;
-      width: 27px;
-      height: 2.5px;
-      background: #222;
-      border-radius: 50px;
-      position: absolute;
-      left: 0;
-      transition: all 0.5s;
-  }
-  #home .header .offcanvas-open span:nth-child(1) {
-      top: 0;
-  }
-  #home .header .offcanvas-open span:nth-child(2) {
-      top: 50%;
-  }
-  #home .header .offcanvas-open span:nth-child(3) {
-      top: 100%;
-  }
-  #home .header .offcanvas-open.active span {
-      background: #222;
-  }
-  #home .header .offcanvas-open.active span:nth-child(1) {
-      top: 50%;
-      transform: translateY(-50%) rotate(45deg);
-  }
-  #home .header .offcanvas-open.active span:nth-child(2) {
-      display: none;
-  }
-  #home .header .offcanvas-open.active span:nth-child(3) {
-      top: 50%;
-      transform: translateY(-50%) rotate(-45deg);
-  }
-  #home .header .offcanvas {
-      width: 100%;
-      height: 100%;
-      padding: 30px 16px;
-      background: rgba(100, 100, 100, 0.445);
-      display: flex;
-      flex-direction: column;
-      position: absolute;
-      top: 80px;
-      right: 0;
-      transform: translateX(100%);
-      /* transform: translateX(0%); */
-      background: #fff;
-      transition: transform 0.5s ease-in-out;
-  }
-  #home .header .offcanvas .offcanvas-body {
-      width: 100%;
-      height: 100%;
-      flex-grow: 1;
-  }
-  #home .gnb-mobile .gnb-item a {
-      width: 100%;
-      box-sizing: border-box;
-      display: block;
-      padding: 0 8px;
-      height: 61px;
-      line-height: 61px;
-      font-size: 18px;
-      font-weight: 500;
-      letter-spacing: -0.32px;
-      border-bottom: 1px solid #ddd;
-      background: #fff;
-  }
-  #home .gnb-mobile .gnb-sub {
-      display: none;
-  }
-  #home .gnb-mobile .gnb-training .gnb-sub .gnb-sub-item a{
-      font-size: 16px;
-      font-weight: 400;
-      color: #555555;
-      border-bottom: 1px solid #eaeaea;
-      background: #FAFAFA;
-  }
-  #home .gnb-training .drop-arrow {
-      float: right;
-      margin-top: 14px;
-      width: 28px;
-      height: 28px;
-      padding: 2px;
-      box-sizing: border-box;
-      position: relative;
-  }
-  #home .gnb-training .drop-arrow span {
-      display: block;
-      width: 10px;
-      height: 3px;
-      background: #777;
-      position: absolute;
-  }
-  #home .gnb-training .drop-arrow span:nth-child(1) {
-      top: 12px;
-      left: 6px;
-      transform: rotate(45deg);
-  }
-  #home .gnb-training .drop-arrow span:nth-child(2) {
-      top: 12px;
-      right: 6px;
-      transform: rotate(-45deg);
-  }
-}
-@media (max-width: 480px) {
   #home .header .content {
     padding: 5.7px 0;
   }
@@ -414,6 +247,17 @@ margin: 0;
   #home .header .content .right-content li a {
     padding: 8px 14px;
     font-size: 14px;
+  }
+
+  #home .header .content .log-after li a {
+    padding: 4px 12px;
+    font-size: 14px;
+  }
+  #home .header .content .log-after li a img {
+    transform: scale(0.9);
+  }
+  #home .header .content .log-after .add-icon {
+    margin-left: 10px;
   }
 }
 
@@ -673,7 +517,7 @@ margin: 0;
 }
 @media (max-width: 767px) {
   #home .user-auth .user-auth-wrap .main-title {
-    font-size: 38px;
+    font-size: 46px;
   }
   #home .find-pw .mob-br {
     display: block;
