@@ -81,14 +81,14 @@ margin: 0;
 	right: 0 !important;
 }
 
+@media (max-width: 767px) {
+  #home #main {
+    padding-top: 48px;
+  }
+}
 @media (max-width: 580px) {
   #home #main {
     min-height: 100vh;
-  }
-}
-@media (max-width: 480px) {
-  #home #main {
-    padding-top: 48px;
   }
 }
 
@@ -150,11 +150,13 @@ margin: 0;
   font-weight: 400;
   border-radius: 10px;
 }
-#home .header .content .right-content li .loginBtn {
+#home .header .content .right-content li .loginBtn , 
+#home .header .content .right-content li .guideBtn {
   color: #5228F4;
   border: 2px solid #EFEAFF;
 }
-#home .header .content .right-content li .signupBtn {
+#home .header .content .right-content li .signupBtn ,
+#home .header .content .right-content li .countBadge {
   color: #FEFEFE;
   background: #5228F4;
 }
@@ -204,12 +206,14 @@ margin: 0;
   gap: 4px;
 }
 #home .header .content .log-after .add-icon {
+  cursor: pointer;
+  position: relative;
+  padding: 0 12px;
+  /* display: none; */
+}
+#home .header .content .log-after .add-icon .circle {
   width: 24px;
   height: 24px;
-  margin-left: 24px;
-  position: relative;
-  cursor: pointer;
-  /* display: none; */
 }
 #home .header .content .log-after .add-icon span {
   display: block;
@@ -218,7 +222,7 @@ margin: 0;
   border-radius: 50%;
   background: #292929;
   position: absolute;
-  left: 50%;
+  right: calc(50% - 12px);
   transform: translateX(-50%);
 }
 #home .header .content .log-after .add-icon span:nth-child(1) {
@@ -231,7 +235,21 @@ margin: 0;
 #home .header .content .log-after .add-icon span:nth-child(3) {
   bottom: 0%;
 }
-
+#home .header .content .log-after .add-icon .add-item {
+  width: 92px;
+  position: absolute;
+  top: 44px;
+  right: 0px;
+  background: #000000a3;
+  display: none;
+}
+#home .header .content .log-after .add-icon .add-item a {
+  display: block;
+  border-radius: 0;
+  text-align: center;
+  color: #fefefe;
+  font-size: 15px;
+}
 @media (max-width: 928px) {
   #home .header .content .nav .gnb {
       gap: 24px;
@@ -240,6 +258,11 @@ margin: 0;
 @media (max-width: 767px) {
   #home .header .content {
     height: 48px;
+  }
+  #home .header .content .left-content .offcanvas-open {
+    width: 20px;
+    height: 16px;
+    margin-right: 0;
   }
   #home .header .content .logo {
     max-width: 73px;
@@ -255,7 +278,9 @@ margin: 0;
     padding: 8px 14px;
     font-size: 14px;
   }
-
+  #home .header .content .right-content li .guideBtn {
+    display: none;
+  }
   #home .header .content .log-after li a {
     padding: 4px 12px;
     font-size: 14px;
@@ -264,7 +289,15 @@ margin: 0;
     transform: scale(0.9);
   }
   #home .header .content .log-after .add-icon {
-    margin-left: 10px;
+    padding-left: 0;
+  }
+  #home .header .content .log-after .add-icon .add-item {
+    width: 86px;
+    top: 38px;
+    right: -24px;
+  }
+  #home .header .content .log-after .add-icon .add-item a {
+    font-size: 14px;
   }
 }
 
@@ -323,12 +356,11 @@ margin: 0;
   width: 100%;
   max-width: 300px;
   height: 100vh;
-  padding: 30px 0;
+  padding-top: max(6vw, 40px);
   display: flex;
   flex-direction: column;
   position: absolute;
   left: 0;
-  transform: translateX(-100%);
   background: #FEFEFE;
 }
 #home .menu-area .offcanvas .offcanvas-body {
@@ -348,6 +380,9 @@ margin: 0;
   display: block;
   height: 46px;
   line-height: 46px;
+}
+#home .gnb .guide-gnb {
+  display: none;
 }
 #home .gnb .focusGnb {
   background: #FAF9FE;
@@ -403,7 +438,6 @@ margin: 0;
   align-items: center;
   justify-content: space-between;
 }
-/* main 클래스 스타일 */
 #home .main .inner {
   max-width: none;
   padding: 0;
@@ -411,17 +445,42 @@ margin: 0;
 }
 #home .main .menu-area {
   width: 300px;
-  float: left;
   overflow: hidden;
+  float: left;
   background: #FEFEFE;
   border-right: 2px solid #efefef;
   transition: transform 0.5s ease-in-out;
 }
+#home .menu-area.active {
+  transform: translateX(0%);
+}
 #home .main .content-area {
-  background: #fafafa;
+  background: lightblue;
 }
 #home .main .content-area > div {
   padding: 100px 0;
+}
+@media (max-width: 767px) {
+  #home .main .menu-area {
+    width: 200px;
+  }
+  #home .gnb .guide-gnb {
+    display: block;
+  }
+  #home .gnb .gnb-item a {
+    padding: 0 20px;
+  }
+  #home .menu-area .gnb-item .gnb-txt {
+    gap: 6px;
+    font-size: 18px;
+  }
+  #home .menu-area .gnb-item .gnb-txt img {
+    transform: scale(0.8);
+  }
+  #home .gnb .gnb-training .gnb-sub .gnb-sub-item a {
+    padding-left: 56px;
+    font-size: 16px;
+  }
 }
 
 /* user-auth 스타일 */

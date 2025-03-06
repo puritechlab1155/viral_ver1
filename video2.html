@@ -15,7 +15,8 @@
             <div class="inner">
                 <div class="content">
                     <div class="left-content">
-                        <button type="button" class="offcanvas-open">
+                        <!-- offcanvas-open 로그인 후 보여짐 -->
+                        <button type="button" class="offcanvas-open"> 
                             <span></span>
                             <span></span>
                             <span></span>
@@ -29,7 +30,7 @@
                         <span class="beta-badge">Beta</span>
                     </div>
 
-                    <!-- 로그인 전 보여짐 -->
+                    <!-- log-befor 로그인 전 보여짐 -->
                     <ul class="right-content log-befor">
                         <li>
                             <a class="loginBtn" href="login.html">로그인</a>
@@ -38,29 +39,43 @@
                             <a class="signupBtn" href="register-hp.html">회원가입</a>
                         </li>
                     </ul>
-                    <!-- 로그인 후 보여짐 -->
+                    <!-- log-after 로그인 후 보여짐 -->
                     <ul class="right-content log-after">
                         <li>
-                            <a class="loginBtn" href="login.html">
-                                <img src="img/guide-icon.svg" alt="사용가이드 아이콘">
+                            <a class="guideBtn" href="login.html">
+                                <img src="img/menu/guide-icon-atv.svg" alt="사용가이드 아이콘">
                                 사용 가이드
                             </a>
                         </li> 
                         <li>
-                            <a class="signupBtn" href="#">
+                            <a class="countBadge" href="#">
                                 <img src="img/time-count.svg" alt="무료 횟수 카운트"> 5/5
                             </a>
                         </li>
                         <li class="add-icon">
-                            <span></span>
-                            <span></span>
-                            <span></span>
+                            <div class="circle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="add-item">
+                                <div>
+                                    <a href="#">구독정보</a>
+                                </div>
+                                <div>
+                                    <a href="#">내 정보</a>
+                                </div>
+                                <div>
+                                    <a href="#">로그아웃</a>
+                                </div>
+                                
+                            </div>
                         </li>
                     </ul>
                 </div>
             </div>
         </header>
-
+        
         <main id="main" class="main">
             <div class= "inner"> 
                 <!-- 메뉴 영역 -->
@@ -113,10 +128,17 @@
                                                     </span>
                                                 </a>
                                             </li>
-                                            <li class="gnb-item" class="gnb-txt">
+                                            <li class="gnb-item">
                                                 <a href="#">
                                                     <span class="gnb-txt">
                                                         <img src="img/menu/service-center.svg" alt="고객센터">고객센터
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item guide-gnb">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/guide-icon.svg" alt="사용 가이드">사용 가이드
                                                     </span>
                                                 </a>
                                             </li>
@@ -130,9 +152,66 @@
 
                 <!-- 컨텐츠 영역 -->
                 <section class="content-area">
-                    <div>
+                    <article class="content-wrap">
+                        <div class="alert">비디오 템플릿은 최대 3개까지 생성이 가능합니다.</div>
+                        
+                        <div class="content-inner">
+                            <h3 class="content-title">
+                                비디오 템플릿 <span>나만의 스타일대로 템플릿을 꾸며보세요! 설정한 템플릿은 숏폼에 반영됩니다.</span>
+                            </h3>
 
-                    </div>
+                            <div class="content-item template-item">
+                                <!-- 최근 사용한 템플릿 -->
+                                <div class="">
+                                    <div class="">
+                                        최근 사용한 템플릿 <span>25. 03. 04</span>
+                                    </div>
+                                    <div class="">
+                                        <img src="" alt="">
+                                    </div>
+                                    <div class="">
+                                        <div>Dance battle</div>
+                                        <button class="deletBtn">
+                                            <img src="" alt="">
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- 지난 템플릿 -->
+                                <div class="">
+                                    <div class="">
+                                        지난 템플릿
+                                    </div>
+
+                                    <div>
+                                        <span>25. 03. 04</span>
+                                        <div class="">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="">
+                                            <div>Dance battle</div>
+                                            <button class="deletBtn">
+                                                <img src="" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <span>25. 03. 04</span>
+                                        <div class="">
+                                            <img src="" alt="">
+                                        </div>
+                                        <div class="">
+                                            <div>Dance battle</div>
+                                            <button class="deletBtn">
+                                                <img src="" alt="">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </section>
             </div>
         </main>
