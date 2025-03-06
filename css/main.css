@@ -768,7 +768,7 @@ margin: 0;
   letter-spacing: -0.36px;
 }
 #home .user-auth .input_container input:focus {
-  outline: 1px solid #5228F4;
+  outline: 1px solid #C5B6FF;
 }
 #home .user-auth .input_container input::placeholder {
   font-size: 16px;
@@ -841,7 +841,7 @@ margin: 0;
   margin-top: 20px;
 }
 #home .user-auth .find-result-wrap .btn_wrap {
-  margin-top: max(7vw, 30px);
+  margin-top: max(7vw, 60px);
 }
 #home .user-auth .eyeBtn {
   position: absolute;
@@ -951,6 +951,9 @@ margin: 0;
   margin-top: 0;
 }
 @media (max-width: 767px) {
+  #home .user-auth .user-auth-wrap {
+    margin-bottom: 120px;
+  }
   #home .user-auth .user-auth-wrap .main-title {
     font-size: 46px;
   }
