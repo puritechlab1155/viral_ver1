@@ -463,13 +463,22 @@ margin: 0;
   background-size: cover;
 }
 #home .content-area .content-wrap .alert {
-  margin-bottom: 70px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
   background: #5F5A73;
   padding: 15.5px 30px;
   color: #FEFEFE;
+  text-align: center;
+  position: relative;
+}
+#home .content-area .content-wrap .fixed-alert {
+  position: fixed !important;
+  left: 44.76%; /*36.8%*/
 }
 #home .content-area .content-inner {
   padding: 0 30px;
+  padding-top: 70px;
 }
 #home .content-area .content-title {
   text-align: center;

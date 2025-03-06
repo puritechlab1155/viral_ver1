@@ -7,6 +7,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var gnbSub = document.querySelector('.gnb-sub');
     var dropIconL = document.querySelector('.drop-arrow .drop-left');
     var dropIconR = document.querySelector('.drop-arrow .drop-right');
+    var alertBox = document.querySelector("#home .content-area .content-wrap .alert");
+    var scrollTop = window.scrollY || document.documentElement.scrollTop;
+
 
     // 초기 상태
     offcanvas.classList.toggle('active');
@@ -14,6 +17,20 @@ document.addEventListener('DOMContentLoaded', function () {
     offcanvas.style.transform = offcanvas.classList.contains('active') ? 'translateX(0%)' : 'translateX(-100%)';
     menuArea.style.transform = offcanvas.classList.contains('active') ? 'translateX(0%)' : 'translateX(-100%)';
     menuArea.style.display = "block";
+
+    // window.addEventListener("scroll", function () {
+    //     var alertBox = document.querySelector("#home .content-area .content-wrap .alert");
+    //     var scrollTop = window.scrollY || document.documentElement.scrollTop;
+
+    //     if (scrollTop > 0) {
+    //         alertBox.classList.add("fixed-alert"); // 스크롤이 발생하면 fixed 적용
+    //         alertBox.style.top = "60px";
+            
+    //     } else {
+    //         alertBox.classList.remove("fixed-alert"); 
+    //         alertBox.style.top = "0";
+    //     }
+    // });
 
     if (offcanvasOpen && offcanvas && offcanvasWrap) {
         offcanvasOpen.addEventListener('click', function () {
@@ -31,9 +48,11 @@ document.addEventListener('DOMContentLoaded', function () {
                 menuArea.style.display = "none";
                 gnbSub.classList.remove('active');
                 gnbSub.style.display = 'none';
+                
                 if (dropIconL && dropIconR) {
                     dropIconL.style.transform = 'rotate(45deg)';
                     dropIconR.style.transform = 'rotate(-45deg)';
+
                 }
             }
         });
