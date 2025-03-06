@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
     offcanvasWrap.style.height = offcanvas.classList.contains('active') ? '100vh' : 'auto';
     offcanvas.style.transform = offcanvas.classList.contains('active') ? 'translateX(0%)' : 'translateX(-100%)';
     menuArea.style.transform = offcanvas.classList.contains('active') ? 'translateX(0%)' : 'translateX(-100%)';
+    menuArea.style.display = "block";
 
     if (offcanvasOpen && offcanvas && offcanvasWrap) {
         offcanvasOpen.addEventListener('click', function () {
@@ -23,9 +24,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // 메뉴가 열릴 때 menuArea도 나타나게 함
             menuArea.style.transform = offcanvas.classList.contains('active') ? 'translateX(0%)' : 'translateX(-100%)';
+            menuArea.style.display = "block";
 
             // 메뉴 닫을 때 드롭다운도 초기화
             if (!offcanvas.classList.contains('active') && gnbSub) {
+                menuArea.style.display = "none";
                 gnbSub.classList.remove('active');
                 gnbSub.style.display = 'none';
                 if (dropIconL && dropIconR) {
