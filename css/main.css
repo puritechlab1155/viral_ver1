@@ -602,7 +602,7 @@ margin: 0;
   margin-top: 30px;
   text-align: center;
 }
-#home .content-area .layout-descript .mock-ratio {
+#home .content-area .layout-descript .ratio {
   margin-bottom: 10px;
   font-size: 22px;
 }
@@ -622,9 +622,6 @@ margin: 0;
   border-radius: 20px;
   border: 2px solid transparent;
 }
-/* #home .content-area .select-box:hover {
-  border-color: #5228F4;
-} */
 #home .content-area .b-show {
   border-color: #5228F4;
 }
@@ -652,7 +649,7 @@ margin: 0;
   top: 0;
   left: 0;
   border-radius: 33px;
-  background: #6415ad;
+  background: #292929;
 }
 #home .content-area .mockup-content {
   width: 210px;
