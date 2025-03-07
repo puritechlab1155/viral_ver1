@@ -106,7 +106,7 @@
                                                 </a>
                                                 <ul class="gnb-sub">
                                                     <li class="gnb-sub-item">
-                                                        <a href="video2.html" class="focus-sub">비디오 템플릿</a>
+                                                        <a href="video.html" class="focus-sub">비디오 템플릿</a>
                                                     </li>
                                                     <li class="gnb-sub-item">
                                                         <a href="card.html">카드뉴스 템플릿</a>
@@ -152,70 +152,90 @@
                 <!-- 컨텐츠 영역 -->
                 <section class="content-area">
                     <article class="content-wrap">
-                        <div class="content-inner">
+                        <div class="content-inner making-inner">
                             <h3 class="content-title">
-                                비디오 템플릿 <span>나만의 스타일대로 템플릿을 꾸며보세요! 설정한 템플릿은 숏폼에 반영됩니다.</span>
+                                비디오 템플릿 스타일
+                                <span class="title-descipt">제목 자막 스타일 및 영상 레이아웃, 배경색상을 직접 업로드하여 커스텀 영상을 제작하세요.</span>
                             </h3>
 
-                            <div class="content-item template-item">
-                                <!-- 최근 사용한 템플릿 -->
-                                <div class="recent-wrap template-wrap">
-                                    <div class="title">
-                                        최근 사용한 템플릿<span class="date-view">25. 03. 04</span>
-                                    </div>
+                            <!-- 탭 -->
+                            <ul class="tab-view video-tab">
+                                <li class="tab-active tab-item">
+                                    <a href="#" class="tab-active">레이아웃</a>
+                                </li>
+                                <li class="tab-disb tab-item">
+                                    <a href="#" class="tab-link">레이아웃 스타일</a>
+                                </li>
+                                <li class="tab-disb tab-item">
+                                    <a href="#" class="tab-link">제목 스타일</a>
+                                </li>
+                                <li class="tab-disb tab-item">
+                                    <a href="#" class="tab-link">자막 스타일</a>
+                                </li> 
+                            </ul>
+
+                            <div class="content-item template-item template-100">
+                                <!-- 템플릿 미리보기 -->
+                                <div class="preview-wrap template-wrap">
                                     <div class="tamplate-box">
-                                        <a href="#" class="tamplate-edit">
-                                            <div class="templaete-inner">
-                                                <div class="templaete-img">
-                                                    <img src="img/template/recent-img.png" alt="최근 사용한 템플릿">
-                                                </div>
-                                            </div>
-                                        </a>
-                                        <div class="bottom-item">
-                                            <div class="template-title">Dance battle</div>
-                                            <button class="deletBtn">
-                                                <img src="img/template/delet-btn.svg" alt="휴지통 아이콘">
-                                            </button>
+                                        <div class="templaete-img template-fit">
+                                            <img src="img/template/recent-img.png" alt="최근 사용한 템플릿">
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- 지난 템플릿 -->
-                                <div class="past-wrap template-wrap">
-                                    <div class="past-container">
-                                        <div class="title">지난 템플릿</div>
-                                        <!-- 지난 템플릿1 -->
-                                        <div class="past-item tamplate-box">
-                                            <span class="date-view">25. 03. 04</span>
-                                            <a href="#" class="tamplate-edit">
+                                <!-- 템플릿 레이아웃 선택 -->
+                                <div class="template-wrap layout-wrap">
+                                    <div class="template-fit layout-box">
+                                        <!-- 레이아웃1 -->
+                                        <div class="layout-item tamplate-box">
+                                            <a href="#" class="select-box">
                                                 <div class="templaete-inner">
-                                                    <div class="templaete-img">
+                                                    <div class="templaete-img template-fit">
                                                         <img src="img/template/past-img1.png" alt="지난 템플릿1">
                                                     </div>
                                                 </div>
                                             </a>
-                                            <div class="bottom-item"">
-                                                <div class="template-title">Dance battle</div>
-                                                <button class="deletBtn">
-                                                    <img src="img/template/delet-btn.svg" alt="휴지통 아이콘">
-                                                </button>
+                                            <div class="layout-descipt">
+                                                <div class="ratio">16 : 9</div>
+                                                <div class="detail">
+                                                    글자가 더 돋보이고, 내용을 <br>
+                                                    온전히 보여줄 수 있습니다.
+                                                </div>
                                             </div>
                                         </div>
-                                        <!-- 지난 템플릿2 -->
-                                        <div class="past-item tamplate-box">
-                                            <span class="date-view">25. 03. 04</span>
-                                            <a href="#" class="tamplate-edit">
+                                        <!-- 레이아웃2 -->
+                                        <div class="layout-item tamplate-box">
+                                            <a href="#" class="select-box">
                                                 <div class="templaete-inner">
-                                                    <div class="templaete-img">
+                                                    <div class="templaete-img template-fit">
                                                         <img src="img/template/past-img2.png" alt="지난 템플릿2">
                                                     </div>
                                                 </div>
                                             </a>
-                                            <div class="bottom-item">
-                                                <div class="template-title">Dance battle</div>
-                                                <button class="deletBtn">
-                                                    <img src="img/template/delet-btn.svg" alt="휴지통 아이콘">
-                                                </button>
+                                            <div class="layout-descipt">
+                                                <div class="ratio">1 : 1</div>
+                                                <div class="detail">
+                                                    핵심 메시지를 전달하기 용이하고, <br>
+                                                    시각적 안정감을 줍니다.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 레이아웃3 -->
+                                        <div class="layout-item tamplate-box">
+                                            <a href="#" class="select-box">
+                                                <div class="templaete-inner">
+                                                    <div class="templaete-img template-fit">
+                                                        <img src="img/template/past-img2.png" alt="지난 템플릿2">
+                                                    </div>
+                                                </div>
+                                            </a>
+                                            <div class="layout-descipt">
+                                                <div class="ratio">16 : 9</div>
+                                                <div class="detail">
+                                                    숏폼 최적화로, 더 높은 <br>
+                                                    시청 완료율을 얻을 수 있습니다.
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
