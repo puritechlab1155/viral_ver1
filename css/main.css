@@ -633,9 +633,12 @@ margin: 0;
   width: 123px;
   height: 256px;
 }
-#home .content-area .past-wrap .templaete-img img {
+#home .content-area .past-wrap .templaete-img .img-item {
   width: 100%;
   object-fit: contain;
+}
+#home .content-area .recent-wrap .templaete-img .mockup-img {
+
 }
 #home .content-area .template-wrap .bottom-item {
   margin-top: 20px;
