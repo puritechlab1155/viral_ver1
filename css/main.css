@@ -492,7 +492,7 @@ margin: 0;
   font-size: 30px;
   font-weight: 600;
 }
-#home .content-area .content-title .title-descipt {
+#home .content-area .content-title .title-descript {
   margin-top: 10px;
   display: block;
   font-size: 16px;
@@ -565,7 +565,7 @@ margin: 0;
 #home .content-area .template-wrap .template-title {
   font-size: 22px;
 }
-#home .content-area .template-wrap .tamplate-edit {
+#home .content-area .template-wrap .template-edit {
   display: block;
   padding: 92px 88px;
   margin: 0 auto;
@@ -575,10 +575,10 @@ margin: 0;
   box-sizing: border-box;
   transition: all 0.1s linear;
 }
-#home .content-area .template-wrap .tamplate-edit:hover {
+#home .content-area .template-wrap .template-edit:hover {
   border-color: #5228F4;
 }
-#home .content-area .preview-wrap .tamplate-box {
+#home .content-area .preview-wrap .template-box {
   padding: 30px 0;
   border-radius: 20px;
   background: #FEFEFE;
@@ -598,15 +598,15 @@ margin: 0;
   width: 240px;
   box-sizing: border-box;
 }
-#home .content-area .layout-descipt {
+#home .content-area .layout-descript {
   margin-top: 30px;
   text-align: center;
 }
-#home .content-area .layout-descipt .ratio {
+#home .content-area .layout-descript .mock-ratio {
   margin-bottom: 10px;
   font-size: 22px;
 }
-#home .content-area .layout-descipt .detail {
+#home .content-area .layout-descript .detail {
   font-size: 16px;
   color: #868686;
   line-height: 160%;
@@ -622,7 +622,10 @@ margin: 0;
   border-radius: 20px;
   border: 2px solid transparent;
 }
-#home .content-area .select-box:hover {
+/* #home .content-area .select-box:hover {
+  border-color: #5228F4;
+} */
+#home .content-area .b-show {
   border-color: #5228F4;
 }
 #home .content-area .recent-wrap .templaete-img {
@@ -637,10 +640,6 @@ margin: 0;
   width: 225px;
   height: 468px;
   position: relative;
-  background: lightgray;
-}
-#home .content-area .img-item {
-  background: lightblue;
 }
 #home .content-area .past-wrap .img-item {
   width: 100%;
@@ -652,15 +651,59 @@ margin: 0;
   height: 100%;
   top: 0;
   left: 0;
-  border-radius: 38px;
-  background: #292929;
+  border-radius: 33px;
+  background: #6415ad;
 }
-#home .content-area .mockup-img .mockup-content {
+#home .content-area .mockup-content {
+  width: 210px;
+  height: 456px;
+  padding: 0 7px;
+  overflow: hidden;
+  border-radius: 30px;
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#home .content-area .mockup-content .title {
+  font-size: 28px;
+}
+#home .content-area .mockup-content .mockup-contentImg {
+  position: absolute;
+  left: 50%;
+}
+#home .content-area .mockup-content .mock-title {
+  top: 15%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+#home .content-area .mockup-content .mock-ratio {
   width: 100%;
-  height: 100%;
-  border-radius: 38px;
-  background: rgba(240, 128, 128, 0.437);
+  overflow: hidden;
+  background: lightgoldenrodyellow;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+#home .content-area .mockup-content .mock-ratio .exampleImg {
+  float: left;
+}
+/* 비율에 맞게 이미지가 변경되는 값 */
+#home .content-area .mockup-content .ratio16-img {
+  height: 118px;
+}
+#home .content-area .mockup-content .ratio1-img { 
+  height: 210px;
+}
+#home .content-area .mockup-content .ratio9-img {
+  height: 456px;
+}
+/* // 비율에 맞게 이미지가 변경되는 값 */
+#home .content-area .mockup-content .mock-subTitle {
+  bottom: 15%;
+  transform: translateX(-50%);
+  z-index: 2;
 }
 #home .content-area .bottom-item {
   margin-top: 20px;

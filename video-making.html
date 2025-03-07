@@ -155,7 +155,7 @@
                         <div class="content-inner making-inner">
                             <h3 class="content-title">
                                 비디오 템플릿 스타일
-                                <span class="title-descipt">제목 자막 스타일 및 영상 레이아웃, 배경색상을 직접 업로드하여 커스텀 영상을 제작하세요.</span>
+                                <span class="title-descript">제목 자막 스타일 및 영상 레이아웃, 배경색상을 직접 업로드하여 커스텀 영상을 제작하세요.</span>
                             </h3>
 
                             <!-- 탭 -->
@@ -177,15 +177,21 @@
                             <div class="content-item template-item template-100">
                                 <!-- 템플릿 미리보기 -->
                                 <div class="preview-wrap template-wrap">
-                                    <div class="tamplate-box">
+                                    <div class="template-box">
                                         <div class="templaete-img template-fit">
                                             <div class="mockup-img">
                                                 <img class="img-item" src="img/template/iphone-mockup.png" alt="아이폰 목업">
                                                 <!-- 제목, 선택한 레이아웃 비율, 자막 컨텐츠 -->
                                                 <div class="mockup-content">
-                                                    <div class="title">제목</div>
-                                                    <div class="ratio-change"></div>
-                                                    <div class="subtitle">자막</div>
+                                                    <div class="mock-title mockup-contentImg">
+                                                        <img class="titleImg" src="img/template/example-title.png" alt="레이아웃 예시 타이틀">
+                                                    </div>
+                                                    <div class="mock-ratio mockup-contentImg">
+                                                        <img class="exampleImg ratio16-img" src="img/template/example-img-16_9.png" alt="레이아웃 예시 이미지">
+                                                    </div>
+                                                    <div class="mock-subTitle mockup-contentImg">
+                                                        <img class="sub-titleImg" src="img/template/example-subtitle.png" alt="레이아웃 예시 타이틀">
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -196,15 +202,15 @@
                                 <div class="template-wrap layout-wrap">
                                     <div class="template-fit layout-box">
                                         <!-- 레이아웃1 -->
-                                        <div class="layout-item tamplate-box">
-                                            <a href="#" class="select-box">
+                                        <div class="layout-item template-box">
+                                            <a href="#" class="select-box ratio-16">
                                                 <div class="templaete-inner">
                                                     <div class="templaete-img template-fit">
                                                         <img class="img-item" src="img/template/layout-16_9.png" alt="레이아웃 비율 16:9">
                                                     </div>
                                                 </div>
                                             </a>
-                                            <div class="layout-descipt">
+                                            <div class="layout-descript">
                                                 <div class="ratio">16 : 9</div>
                                                 <div class="detail">
                                                     글자가 더 돋보이고, 내용을 <br>
@@ -213,15 +219,15 @@
                                             </div>
                                         </div>
                                         <!-- 레이아웃2 -->
-                                        <div class="layout-item tamplate-box">
-                                            <a href="#" class="select-box">
+                                        <div class="layout-item template-box">
+                                            <a href="#" class="select-box ratio-1">
                                                 <div class="templaete-inner">
                                                     <div class="templaete-img template-fit">
                                                         <img class="img-item" src="img/template/layout-1_1.png" alt="레이아웃 비율 1:1">
                                                     </div>
                                                 </div>
                                             </a>
-                                            <div class="layout-descipt">
+                                            <div class="layout-descript">
                                                 <div class="ratio">1 : 1</div>
                                                 <div class="detail">
                                                     핵심 메시지를 전달하기 용이하고, <br>
@@ -230,15 +236,15 @@
                                             </div>
                                         </div>
                                         <!-- 레이아웃3 -->
-                                        <div class="layout-item tamplate-box">
-                                            <a href="#" class="select-box">
+                                        <div class="layout-item template-box">
+                                            <a href="#" class="select-box ratio-9">
                                                 <div class="templaete-inner">
                                                     <div class="templaete-img template-fit">
                                                         <img class="img-item" src="img/template/layout-9_16.png" alt="레이아웃 비율 9:16">
                                                     </div>
                                                 </div>
                                             </a>
-                                            <div class="layout-descipt">
+                                            <div class="layout-descript">
                                                 <div class="ratio">9 : 16</div>
                                                 <div class="detail">
                                                     숏폼 최적화로, 더 높은 <br>
@@ -258,39 +264,6 @@
                 </section>
             </div>
         </main>
-
-        <!-- 삭제 클릭 확인 모달창 -->
-        <div class="delet-check-pop pop-wrap">
-            <div class="pop-inner">
-                <p class="pop-text">선택하신 컨텐츠를 정말로 삭제하시겠습니까?</p>
-                <div class="popBtn-wrap">
-                    <div class="popBtn01 popBtn-item">
-                        <button class="noBtn" type="button">아니오</button>
-                    </div>
-                    <div class="popBtn02 popBtn-item ">
-                        <button class="yesBtn" type="button">예</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--  템플릿 추가 이름 생성 모달창 -->
-        <div class="templaete-add pop-wrap">
-            <div class="pop-inner">
-                <label class="pop-text">템플릿 이름 생성</label>
-                <div class="pop-input">
-                    <input type="text" id="templateName" placeholder="템플릿 이름을 지정해주세요.">
-                </div>
-                <div class="popBtn-wrap">
-                    <div class="popBtn01 popBtn-item">
-                        <button class="noBtn" type="button">취소하기</button>
-                    </div>
-                    <div class="popBtn02 popBtn-item ">
-                        <button class="yesBtn" type="button">생성하기</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <footer id="footer" class="footer">
             <div class="content">
@@ -379,67 +352,37 @@
     </section>
 
     <script src="js/script.js"></script>
-
+        
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const deleteButtons = document.querySelectorAll(".deletBtn");
-            const deleteModal = document.querySelector(".delet-check-pop.pop-wrap"); // 삭제 모달
-            const templateAddModal = document.querySelector(".templaete-add.pop-wrap"); // 템플릿 추가 모달
-            const addButton = document.querySelector(".template-addBtn button"); // 템플릿 추가 버튼
+            const exampleImg = document.querySelector(".exampleImg");
+            const ratioButtons = document.querySelectorAll(".select-box"); 
 
-            const noButtonDelete = deleteModal.querySelector(".noBtn");
-            const yesButtonDelete = deleteModal.querySelector(".yesBtn");
-            const noButtonAdd = templateAddModal.querySelector(".noBtn");
+            ratioButtons.forEach(button => {
+                button.addEventListener("click", function (event) {
+                    event.preventDefault(); // 기본 이벤트 방지
 
-            let currentDeleteButton = null; // 현재 클릭한 삭제 버튼 저장
+                    ratioButtons.forEach(btn => {
+                        btn.classList.remove("b-show"); 
+                    });
 
-            // 화면에서 보이는 템플릿 개수를 세는 함수
-            function getVisibleTemplateCount() {
-                return [...document.querySelectorAll(".template-wrap, .past-item")].filter(
-                    item => item.style.display !== "none"
-                ).length;
-            }
+                    button.classList.add("b-show");
 
-            // 삭제 버튼 클릭 시 삭제 모달창 보이기
-            deleteButtons.forEach(button => {
-                button.addEventListener("click", function () {
-                    if (getVisibleTemplateCount() > 1) {
-                        currentDeleteButton = button; // 현재 클릭한 삭제 버튼 저장
-                        deleteModal.style.display = "flex"; // 삭제 모달 표시
-                    } else {
-                        alert("마지막 템플릿은 삭제할 수 없습니다."); // 1개만 남으면 경고
+                    if (button.classList.contains("ratio-16")) {
+                        updateMockup(exampleImg, "img/template/example-img-16_9.png", "ratio16-img");
+                    } else if (button.classList.contains("ratio-1")) {
+                        updateMockup(exampleImg, "img/template/example-img-1_1.png", "ratio1-img");
+                    } else if (button.classList.contains("ratio-9")) {
+                        updateMockup(exampleImg, "img/template/example-img-9_16.png", "ratio9-img");
                     }
                 });
             });
 
-            // "아니오" 버튼 클릭 시 삭제 모달 숨기기
-            noButtonDelete.addEventListener("click", function () {
-                deleteModal.style.display = "none";
-            });
-
-            // 템플릿 추가 버튼 클릭 시 추가 모달창 보이기
-            addButton.addEventListener("click", function () {
-                templateAddModal.style.display = "flex";
-            });
-
-            // "아니오" 버튼 클릭 시 추가 모달 숨기기
-            noButtonAdd.addEventListener("click", function () {
-                templateAddModal.style.display = "none";
-            });
-
-            // 모달 바깥 클릭 시 닫기 (삭제 모달)
-            deleteModal.addEventListener("click", function (event) {
-                if (event.target === deleteModal) {
-                    deleteModal.style.display = "none";
-                }
-            });
-
-            // 모달 바깥 클릭 시 닫기 (템플릿 추가 모달)
-            templateAddModal.addEventListener("click", function (event) {
-                if (event.target === templateAddModal) {
-                    templateAddModal.style.display = "none";
-                }
-            });
+            function updateMockup(imgElement, newSrc, newClass) {
+                imgElement.classList.remove("ratio16-img", "ratio1-img", "ratio9-img");
+                imgElement.classList.add(newClass);
+                imgElement.src = newSrc;
+            }
         });
     </script>
 </body>
