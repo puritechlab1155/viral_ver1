@@ -53,14 +53,29 @@ margin: 0;
   padding: 0 24px;
   margin: 0 auto;
 }
+#home .m-top10 {
+  margin-top: 10px;
+}
 #home .m-top20 {
   margin-top: 20px;
 }
 #home .m-top40 {
-  margin-top: 20px;
+  margin-top: 40px !important;
+}
+#home .m-top50 {
+  margin-top: 50px;
 }
 #home .mob-br {
   display: none;
+}
+#home .none {
+  display: none;
+}
+#home .flex {
+  display: flex;
+}
+#home .font-IBM {
+  font-family: "IBM Plex Sans KR" !important;
 }
 @supports (-webkit-appearance:none) {
     input {
@@ -185,7 +200,7 @@ margin: 0;
 #home .header .content .left-content .offcanvas-open span {
   display: block;
   width: 100%;
-  height: 3px;
+  height: 3.5px;
   border-radius: 50px;
   background: #292929;
   position: absolute;
@@ -479,19 +494,16 @@ margin: 0;
   position: fixed !important;
   left: 44.76%; /*36.8%*/
 }
-#home .content-area .content-inner {
+#home .content-inner {
+  padding: 0 72px;
   padding-top: 70px;
 }
 #home .video-inner {
-  padding: 0 30px;
+  padding: 0 30px !important;
 }
-#home .making-inner {
-  padding: 0 72px;
-}
-#home .content-area .content-title {
+#home .content-title {
   margin-bottom: 40px;
   text-align: center;
-  font-family: "IBM Plex Sans KR";
   font-size: 30px;
   font-weight: 600;
 }
@@ -509,8 +521,16 @@ margin: 0;
   justify-content: center;
   align-items: center;
 }
+#home .content-area .edit-inner .template-item {
+  justify-content: space-between;
+}
 #home .video-inner .template-item {
-  gap: 198px;
+  width: 100%;
+  max-width: 1320px;
+  display: flex;
+  margin: 0 auto;
+  gap:  80px 0;
+  justify-content: space-between;
 }
 #home .making-inner .template-item {
   gap: 30px;
@@ -549,17 +569,27 @@ margin: 0;
 }
 #home .content-area .recent-wrap {
   flex: 0 0 412px;
+  min-width: 412px;
 }
 #home .content-area .preview-wrap {
-  flex: 0 0 570px;
+  width: 100%;
+  max-width: 570px;
+  min-width: 460px;
+}
+#home .content-area .edit-inner .preview-wrap {
+  max-width: 480px;
 }
 #home .content-area .past-wrap {
-  width: fit-content;
+  max-width: fit-content;
+  padding-left: 30px;
 }
 #home .content-area .past-container {
+  width: 100%;
+  max-width: 710px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  gap: 46px 110px;
+  justify-content: center;
 }
 #home .content-area .past-container .past-item {
   flex: 0 0 300px;
@@ -588,13 +618,19 @@ margin: 0;
   box-shadow: 0px 4px 10px #00000070;
 }
 #home .content-area .layout-wrap {
-  width: 876px;
+  width: 100%;
+  max-width: 876px;
   overflow: hidden;
   margin-left: 20px;
+}
+#home .content-area .subtitle-wrap {
+  flex: 1;
+  min-width: 540px;
 }
 #home .content-area .layout-box {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 20px;
 }
 #home .content-area .layout-item {
@@ -626,7 +662,7 @@ margin: 0;
   border: 2px solid transparent;
 }
 #home .content-area .b-show {
-  border-color: #5228F4;
+  border-color: #5228F4 !important;
 }
 #home .content-area .recent-wrap .templaete-img {
   width: 230px;
@@ -700,6 +736,7 @@ margin: 0;
   height: 456px;
 }
 /* // 비율에 맞게 이미지가 변경되는 값 */
+
 #home .content-area .mockup-content .mock-subTitle {
   bottom: 15%;
   transform: translateX(-50%);
@@ -739,6 +776,157 @@ margin: 0;
   color: #fff;
   border: none;
 }
+#home .content-area .video-header {
+  padding: 6px 16px;
+  display: flex;
+  justify-content: right;
+  position: relative;
+}
+#home .content-area .video-title {
+  width: fit-content;
+  font-size: 30px;
+  font-weight: 600;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#home .content-area .title-text {
+  color: #5228F4;
+}
+#home .content-area .controls {
+  width: 100%;
+  max-width: fit-content;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+#home .content-area .controlsBtn {
+  padding: 4px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  background: #FAF9FE;
+  border: 1px solid #EFEAFF;
+  border-radius: 8px;
+}
+#home .content-area .edit-content {
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px 30px;
+  background: lightsalmon;
+}
+#home .content-area .subtitle-wrap {
+  overflow: hidden;
+  flex: 1;
+  background: lightskyblue;
+  border-radius: 20px;
+}
+#home .content-area .edit-item-wrap {
+  background: #7676765c;
+  padding: 60px 30px 0px;
+}
+#home .content-area .edit-title {
+  font-size: 22px;
+  font-weight: 500;
+}
+#home .content-area .edit-item {
+  background: lightcyan;
+}
+#home .content-area .subtitle-edit-title {
+  flex: 0 0 70px;
+  font-size: 18px;
+  font-weight: 500;
+  background: lightgoldenrodyellow;
+}
+#home .content-area .subtitle-effect-wrap {
+  display: flex;
+  gap: 0 16px;
+  justify-content: space-around;
+}
+#home .content-area .subtitle-effect-item {
+  text-align: center;
+}
+#home .content-area .effectBtn {
+  width: 150px;
+  padding: 24px 0;
+  background: #fafafa;
+  border: 2px solid transparent;
+}
+#home .content-area .effectBtn-text {
+  display: block;
+  margin-top: 10px;
+}
+#home .content-area .edit-item-wrap .flex {
+  align-items: center;
+  gap: 20px;
+  background: lightpink;
+}
+#home .content-area .subtitle-edit-wrap {
+  padding: 20px 30px;
+  background-color: lightseagreen;
+}
+#home .mockup-content .user-title {
+  color: #fafafa;
+}
+#home .mockup-content .user-subtitle {
+  color: #fafafa;
+}
+
+/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 자막 편집 !!!!!!!!!!!!!!!!!!!*/
+.edit-menu {
+  list-style-type: none;
+  display: none; /* 처음에는 숨김 */
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 5px;
+  margin: 0;
+}
+
+.subtitle-container .word {
+  cursor: pointer;
+  margin-right: 5px;
+}
+
+.color-panel {
+  margin-top: 10px;
+}
+
+.selected {
+  color: purple;
+  cursor: text;
+}
+
+.color-change .color-chip {
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+@media (max-width: 1538px) {
+  #home .content-area .video-title {
+    left: 0;
+    transform: none;
+  }
+}
+@media (max-width: 1420px) {
+  #home .making-inner .template-item {
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 1098px) {
+  #home .video-inner .template-item {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
 #home .pop-wrap {
   width: 100%;
   height: 100%;
@@ -831,7 +1019,7 @@ margin: 0;
   }
 }
 
-/* user-auth 스타일 */
+
 #home .user-auth .user-auth-wrap {
   width: 100%;
   max-width: 580px;
@@ -844,7 +1032,6 @@ margin: 0;
   font-size: 50px;
   font-weight: 600;
   letter-spacing: -0.36px;
-  font-family: "IBM Plex Sans KR";
   font-style: normal;
 }
 #home .tab-view {

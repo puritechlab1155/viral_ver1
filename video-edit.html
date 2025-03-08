@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
+    <title>Viral | 비디오 편집 - 자막</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <section id="home">
+        <header id="header" class="header sub-header">
+            <div class="inner">
+                <div class="content">
+                    <div class="left-content">
+                        <!-- offcanvas-open 로그인 후 보여짐 -->
+                        <button type="button" class="offcanvas-open"> 
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <h1 class="logo">
+                            <a href="index.html">
+                                <img class="logo-img" src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </a>
+                        </h1>
+                        <span class="beta-badge">Beta</span>
+                    </div>
+
+                    <!-- log-befor 로그인 전 보여짐 -->
+                    <ul class="right-content log-befor">
+                        <li>
+                            <a class="loginBtn" href="login.html">로그인</a>
+                        </li> 
+                        <li>
+                            <a class="signupBtn" href="register-hp.html">회원가입</a>
+                        </li>
+                    </ul>
+                    <!-- log-after 로그인 후 보여짐 -->
+                    <ul class="right-content log-after">
+                        <li>
+                            <a class="guideBtn after-item" href="guide.html">
+                                <img src="img/hd-guide.svg" alt="사용가이드 아이콘"> 사용 가이드
+                            </a>
+                        </li> 
+                        <li>
+                            <a class="countBadge after-item" href="#">
+                                <img src="img/time-count.svg" alt="무료 횟수 카운트"> 5/5
+                            </a>
+                        </li>
+                        <li class="add-icon">
+                            <div class="circle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="add-item">
+                                <div class="item">
+                                    <a href="subscrib-info.html">구독정보</a>
+                                </div>
+                                <div class="item">
+                                    <a href="info.html">내 정보</a>
+                                </div>
+                                <div class="item">
+                                    <a href="index.html">로그아웃</a>
+                                </div>
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        
+        <main id="main" class="main">
+            <div class= "inner"> 
+                <!-- 메뉴 영역 -->
+                <section class="menu-area">
+                    <div class="content">
+                        <div class="offcanvas-wrap">
+                            <div class="offcanvas">
+                                <div class="offcanvas-body">
+                                    <nav id="nav">
+                                        <ul class="gnb">
+                                            <li class="gnb-item">
+                                                <a href="my-project.html">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/my-project.svg" alt="내 프로젝트">내 프로젝트
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item gnb-training">
+                                                <a href="#" class="focusGnb">
+                                                    <span class="gnb-txt-cont">
+                                                        <div class="gnb-txt gnb-focus-txt">
+                                                            <img src="img/menu/template-atv.svg" alt="템플릿"> 템플릿
+                                                        </div>
+                                                        <div class="drop-arrow">
+                                                            <span class="drop-left"></span>
+                                                            <span class="drop-right"></span>
+                                                        </div>
+                                                    </span>
+                                                </a>
+                                                <ul class="gnb-sub">
+                                                    <li class="gnb-sub-item">
+                                                        <a href="video.html" class="focus-sub">비디오 템플릿</a>
+                                                    </li>
+                                                    <li class="gnb-sub-item">
+                                                        <a href="card.html">카드뉴스 템플릿</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="subscribe-year.html">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/subscribe.svg" alt="구독하기">구독하기
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="notice.html">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/notice.svg" alt="공지사항">공지사항
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="qa-list.html">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/service-center.svg" alt="고객센터">고객센터
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item guide-gnb">
+                                                <a href="guide.html">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/guide-icon.svg" alt="사용 가이드">사용 가이드
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 컨텐츠 영역 -->
+                <section class="content-area">
+                    <article class="content-wrap">
+                        <div class="content-inner edit-inner">
+                            <!-- 제목 및 브라우저 컨트롤 버튼 -->
+                            <div class="video-header">
+                                <h3 class="video-title">
+                                    <span class="title-text font-IBM">제목 : </span>
+                                    <span class="user-video-title font-IBM">로우하이 -- vs -- 큐지</span>
+                                </h3>
+
+                                <ul class="controls">
+                                    <li class="controls-item">
+                                        <button type="button" class="controlsBtn">
+                                            <img src="img/refresh-icon.svg" alt="새로고침 아이콘"> 새로고침
+                                        </button>
+                                    </li>
+                                    <li class="controls-item">
+                                        <button type="button" class="controlsBtn">
+                                            <img src="img/back-icon.svg" alt="뒤로 아이콘"> 뒤로
+                                        </button>
+                                    </li>
+                                    <li class="controls-item">
+                                        <button type="button" class="controlsBtn">
+                                            <img src="img/next-icon.svg" alt="앞으로 아이콘"> 앞으로
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <!-- 탭 -->
+                            <ul class="tab-view video-tab m-top40">
+                                <li class="tab-active tab-item">
+                                    <a href="#" class="tab-active">자막 스타일</a>
+                                </li>
+                                <li class="tab-disb tab-item">
+                                    <a href="#" class="tab-link">제목 스타일</a>
+                                </li>
+                                <li class="tab-disb tab-item">
+                                    <a href="#" class="tab-link">레이아웃 스타일</a>
+                                </li>
+                                <li class="tab-disb tab-item">
+                                    <a href="#" class="tab-link">스타일 업로드</a>
+                                </li> 
+                            </ul>
+
+                            <div class="content-item m-top40">
+                                <div class="edit-title font-IBM">"원하는대로 자막을 편집해보세요 !"</div>
+                                <div class="content-item flex m-top20 edit-content">
+                                    <!-- 자막 편집 -->
+                                    <div class="subtitle-wrap">
+                                        <!-- 편집 선택 박스 -->
+                                        <div class="edit-item-wrap">
+                                            <!-- 자막효과 -->
+                                            <div class="edit-item">
+                                                <h4 class="subtitle-edit-title">자막 효과</h4>
+                                                <ul class="subtitle-effect-wrap m-top10">
+                                                    <li class="subtitle-effect-item">
+                                                        <button type="button" class="effectBtn b-show">
+                                                            <img src="" alt="효과없음">
+                                                        </button>
+                                                        <span class="effectBtn-text">효과없음</span>
+                                                    </li>
+                                                    <li class="subtitle-effect-item">
+                                                        <button type="button" class="effectBtn">
+                                                            <img src="" alt="바운스">
+                                                        </button>
+                                                        <span class="effectBtn-text">바운스</span>
+                                                    </li>
+                                                    <li class="subtitle-effect-item">
+                                                        <button type="button" class="effectBtn">
+                                                            <img src="" alt="팝">
+                                                        </button>
+                                                        <span class="effectBtn-text">팝</span>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <!-- 효과색상 -->
+                                            <div class="edit-item m-top20 flex">
+                                                <h4 class="subtitle-edit-title">효과 색상</h4>
+                                                <div class="">
+                                                    <label class="none">효과 색상 선택</label>
+                                                    <select class="">
+                                                        <option>색상1</option>
+                                                        <option>색상2</option>
+                                                        <option>색상3</option>
+                                                        <option>색상4</option>
+                                                        <option>색상5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- 폰트 -->
+                                            <div class="edit-item m-top20 flex">
+                                                <h4 class="subtitle-edit-title">폰트</h4>
+                                                <div class="">
+                                                    <label class="none">폰트 선택</label>
+                                                    <select class="">
+                                                        <option>폰트1</option>
+                                                        <option>폰트2</option>
+                                                        <option>폰트3</option>
+                                                        <option>폰트4</option>
+                                                        <option>폰트5</option>
+                                                    </select>
+                                                    <div class="">
+                                                        <label class="none">폰트 사이즈</label>
+                                                        <input type="number" placeholder="16">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- 폰트 컬러 -->
+                                            <div class="edit-item m-top20 flex">
+                                                <h4 class="subtitle-edit-title">폰트 컬러</h4>
+                                                <div class="">
+                                                    <label class="none">폰트 컬러 선택</label>
+                                                    <select class="">
+                                                        <option>폰트 컬러1</option>
+                                                        <option>폰트 컬러2</option>
+                                                        <option>폰트 컬러3</option>
+                                                        <option>폰트 컬러4</option>
+                                                        <option>폰트 컬러5</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- 테두리 -->
+                                            <div class="edit-item m-top20 flex">
+                                                <h4 class="subtitle-edit-title">테두리</h4>
+                                                <div class="">
+                                                    <label class="none">테두리 선택</label>
+                                                    <select class="">
+                                                        <option>테두리1</option>
+                                                        <option>테두리2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- 자막 단위 -->
+                                            <div class="edit-item m-top20 flex">
+                                                <h4 class="subtitle-edit-title">자막 단위</h4>
+                                                <div class="">
+                                                    <label class="none">자막 단위 선택</label>
+                                                    <select class="">
+                                                        <option>자막 단위1</option>
+                                                        <option>자막 단위2</option>
+                                                        <option>자막 단위2</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <!-- 자막 위치 -->
+                                            <div class="edit-item m-top20 flex">
+                                                <h4 class="subtitle-edit-title">자막 위치</h4>
+                                                <div>
+                                                    <div class="">
+                                                        <label class="none">자막 위치 선택</label>
+                                                        <select class="">
+                                                            <option>자막 위치1</option>
+                                                            <option>자막 위치2</option>
+                                                            <option>자막 위치3</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="m-top10">
+                                                        <span>아래</span>
+                                                        <input type="range" id="subtitle-range" min="0" max="100" value="50">
+                                                        <span>위</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 전체 자막 박스 -->
+                                        <div class="subtitle-edit-wrap m-top20">
+                                            <div class="subtitle-container">
+                                                <ul class="edit-menu">
+                                                    <li class="edit">편집</li>
+                                                    <li class="delete">삭제</li>
+                                                    <li class="color-change">
+                                                        <!-- 기본 컬러칩 (색상 선택을 표시) -->
+                                                        <span class="color-chip" style="background-color: #000000;"></span>
+                                                    </li>
+                                                </ul>
+
+                                                <div class="word-wrap">
+                                                    <span class="word" data-index="1">안녕하세요, </span>
+                                                    <span class="word" data-index="2">여러분!</span>
+                                                    <span class="word" data-index="3">오늘은</span>
+                                                    <span class="word" data-index="4">자막</span>
+                                                    <span class="word" data-index="5">색상</span>
+                                                    <span class="word" data-index="6">변경</span>
+                                                    <span class="word" data-index="7">기능을</span>
+                                                    <span class="word" data-index="8">소개합니다.</span>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="color-panel" style="display:none;">
+                                                <label for="color-picker">자막 색상 선택:</label>
+                                                <input type="color" id="color-picker" name="color">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- 미리보기 박스 -->
+                                    <div class="preview-wrap template-wrap">
+                                        <div class="template-box">
+                                            <div class="templaete-img template-fit">
+                                                <div class="mockup-img">
+                                                    <img class="img-item" src="img/template/iphone-mockup.png" alt="아이폰 목업">
+                                                    <!-- 제목, 선택한 레이아웃 비율, 자막 컨텐츠 -->
+                                                    <div class="mockup-content">
+                                                        <div class="mock-title mockup-contentImg">
+                                                            <div class="user-title">로우하이 -- vs -- 큐지</div>
+                                                        </div>
+                                                        <div class="mock-ratio mockup-contentImg">
+                                                            <img class="exampleImg ratio16-img" src="img/template/example-img-16_9.png" alt="레이아웃 예시 이미지">
+                                                        </div>
+                                                        <div class="mock-subTitle mockup-contentImg">
+                                                            <div class="user-subtitle">
+                                                                <span class="word">안녕하세요, </span>
+                                                                <span class="word">여러분!</span>
+                                                                <span class="word">오늘은</span>
+                                                                <span class="word">자막</span>
+                                                                <span class="word">색상</span>
+                                                                <span class="word">변경</span>
+                                                                <span class="word">기능을</span>
+                                                                <span class="word">소개합니다.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- <div class="templateBtn-wrap">
+                            <button type="button" class="templaeteBtn">저장하기</button>
+                        </div> -->
+                    </article>
+                </section>
+            </div>
+        </main>
+
+        <footer id="footer" class="footer">
+            <div class="content">
+                <div class="footer-info01 footer-info">
+                    <div class="inner">
+                        <div class="company-info">
+                            <ul class="info info01">
+                                <li>(주)바이럴</li>
+                                <li>대표 : 가나다</li>
+                                <li class="info-mg">주소 : 서울특별시 서울구 서울로 123 가나다라타워 3층 바이럴</li>
+                                <li>사업자등록번호 : 000 - 00 - 00000</li>
+                                <li class="info-mg">통신판매업 신고번호 : 제 0000 - 서울서울 - 0000호</li>
+                                <li>
+                                    abcdefg@gmail.com
+                                    <span>010-0101-0101</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="site-map">
+                            <ul class="site">
+                                <li>
+                                    <a href="#">프로젝트</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 영상</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 카드뉴스</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">비디오 템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">카드뉴스 템플릿</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">구독하기</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">공지사항</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">고객센터</a>
+                                </li>
+                            </ul>
+                        </ul><!-- //partner-site -->
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="footer-info02 footer-info">
+                    <div class="inner">
+                        <div class="left-content">
+                            <div class="footer-logo">
+                                <img src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </div>
+                            <div class="support-links">
+                                <div class="link" id="terms-btn">
+                                    <a href="#">이용약관</a>
+                                </div>
+                                <div class="link" id="privacy-btn">
+                                    <a href="#">개인정보처리방침</a>
+                                </div>
+                            </div><!-- //support-links -->
+                        </div>
+                        <div class="copyright">
+                            ©Viral 2025 All rights reserved.
+                        </div>
+                    </div>
+                </div><!-- //footer-info01 -->
+            </div>
+            
+        </footer>
+    </section>
+
+    <script src="js/script.js"></script>
+        
+    <script>
+        // 각 단어에 클릭 이벤트 추가
+        const words = document.querySelectorAll('.word-wrap .word');
+        const editMenu = document.querySelector('.edit-menu');
+        const colorPanel = document.querySelector('.color-panel');
+        const colorPicker = document.getElementById('color-picker');
+        const colorChip = document.querySelector('.color-chip'); // 컬러칩
+
+        let selectedWord = null;
+
+        // 단어를 클릭하면 편집 메뉴 보이기
+        words.forEach(word => {
+            word.addEventListener('click', function () {
+                // 이전에 선택된 단어의 'selected' 클래스 제거
+                if (selectedWord) {
+                    selectedWord.classList.remove('selected');
+                }
+
+                // 현재 클릭된 단어를 선택 상태로 만들기
+                selectedWord = word;
+                selectedWord.classList.add('selected');
+
+                // 편집 메뉴 표시
+                editMenu.style.display = 'block';
+                editMenu.style.top = `${word.offsetTop + word.offsetHeight}px`; // 메뉴 위치 조정
+                editMenu.style.left = `${word.offsetLeft}px`; // 메뉴 위치 조정
+            });
+        });
+
+        // 편집 클릭 시 단어 텍스트 수정 가능하게 하기
+        document.querySelector('.edit').addEventListener('click', function () {
+            if (selectedWord) {
+                selectedWord.contentEditable = true;
+                selectedWord.focus();
+            }
+        });
+
+        // 삭제 클릭 시 단어 삭제하기
+        document.querySelector('.delete').addEventListener('click', function () {
+            if (selectedWord) {
+                selectedWord.remove();
+                editMenu.style.display = 'none'; // 메뉴 숨기기
+            }
+        });
+
+        // 컬러칩 클릭 시 컬러 패널 표시하기
+        colorChip.addEventListener('click', function () {
+            colorPanel.style.display = 'block';
+        });
+
+        // 컬러 선택 후 색상 변경하기
+        colorPicker.addEventListener('input', function () {
+            if (selectedWord) {
+                // 선택된 단어 색상 변경
+                selectedWord.style.color = colorPicker.value;
+                // 컬러칩 색상 업데이트
+                colorChip.style.backgroundColor = colorPicker.value;
+            }
+        });
+
+        // 문서 외부 클릭 시 편집 메뉴 숨기기
+        document.addEventListener('click', function (event) {
+            if (!event.target.closest('.subtitle-container') && !event.target.closest('.edit-menu')) {
+                editMenu.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>

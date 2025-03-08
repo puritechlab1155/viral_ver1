@@ -37,7 +37,7 @@
         <main id="main" class="user-auth register-form">
             <div class= "inner"> 
                 <div class="user-auth-wrap">
-                    <h3 class="main-title">회원가입</h3>
+                    <h3 class="main-title font-IBM">회원가입</h3>
                     <div class="guide-title">
                         <span>회원가입을 위한 정보를 작성해주세요.</span>
                         기본 정보 입력
@@ -79,11 +79,13 @@
                         <div class="m-top40">주민번호 입력</div>
                         <div class="input_container m-top20 residentNum-input">
                             <label for="fist-residentNum" class="resident-label">
-                                <input id="before-residentNum" class="fist-residentNum" type="text" placeholder="주민번호 앞자리 6자">
+                                <input id="before-residentNum" class="fist-residentNum" type="text" placeholder="주민번호 앞자리 6자" maxlength="6"
+                                    inputmode="numeric" pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                             </label>
                             <span> - </span>
                             <label for="after-residentNum" class="resident-label">
-                                <input id="after-residentNum" class="after-residentNum" type="password" placeholder="">
+                                <input id="after-residentNum" class="after-residentNum" type="password" maxlength="1" inputmode="numeric"
+                                    pattern="[0-9]*" oninput="this.value = this.value.replace(/[^0-9]/g, '')">
                             </label>
                             <span>******</span>
                         </div>
