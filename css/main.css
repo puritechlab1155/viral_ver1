@@ -56,6 +56,9 @@ margin: 0;
 #home .m-top20 {
   margin-top: 20px;
 }
+#home .m-top40 {
+  margin-top: 20px;
+}
 #home .mob-br {
   display: none;
 }
@@ -893,10 +896,18 @@ margin: 0;
 #home .user-auth .input_container {
   width: 100%;
   display: flex;
+  align-items: center;
   gap: 16px;
+}
+#home .user-auth .residentNum-input {
+  gap: 23px;
+  justify-content: start;
 }
 #home .user-auth .input_container label {
   flex: 1;
+}
+#home .user-auth .input_container .resident-label {
+  flex: inherit;
 }
 #home .user-auth .input_container input {
   width: 100%;
@@ -919,6 +930,13 @@ margin: 0;
 #home .user-auth .input_wrap .password_container {
   display: block;
   position: relative;
+}
+#home .user-auth .input_wrap .fist-residentNum {
+  max-width: 263px;
+}
+#home .user-auth .input_wrap .after-residentNum {
+  max-width: 75px;
+  text-align: center;
 }
 #home .user-auth .keep_login {
   width: fit-content;
@@ -993,6 +1011,7 @@ margin: 0;
 }
 #home .user-auth .input_container button {
   width: 140px;
+  padding: 16px 0;
 }
 #home .user-auth .focusBtn {
   background: #FAF9FE;
@@ -1100,6 +1119,9 @@ margin: 0;
   }
   #home .find-pw .mob-br {
     display: block;
+  }
+  #home .user-auth .residentNum-input {
+    gap: 16px;
   }
 }
 @media (max-width: 480px) {
