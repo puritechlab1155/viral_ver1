@@ -889,7 +889,7 @@ margin: 0;
 
 .subtitle-container .word {
   cursor: pointer;
-  margin-right: 5px;
+  margin-right: 2px;
 }
 
 .color-panel {
@@ -897,7 +897,6 @@ margin: 0;
 }
 
 .selected {
-  color: purple;
   cursor: text;
 }
 

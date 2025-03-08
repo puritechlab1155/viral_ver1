@@ -322,7 +322,10 @@
                                                     <li class="delete">삭제</li>
                                                     <li class="color-change">
                                                         <!-- 기본 컬러칩 (색상 선택을 표시) -->
-                                                        <span class="color-chip" style="background-color: #000000;"></span>
+                                                        <div class="color-panel">
+                                                            <label for="color-picker" class="none">자막 색상 선택:</label>
+                                                            <input type="color" id="color-picker" name="color">
+                                                        </div>
                                                     </li>
                                                 </ul>
 
@@ -336,11 +339,6 @@
                                                     <span class="word" data-index="7">기능을</span>
                                                     <span class="word" data-index="8">소개합니다.</span>
                                                 </div>
-                                            </div>
-                                        
-                                            <div class="color-panel" style="display:none;">
-                                                <label for="color-picker">자막 색상 선택:</label>
-                                                <input type="color" id="color-picker" name="color">
                                             </div>
                                         </div>
                                     </div>
@@ -476,71 +474,74 @@
     <script src="js/script.js"></script>
         
     <script>
-        // 각 단어에 클릭 이벤트 추가
-        const words = document.querySelectorAll('.word-wrap .word');
-        const editMenu = document.querySelector('.edit-menu');
-        const colorPanel = document.querySelector('.color-panel');
-        const colorPicker = document.getElementById('color-picker');
-        const colorChip = document.querySelector('.color-chip'); // 컬러칩
+        document.addEventListener("DOMContentLoaded", () => {
+            const wordWrap = document.querySelector(".word-wrap");
+            const editMenu = document.querySelector(".edit-menu");
+            const colorPicker = document.getElementById("color-picker");
 
-        let selectedWord = null;
+            let selectedWord = null;
 
-        // 단어를 클릭하면 편집 메뉴 보이기
-        words.forEach(word => {
-            word.addEventListener('click', function () {
-                // 이전에 선택된 단어의 'selected' 클래스 제거
-                if (selectedWord) {
-                    selectedWord.classList.remove('selected');
+            // 이벤트 위임을 사용하여 단어 클릭 처리
+            wordWrap.addEventListener("click", (event) => {
+                if (event.target.classList.contains("word")) {
+                    if (selectedWord) {
+                        selectedWord.classList.remove("selected");
+                    }
+
+                    selectedWord = event.target;
+                    selectedWord.classList.add("selected");
+
+                    // 선택된 단어의 현재 색상을 컬러 선택기에 반영
+                    let currentColor = window.getComputedStyle(selectedWord).color;
+                    colorPicker.value = rgbToHex(currentColor);
+
+                    // 편집 메뉴 위치 조정
+                    const rect = selectedWord.getBoundingClientRect();
+                    editMenu.style.display = "block";
+                    editMenu.style.top = `${window.scrollY + rect.bottom}px`;
+                    editMenu.style.left = `${window.scrollX + rect.left}px`;
                 }
-
-                // 현재 클릭된 단어를 선택 상태로 만들기
-                selectedWord = word;
-                selectedWord.classList.add('selected');
-
-                // 편집 메뉴 표시
-                editMenu.style.display = 'block';
-                editMenu.style.top = `${word.offsetTop + word.offsetHeight}px`; // 메뉴 위치 조정
-                editMenu.style.left = `${word.offsetLeft}px`; // 메뉴 위치 조정
             });
-        });
 
-        // 편집 클릭 시 단어 텍스트 수정 가능하게 하기
-        document.querySelector('.edit').addEventListener('click', function () {
-            if (selectedWord) {
-                selectedWord.contentEditable = true;
-                selectedWord.focus();
+            // 편집 버튼 클릭 시 내용 수정 가능하도록 설정
+            document.querySelector(".edit").addEventListener("click", () => {
+                if (selectedWord) {
+                    selectedWord.contentEditable = true;
+                    selectedWord.focus();
+                }
+            });
+
+            // 삭제 버튼 클릭 시 단어 삭제
+            document.querySelector(".delete").addEventListener("click", () => {
+                if (selectedWord) {
+                    selectedWord.remove();
+                    editMenu.style.display = "none";
+                    selectedWord = null;
+                }
+            });
+
+            // 컬러 선택 후 적용
+            colorPicker.addEventListener("input", () => {
+                if (selectedWord) {
+                    selectedWord.style.color = colorPicker.value;
+                }
+            });
+
+            // 외부 클릭 시 메뉴 숨기기
+            document.addEventListener("click", (event) => {
+                if (!editMenu.contains(event.target) && !wordWrap.contains(event.target)) {
+                    editMenu.style.display = "none";
+                }
+            });
+
+            // RGB → HEX 변환 함수
+            function rgbToHex(rgb) {
+                const rgbArray = rgb.match(/\d+/g).map(Number);
+                return `#${rgbArray.map(x => x.toString(16).padStart(2, "0")).join("")}`;
             }
         });
 
-        // 삭제 클릭 시 단어 삭제하기
-        document.querySelector('.delete').addEventListener('click', function () {
-            if (selectedWord) {
-                selectedWord.remove();
-                editMenu.style.display = 'none'; // 메뉴 숨기기
-            }
-        });
 
-        // 컬러칩 클릭 시 컬러 패널 표시하기
-        colorChip.addEventListener('click', function () {
-            colorPanel.style.display = 'block';
-        });
-
-        // 컬러 선택 후 색상 변경하기
-        colorPicker.addEventListener('input', function () {
-            if (selectedWord) {
-                // 선택된 단어 색상 변경
-                selectedWord.style.color = colorPicker.value;
-                // 컬러칩 색상 업데이트
-                colorChip.style.backgroundColor = colorPicker.value;
-            }
-        });
-
-        // 문서 외부 클릭 시 편집 메뉴 숨기기
-        document.addEventListener('click', function (event) {
-            if (!event.target.closest('.subtitle-container') && !event.target.closest('.edit-menu')) {
-                editMenu.style.display = 'none';
-            }
-        });
     </script>
 </body>
 </html>
