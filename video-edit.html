@@ -228,29 +228,26 @@
                                             <!-- 효과색상 -->
                                             <div class="edit-item m-top20 flex">
                                                 <h4 class="subtitle-edit-title">효과 색상</h4>
-                                                <div class="">
-                                                    <label class="none">효과 색상 선택</label>
-                                                    <select class="">
-                                                        <option>색상1</option>
-                                                        <option>색상2</option>
-                                                        <option>색상3</option>
-                                                        <option>색상4</option>
-                                                        <option>색상5</option>
-                                                    </select>
+                                                <div class="picker-container">
+                                                    <label for="effect-color-picker" class="none">자막 색상 선택:</label>
+                                                    <input class="color-picker" type="color" id="effect-color-picker" name="color">
                                                 </div>
                                             </div>
                                             <!-- 폰트 -->
                                             <div class="edit-item m-top20 flex">
                                                 <h4 class="subtitle-edit-title">폰트</h4>
-                                                <div class="">
-                                                    <label class="none">폰트 선택</label>
-                                                    <select class="">
-                                                        <option>폰트1</option>
-                                                        <option>폰트2</option>
-                                                        <option>폰트3</option>
-                                                        <option>폰트4</option>
-                                                        <option>폰트5</option>
-                                                    </select>
+                                                <div class="flex">
+                                                    <div class="select-container">
+                                                        <div class="select-wrap">
+                                                            <div class="select-view">
+                                                                pretendard <img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">
+                                                            </div>
+                                                            <div class="select selectNone">
+                                                                <div class="option">pretendard</div>
+                                                                <div class="option m-btm0">BMJua</div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                     <div class="">
                                                         <label class="none">폰트 사이즈</label>
                                                         <input type="number" placeholder="16">
@@ -260,53 +257,58 @@
                                             <!-- 폰트 컬러 -->
                                             <div class="edit-item m-top20 flex">
                                                 <h4 class="subtitle-edit-title">폰트 컬러</h4>
-                                                <div class="">
-                                                    <label class="none">폰트 컬러 선택</label>
-                                                    <select class="">
-                                                        <option>폰트 컬러1</option>
-                                                        <option>폰트 컬러2</option>
-                                                        <option>폰트 컬러3</option>
-                                                        <option>폰트 컬러4</option>
-                                                        <option>폰트 컬러5</option>
-                                                    </select>
+                                                <div class="picker-container">
+                                                    <label for="font-color-picker" class="none">자막 색상 선택:</label>
+                                                    <input class="color-picker" type="color" id="font-color-picker" name="color">
                                                 </div>
                                             </div>
                                             <!-- 테두리 -->
                                             <div class="edit-item m-top20 flex">
                                                 <h4 class="subtitle-edit-title">테두리</h4>
-                                                <div class="">
-                                                    <label class="none">테두리 선택</label>
-                                                    <select class="">
-                                                        <option>테두리1</option>
-                                                        <option>테두리2</option>
-                                                    </select>
+                                                <div class="select-container">
+                                                    <div class="select-wrap">
+                                                        <div class="select-view">
+                                                            있음<img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">
+                                                        </div>
+                                                        <div class="select selectNone">
+                                                            <div class="option">있음</div>
+                                                            <div class="option m-btm0">없음</div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- 자막 단위 -->
                                             <div class="edit-item m-top20 flex">
                                                 <h4 class="subtitle-edit-title">자막 단위</h4>
-                                                <div class="">
-                                                    <label class="none">자막 단위 선택</label>
-                                                    <select class="">
-                                                        <option>자막 단위1</option>
-                                                        <option>자막 단위2</option>
-                                                        <option>자막 단위2</option>
-                                                    </select>
+                                                <div class="select-container">
+                                                    <div class="select-wrap">
+                                                        <div class="select-view">
+                                                            긴 자막<img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">
+                                                        </div>
+                                                        <div class="select selectNone">
+                                                            <div class="option">긴 자막</div>
+                                                            <div class="option m-btm0">짧은 자막</div>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                             <!-- 자막 위치 -->
                                             <div class="edit-item m-top20 flex">
                                                 <h4 class="subtitle-edit-title">자막 위치</h4>
-                                                <div>
-                                                    <div class="">
-                                                        <label class="none">자막 위치 선택</label>
-                                                        <select class="">
-                                                            <option>자막 위치1</option>
-                                                            <option>자막 위치2</option>
-                                                            <option>자막 위치3</option>
-                                                        </select>
+                                                <div class="edit-container flex">
+                                                    <div class="select-container">
+                                                        <div class="select-wrap">
+                                                            <div class="select-view">
+                                                                하단<img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">
+                                                            </div>
+                                                            <div class="select selectNone">
+                                                                <div class="option">상단</div>
+                                                                <div class="option">중단</div>
+                                                                <div class="option m-btm0">하단</div>
+                                                            </div>
+                                                        </div>
                                                     </div>
-                                                    <div class="m-top10">
+                                                    <div class="m-top10 flex">
                                                         <span>아래</span>
                                                         <input type="range" id="subtitle-range" min="0" max="100" value="50">
                                                         <span>위</span>
@@ -324,7 +326,7 @@
                                                         <!-- 기본 컬러칩 (색상 선택을 표시) -->
                                                         <div class="color-panel">
                                                             <label for="color-picker" class="none">자막 색상 선택:</label>
-                                                            <input type="color" id="color-picker" name="color">
+                                                            <input class="color-picker" type="color" id="color-picker" name="color">
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -539,6 +541,45 @@
                 const rgbArray = rgb.match(/\d+/g).map(Number);
                 return `#${rgbArray.map(x => x.toString(16).padStart(2, "0")).join("")}`;
             }
+
+
+
+
+            const selectWraps = document.querySelectorAll(".select-wrap");
+
+            selectWraps.forEach((wrap) => {
+                const selectView = wrap.querySelector(".select-view");
+                const selectDropdown = wrap.querySelector(".select");
+
+                selectView.addEventListener("click", (event) => {
+                event.stopPropagation(); // 클릭 이벤트 전파 방지
+
+                // 모든 드롭다운 닫기 (현재 선택한 드롭다운 제외)
+                document.querySelectorAll(".select").forEach((dropdown) => {
+                    if (dropdown !== selectDropdown) {
+                    dropdown.classList.add("selectNone");
+                    }
+                });
+
+                // 클릭한 드롭다운만 토글
+                selectDropdown.classList.toggle("selectNone");
+                });
+
+                // 옵션 선택 시 드롭다운 닫기
+                selectDropdown.querySelectorAll(".option").forEach((option) => {
+                option.addEventListener("click", () => {
+                    selectView.innerHTML = `${option.textContent} <img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">`;
+                    selectDropdown.classList.add("selectNone");
+                });
+                });
+            });
+
+            // 다른 곳을 클릭하면 모든 드롭다운 닫기
+            document.addEventListener("click", () => {
+                document.querySelectorAll(".select").forEach((dropdown) => {
+                dropdown.classList.add("selectNone");
+                });
+            });
         });
 
 

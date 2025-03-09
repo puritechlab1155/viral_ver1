@@ -65,6 +65,9 @@ margin: 0;
 #home .m-top50 {
   margin-top: 50px;
 }
+#home .m-btm0 {
+  margin-bottom: 0px !important;
+}
 #home .mob-br {
   display: none;
 }
@@ -97,6 +100,14 @@ margin: 0;
 	pointer-events:none !important;
 	position:absolute !important;
 	right: 0 !important;
+}
+#home .color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+#home .color-picker::-webkit-color-swatch {
+  border: none;
+  border-radius: 50%;
 }
 
 @media (max-width: 767px) {
@@ -815,30 +826,24 @@ margin: 0;
   justify-content: space-between;
   align-items: center;
   gap: 20px 30px;
-  background: lightsalmon;
 }
 #home .content-area .subtitle-wrap {
   overflow: hidden;
   flex: 1;
-  background: lightskyblue;
+  background: #eee;
   border-radius: 20px;
 }
 #home .content-area .edit-item-wrap {
-  background: #7676765c;
   padding: 60px 30px 0px;
 }
 #home .content-area .edit-title {
   font-size: 22px;
   font-weight: 500;
 }
-#home .content-area .edit-item {
-  background: lightcyan;
-}
 #home .content-area .subtitle-edit-title {
   flex: 0 0 70px;
   font-size: 18px;
   font-weight: 500;
-  background: lightgoldenrodyellow;
 }
 #home .content-area .subtitle-effect-wrap {
   display: flex;
@@ -861,11 +866,68 @@ margin: 0;
 #home .content-area .edit-item-wrap .flex {
   align-items: center;
   gap: 20px;
-  background: lightpink;
 }
 #home .content-area .subtitle-edit-wrap {
   padding: 20px 30px;
   background-color: lightseagreen;
+}
+#home .content-area .color-picker {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #eee;
+  border-radius: 50px;
+  cursor: pointer;
+}
+#home .content-area .select-container {
+  flex: 0 0 350px;
+}
+#home .content-area .select-wrap {
+  width: 100%;
+  position: relative;
+}
+#home .content-area .select-view {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 8px;
+  height: 34px;
+  line-height: 34px;
+  font-size: 16px;
+  font-weight: 500;
+  background: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#home .content-area .select-view .drop-icon {
+  width: 18px;
+}
+#home .content-area .select {
+  width: 100%;
+  max-width: 350px;
+  overflow: hidden;
+  position: absolute;
+  top: 38px;
+  left: 0;
+  background: #ccc;
+  border-radius: 5px;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+#home .content-area .selectNone {
+  opacity: 0;
+  display: none;
+}
+#home .content-area .option {
+  padding: 0 16px;
+  height: 30px;
+  line-height: 30px;
+  margin-bottom: 4px;
+  font-size: 15px;
+  background: #ddd;
+  cursor: pointer;
+}
+#home .content-area .option:hover {
+  background: #333;
+  color: #fff;
 }
 #home .mockup-content .user-title {
   color: #fafafa;
