@@ -1447,8 +1447,8 @@ ol {
 #home .watermark-img {
   width: fit-content;
   position: absolute;
-  top: 25%;
-  right: 16px;
+  top: 45%;
+  left: 16px;
   z-index: 30;
 }
 
