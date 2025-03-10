@@ -1321,6 +1321,9 @@ ol {
   border-radius: 6px;
   margin: 0;
 }
+#home .content-area .show-edit-menu {
+  display: flex;
+}
 
 #home .content-area .edit-menu-item {
   cursor: pointer;
@@ -1353,7 +1356,8 @@ ol {
 
 #home .content-area .selected {
   cursor: text;
-  background: #f2eeff;
+  background: #e9e2ff;
+  border-bottom: 2px solid #523baf;
 }
 
 #home .mockup-content .user-title {
