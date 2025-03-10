@@ -7,300 +7,6 @@
     <title>Viral | 생성한 영상</title>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
-
-
-    <style>
-        /* -------projectV-complete : 생성한 영상-------- */
-        /* 썸네일 슬라이드바 */
-        #home .content-area .thumb-slide-contain {
-            display: flex;
-            overflow: hidden;
-            width: 100%;
-            margin: 0 auto;
-            padding: 10px 0;
-            cursor: grab; /* 드래그 커서 */
-        }
-        #home .content-area .thumb-slide-box {
-            flex: 0 0 auto;
-            max-width: 380px;
-            width: 30%;
-            margin-right: 20px;
-            max-height: 180px;
-            /* height: auto; */
-            aspect-ratio: 16 / 9;
-            background-color: #FEFEFE;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            border-radius: 20px;
-            padding: 10px;
-            box-sizing: border-box;
-            border: 2px solid #EFEFEF;
-        }
-        #home .content-area .click-border-2 {
-            border: 2px solid #5228F4;
-        }
-
-        #home .content-area .thumb-slide-box .projectV-thumb {
-            max-width: 140px;
-            max-height: 140px;
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-        }
-        #home .content-area .thumb-slide-box .thumbnail {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            border-radius: 10px;
-        }
-        #home .thumb-slide-contain .semiboldS-style {
-            color: #868686;
-            margin-top: 15px;
-        }
-        #home .thumb-slide-contain .projectV-info .star-ranking {
-            margin-top: 15px; 
-            display: flex;
-            justify-content: flex-end; 
-            align-items: center;
-        }
-
-        /* --미리보기 */
-        #home .projectV-time {
-            display: block;
-        }
-        #home .projectV-flex-box {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items:flex-start;
-            gap: 20px;
-        }
-        #home .content-area .projectV-preview {
-            max-width: 400px;
-            width: 100%;
-            align-items: center;
-            margin: 50px 0;
-        }
-        #home .content-area .projectV-preview .btn-icon-box {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-around;
-            gap: 70px;
-        }
-        #home .content-area .projectV-preview .btn-icon-box .border-none {
-            border: none;
-        }
-        #home .content-area .projectV-preview .center {
-        text-align: center;
-        }
-            /* --AI리뷰 부분 */
-        #home .projectV-flex-box .projectV-left, .projectV-right {
-            width: 50%;
-        }
-        #home .ai-review-bg {
-            height: 256px;
-            background: #F8F8F8;
-            border-radius: 20px;
-            padding: 20px;
-        }
-        #home .content-area .projectV-preview .bg-none {
-            background: none;
-            box-shadow: none;
-        }
-        #home .ai-review-contain {
-            /* min-width: 800px; */
-            width: 100%;
-            /* height: 430px; */
-            height: auto;
-            background: #FEFEFE;
-            border-radius: 20px;
-            padding: 30px;
-        }
-        #home .projectV-left .title {
-            margin-top: 20px;
-        }
-        #home .semibold-style {
-            font-size: 18px;
-            font-weight: 700;
-        }
-        #home .semiboldS-style {
-            font-size: 16px;
-            margin-top: 20px;
-        }
-        #homm .upload-info-title .h-48 {
-            height: 48px;
-        }
-        #home .medium-style {
-            font-size: 16px;
-            color: #868686;
-            line-height: 160%;
-            background: #FEFEFE;
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 10px;
-            height: 170px;
-            overflow-y: auto;
-            box-sizing: border-box;
-            text-align: left;
-        }
-        #home .projectV-right .upload-info {
-            height: auto;
-        }
-        #home .projectV-right .upload-info .h-56 {
-            height: 56px;
-        }
-        #home .projectV-right .upload-info .h-120 {
-            height: 120px;
-        }
-        #home .projectV-right .templateBtn-wrap {
-            width: auto;
-            margin-top: 30px;
-        }
-        /* 모달 배경 */
-        #home .subscribe-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none; /* JavaScript에서 이 속성을 변경 */
-            justify-content: center;
-            align-items: center;
-        }
-
-        #home .subscribe-modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            display: none; /* JavaScript에서 이 속성을 변경 */
-            justify-content: center;
-            align-items: center;
-        }
-
-        /* 모달이 보일 때 */
-        #home .subscribe-modal.show { /* 공백 제거 */
-            display: flex !important;
-        }
-
-        /* 모달 창 */
-        #home .subscribe-modal .modal-content {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 480px;
-            text-align: center;
-            position: relative;
-        }
-        #home .subscribe-modal .modal-content .semibold-50 {
-            font-size: 50px;
-            font-weight: 700;
-            line-height: 140%;
-        }
-        #home .subscribe-modal .modal-content .medium-16 {
-            font-size: 16px;
-            color: #868686;
-            line-height: 160%;
-            margin-top: 12px;
-        }
-        #home .subscribe-modal .subscribe-content {
-            margin: 30px 0;
-            width: 100%;
-        }
-        #home .subscribe-modal .subscribe-content .flex-100 {
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-        }
-        #home .subscribe-modal .subscribe-content .flex-100:last-child {
-            margin-top: 25px;
-        }
-        #home .subscribe-modal .subscribe-content .subscribe-bg {
-            width: 190px;
-            height: 100px;
-            background: #FAF9FE;
-            border: 1px solid #EFEAFF;
-            border-radius: 20px;
-            font-size: 22px;
-            line-height: 140%;
-            padding: 20px
-        }
-        #home .subscribe-modal .subscribe-content .text-purple {
-            color: #5228F4;
-        }
-
-        /* 닫기 버튼 */
-        #home .subscribe-modal .close-btn {
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            border: none !important;
-            background: none;
-            font-size: 40px;
-            cursor: pointer;
-        }
-        /* 자세히보기 버튼 */
-        #home .content-area .templateBtn-wrap .radius-10 {
-            border-radius: 10px;
-            width: 204px;
-            height: 56px;
-        }
-        /* 데스크탑 기준 반응형 */
-        @media (max-width: 1199px) {
-            #home .ai-review-contain {
-                display: none;
-            }
-        }
-        @media (max-width: 850px) {
-            #home .semibold-style {
-                font-size: 14px;
-            }
-            #home .thumb-slide-contain .semiboldS-style {
-                margin-top: 3px;
-            }
-            #home .semiboldS-style {
-                font-size: 12px;
-            }
-            #home .thumb-slide-contain .projectV-info .star-ranking {
-                margin-top: -10px;
-            }
-            #home .thumb-slide-contain .projectV-info .star-ranking .star-img {
-                width: 50%;
-            }
-        }
-        @media (max-width: 767px) {
-            #home .content-area .thumb-slide-box {
-                flex-wrap: wrap;
-            }
-            #home .thumb-slide-contain .projectV-info .star-ranking .star-img {
-                width: 30%;
-            }
-        }
-        @media (max-width: 480px) {
-            /* #home .content-area .thumb-slide-box {
-                flex-wrap: wrap;
-            } */
-            #home .thumb-slide-contain .projectV-info .star-ranking {
-                margin-top: -20px;
-            }
-            #home .thumb-slide-contain .projectV-info .star-ranking .star-img {
-                width: 30%;
-            }
-            #home .content-area .projectV-preview {
-                justify-content: initial;
-                margin-left: 5%;
-                margin-top: 20px;
-            }
-            
-        }
-    </style>
-
 </head>
 <body>
     <section id="home">
@@ -457,7 +163,7 @@
                                         <h2 class="semibold-style">숏폼이 자동 생성한 제목</h2>
                                         <h3 class="semiboldS-style">01:03 </h3>
                                         <div class="star-ranking">
-                                            <img class="star-five star-img" src="/img/projectV/star-five.svg" alt="별5개">
+                                            <img class="star-five star-img" src="img/projectV/star-five.svg" alt="별5개">
                                         </div>
                                     </div>
                                 </div>
@@ -469,7 +175,7 @@
                                         <h2 class="semibold-style">숏폼이 자동 생성한 제목</h2>
                                         <h3 class="semiboldS-style projectV-time">00:49 </h3>
                                         <div class="star-ranking">
-                                            <img class="star-five star-img" src="/img/projectV/star-four.svg" alt="별5개">
+                                            <img class="star-five star-img" src="img/projectV/star-four.svg" alt="별5개">
                                         </div>
                                     </div>
                                 </div>                                
@@ -488,54 +194,37 @@
                                         <div class="template-fit">
                                             <div class="mockup-img">
                                                 <img class="img-item" src="img/template/iphone-mockup.png" alt="아이폰 목업">
-                                                    <!-- 제목, 선택한 레이아웃 비율, 자막 컨텐츠 -->
-                                                    <div class="mockup-content">
-                                                        <div class="mock-title mockup-contentImg">
-                                                            <div class="user-title">로우하이 -- vs -- 큐지</div>
-                                                        </div>
-                                                        <div class="mock-ratio mockup-contentImg">
-                                                            <img class="exampleImg ratio16-img" src="img/template/example-img-16_9.png" alt="레이아웃 예시 이미지">
-                                                        </div>
-                                                        <div class="mock-subTitle mockup-contentImg">
-                                                            <div class="user-subtitle">
-                                                                <span class="word">안녕하세요, </span>
-                                                                <span class="word">여러분!</span>
-                                                                <span class="word">오늘은</span>
-                                                                <span class="word">자막</span>
-                                                                <span class="word">색상</span>
-                                                                <span class="word">변경</span>
-                                                                <span class="word">기능을</span>
-                                                                <span class="word">소개합니다.</span>
-                                                            </div>
+                                                <!-- 목업 : 제목, 선택한 레이아웃 비율, 자막 컨텐츠 -->
+                                                <div class="mockup-content">
+                                                    <div class="mock-title mockup-content-item">
+                                                        <div class="user-title">로우하이 -- vs -- 큐지</div>
+                                                    </div>
+                                                    <div class="mock-ratio mockup-content-item mockup-content-video ratio16-item">
+                                                        <video class="user-video" src="img/videos/sample-video.mp4" autoplay muted loop></video>
+                                                    </div>
+                                                    <div class="mock-subTitle mockup-content-item bottom-subTitle">
+                                                        <div class="user-subtitle long-subtitle font-color">
+                                                            <span class="word stokeWrod effectWrod">안녕하세요,</span>
+                                                            <span class="word">여러분!</span>
                                                         </div>
                                                     </div>
-                                                <!-- <div class="mockup-content">
-                                                    <div class="mock-title mockup-contentImg">
-                                                        <img class="titleImg" src="img/template/example-title.svg" alt="레이아웃 예시 타이틀">
-                                                    </div>
-                                                    <div class="mock-ratio mockup-contentImg">
-                                                        <img class="exampleImg ratio16-img" src="img/template/example-img-16_9.png" alt="레이아웃 예시 이미지">
-                                                    </div>
-                                                    <div class="mock-subTitle mockup-contentImg">
-                                                        <img class="sub-titleImg" src="img/template/example-subtitle.svg" alt="레이아웃 예시 타이틀">
-                                                    </div>
-                                                </div> -->
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="btn-icon-box">
                                         <div class="projectV-starTime">
-                                            <img src="/img/projectV/star-five.svg" alt="썸네일에서 클릭한 영상 별점">
+                                            <img src="img/projectV/star-five.svg" alt="썸네일에서 클릭한 영상 별점">
                                             <span class="projectV-time center">01:03</span>
                                         </div>
                                         <div class="projectV-down">
                                             <a id="downloadBtn" class="border-none projectV-download" href="/videos/sample-video.mp4" download="video.mp4">
-                                                <img src="/img/projectV/download.svg" alt="다운로드버튼 이미지">
+                                                <img src="img/projectV/download.svg" alt="다운로드버튼 이미지">
                                             </a>
                                         </div>
                                         <div class="projectV-edit">
                                             <button type="button" class="border-none" onclick="location.href='/video-edit1.html'">
-                                                <img src="/img/projectV/edit.svg" alt="편집버튼 이미지">
+                                                <img src="img/projectV/edit.svg" alt="편집버튼 이미지">
                                             </button>
                                         </div>
                                     </div>
