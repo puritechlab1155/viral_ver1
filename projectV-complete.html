@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
+    <title>Viral | 생성한 영상</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+
+
+    <style>
+        /* -------projectV-complete : 생성한 영상-------- */
+        /* 썸네일 슬라이드바 */
+        #home .content-area .thumb-slide-contain {
+            display: flex;
+            overflow: hidden;
+            width: 100%;
+            margin: 0 auto;
+            padding: 10px 0;
+            cursor: grab; /* 드래그 커서 */
+        }
+        #home .content-area .thumb-slide-box {
+            flex: 0 0 auto;
+            max-width: 380px;
+            width: 30%;
+            margin-right: 20px;
+            max-height: 180px;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            background-color: #FEFEFE;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            border-radius: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #EFEFEF;
+        }
+        #home .content-area .click-border-2 {
+            border: 2px solid #5228F4;
+        }
+
+        #home .content-area .thumb-slide-box .projectV-thumb {
+            width: 140px;
+            height: 140px;
+        }
+        #home .content-area .thumb-slide-box .thumbnail {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            border-radius: 10px;
+        }
+        #home .thumb-slide-contain .semiboldS-style {
+            color: #868686;
+            margin-top: 15px;
+        }
+        #home .thumb-slide-contain .projectV-info .star-ranking {
+            margin-top: 15px; 
+            display: flex;
+            justify-content: flex-end; 
+            align-items: center;
+        }
+
+        /* --미리보기 */
+        #home .projectV-time {
+            display: block;
+        }
+        #home .projectV-flex-box {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items:flex-start;
+            gap: 20px;
+        }
+        #home .content-area .projectV-preview {
+            max-width: 400px;
+            width: 100%;
+            align-items: center;
+            margin: 50px 0;
+        }
+        #home .content-area .projectV-preview .btn-icon-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            gap: 70px;
+        }
+        #home .content-area .projectV-preview .btn-icon-box .border-none {
+            border: none;
+        }
+        #home .content-area .projectV-preview .center {
+        text-align: center;
+        }
+            /* --AI리뷰 부분 */
+        #home .projectV-flex-box .projectV-left, .projectV-right {
+            width: 50%;
+        }
+        #home .ai-review-bg {
+            height: 256px;
+            background: #F8F8F8;
+            border-radius: 20px;
+            padding: 20px;
+        }
+        #home .content-area .projectV-preview .bg-none {
+            background: none;
+            box-shadow: none;
+        }
+        #home .ai-review-contain {
+            min-width: 800px;
+            width: 100%;
+            /* height: 430px; */
+            height: auto;
+            background: #FEFEFE;
+            border-radius: 20px;
+            padding: 30px;
+        }
+        #home .projectV-left .title {
+            margin-top: 20px;
+        }
+        #home .semibold-style {
+            font-size: 18px;
+            font-weight: 700;
+        }
+        #home .semiboldS-style {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        #homm .upload-info-title .h-48 {
+            height: 48px;
+        }
+        #home .medium-style {
+            font-size: 16px;
+            color: #868686;
+            line-height: 160%;
+            background: #FEFEFE;
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 10px;
+            height: 170px;
+            overflow-y: auto;
+            box-sizing: border-box;
+            text-align: left;
+        }
+        #home .projectV-right .upload-info {
+            height: auto;
+        }
+        #home .projectV-right .upload-info .h-56 {
+            height: 56px;
+        }
+        #home .projectV-right .upload-info .h-120 {
+            height: 120px;
+        }
+        #home .projectV-right .templateBtn-wrap {
+            width: auto;
+            margin-top: 30px;
+        }
+        /* 모달 배경 */
+        #home .subscribe-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none; /* JavaScript에서 이 속성을 변경 */
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home .subscribe-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none; /* JavaScript에서 이 속성을 변경 */
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 모달이 보일 때 */
+        #home .subscribe-modal.show { /* 공백 제거 */
+            display: flex !important;
+        }
+
+        /* 모달 창 */
+        #home .subscribe-modal .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 480px;
+            text-align: center;
+            position: relative;
+        }
+        #home .subscribe-modal .modal-content .semibold-50 {
+            font-size: 50px;
+            font-weight: 700;
+            line-height: 140%;
+        }
+        #home .subscribe-modal .modal-content .medium-16 {
+            font-size: 16px;
+            color: #868686;
+            line-height: 160%;
+            margin-top: 12px;
+        }
+        #home .subscribe-modal .subscribe-content {
+            margin: 30px 0;
+            width: 100%;
+        }
+        #home .subscribe-modal .subscribe-content .flex-100 {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        #home .subscribe-modal .subscribe-content .flex-100:last-child {
+            margin-top: 25px;
+        }
+        #home .subscribe-modal .subscribe-content .subscribe-bg {
+            width: 190px;
+            height: 100px;
+            background: #FAF9FE;
+            border: 1px solid #EFEAFF;
+            border-radius: 20px;
+            font-size: 22px;
+            line-height: 140%;
+            padding: 20px
+        }
+        #home .subscribe-modal .subscribe-content .text-purple {
+            color: #5228F4;
+        }
+
+        /* 닫기 버튼 */
+        #home .subscribe-modal .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            border: none !important;
+            background: none;
+            font-size: 40px;
+            cursor: pointer;
+        }
+        /* 자세히보기 버튼 */
+        #home .content-area .templateBtn-wrap .radius-10 {
+            border-radius: 10px;
+            width: 204px;
+            height: 56px;
+        }
+    </style>
+
+</head>
+<body>
+    <section id="home">
+        <header id="header" class="header sub-header">
+            <div class="inner">
+                <div class="content">
+                    <div class="left-content">
+                        <!-- offcanvas-open 로그인 후 보여짐 -->
+                        <button type="button" class="offcanvas-open"> 
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <h1 class="logo">
+                            <a href="index.html">
+                                <img class="logo-img" src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </a>
+                        </h1>
+                        <span class="beta-badge">Beta</span>
+                    </div>
+
+                    <!-- log-befor 로그인 전 보여짐 -->
+                    <ul class="right-content log-befor">
+                        <li>
+                            <a class="loginBtn" href="login.html">로그인</a>
+                        </li> 
+                        <li>
+                            <a class="signupBtn" href="register-hp.html">회원가입</a>
+                        </li>
+                    </ul>
+                    <!-- log-after 로그인 후 보여짐 -->
+                    <ul class="right-content log-after">
+                        <li>
+                            <a class="guideBtn" href="login.html">
+                                <img src="img/menu/guide-icon-atv.svg" alt="사용가이드 아이콘">
+                                사용 가이드
+                            </a>
+                        </li> 
+                        <li>
+                            <a class="countBadge" href="#">
+                                <img src="img/time-count.svg" alt="무료 횟수 카운트"> 5/5
+                            </a>
+                        </li>
+                        <li class="add-icon">
+                            <div class="circle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="add-item">
+                                <div>
+                                    <a href="#">구독정보</a>
+                                </div>
+                                <div>
+                                    <a href="#">내 정보</a>
+                                </div>
+                                <div>
+                                    <a href="#">로그아웃</a>
+                                </div>
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        
+        <main id="main" class="main">
+            <div class= "inner"> 
+                <!-- 메뉴 영역 -->
+                <section class="menu-area">
+                    <div class="content">
+                        <div class="offcanvas-wrap">
+                            <div class="offcanvas">
+                                <div class="offcanvas-body">
+                                    <nav id="nav">
+                                        <ul class="gnb">
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/my-project.svg" alt="내 프로젝트">내 프로젝트
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item gnb-training">
+                                                <a href="#" class="focusGnb">
+                                                    <span class="gnb-txt-cont">
+                                                        <div class="gnb-txt gnb-focus-txt">
+                                                            <img src="img/menu/template-atv.svg" alt="템플릿"> 템플릿
+                                                        </div>
+                                                        <div class="drop-arrow">
+                                                            <span class="drop-left"></span>
+                                                            <span class="drop-right"></span>
+                                                        </div>
+                                                    </span>
+                                                </a>
+                                                <ul class="gnb-sub">
+                                                    <li class="gnb-sub-item">
+                                                        <a href="#" class="focus-sub">비디오 템플릿</a>
+                                                    </li>
+                                                    <li class="gnb-sub-item">
+                                                        <a href="#">카드뉴스 템플릿</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/subscribe.svg" alt="구독하기">구독하기
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/notice.svg" alt="공지사항">공지사항
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/service-center.svg" alt="고객센터">고객센터
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item guide-gnb">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/guide-icon.svg" alt="사용 가이드">사용 가이드
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 컨텐츠 영역 -->
+                <section class="content-area">
+                    <article class="content-wrap">
+                        <div class="content-inner making-inner">
+                            <!-- 썸네일 슬라이드바 -->
+                            <div class="thumb-slide-contain" id="thumb-slide-contain">
+                                <div class="click-border-2 thumb-slide-box projectV-flex-box">
+                                    <div class="projectV-thumb">
+                                        <img class="thumbnail" src="img/template/example-img-16_9.png" alt="숏폼 변환 썸네일" style="background: plum;">
+                                    </div>
+                                    <div class="projectV-info">
+                                        <h2 class="semibold-style">숏폼이 자동 생성한 제목</h2>
+                                        <h3 class="semiboldS-style">01:03 </h3>
+                                        <div class="star-ranking">
+                                            <img class="star-five" src="/img/projectV/star-five.svg" alt="별5개개">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="thumb-slide-box projectV-flex-box">
+                                    <div class="projectV-thumb">
+                                        <img class="thumbnail" src="img/template/example-img-16_9.png" alt="숏폼 변환 썸네일" style="background: plum;">
+                                    </div>
+                                    <div class="projectV-info">
+                                        <h2 class="semibold-style">숏폼이 자동 생성한 제목</h2>
+                                        <h3 class="semiboldS-style projectV-time">00:49 </h3>
+                                        <div class="star-ranking">
+                                            <img class="star-five" src="/img/projectV/star-four.svg" alt="별5개개">
+                                        </div>
+                                    </div>
+                                </div>                                
+                                <div class="thumb-slide-box">3</div>
+                                <div class="thumb-slide-box">4</div>
+                                <div class="thumb-slide-box">5</div>
+                                <div class="thumb-slide-box">6</div>
+                                <!-- 숏폼 영상 갯수에 따라 div.thumb-slide-box 생성 -->
+                            </div> 
+
+                            <div class="projectV-flex-box">
+
+                                <!-- 미리보기 -->
+                                <div class="projectV-preview projectV-flex-box">
+                                    <div class="template-box bg-none">
+                                        <div class="template-fit">
+                                            <div class="mockup-img">
+                                                <img class="img-item" src="img/template/iphone-mockup.png" alt="아이폰 목업">
+                                                <div class="mockup-content">
+                                                    <div class="mock-title mockup-contentImg">
+                                                        <img class="titleImg" src="img/template/example-title.svg" alt="레이아웃 예시 타이틀">
+                                                    </div>
+                                                    <div class="mock-ratio mockup-contentImg">
+                                                        <img class="exampleImg ratio16-img" src="img/template/example-img-16_9.png" alt="레이아웃 예시 이미지">
+                                                    </div>
+                                                    <div class="mock-subTitle mockup-contentImg">
+                                                        <img class="sub-titleImg" src="img/template/example-subtitle.svg" alt="레이아웃 예시 타이틀">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="btn-icon-box">
+                                        <div class="projectV-starTime">
+                                            <img src="/img/projectV/star-five.svg" alt="썸네일에서 클릭한 영상 별점">
+                                            <span class="projectV-time center">01:03</span>
+                                        </div>
+                                        <div class="projectV-down">
+                                            <button type="button" class="border-none projectV-download">
+                                                <img src="/img/projectV/download.svg" alt="다운로드버튼 이미지">
+                                            </button>
+                                        </div>
+                                        <div class="projectV-edit">
+                                            <button type="button" class="border-none" onclick="location.href='/video-edit1.html'">
+                                                <img src="/img/projectV/edit.svg" alt="편집버튼 이미지">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- AI리뷰 부분 -->
+                                <div class="ai-review-contain">
+                                    <div class="projectV-flex-box">
+                                        <div class="projectV-left">
+                                            <div class="guide ai-review-bg template-100">
+                                                <h2 class="semibold-style">AI 바이럴 가이드</h2>
+                                                <p class="terms-content medium-style">이 영상은 직관과 논리를 대비하며 결정할 때 감각의 중요성을
+                                                    강조합니다. 첫 문장은 다소 추상적이라 시청자의 즉각적인 관심
+                                                    유도에는 약하지만, 전체적인 흐름과 논리가 일관성을 유지합니다. 
+                                                결론에서는 결정하지 않는 것의 중요성을 언급하며 완결성을 
+                                                주고 있습니다.
+                                                </p>
+                                            </div>
+                                            <div class="title ai-review-bg template-100">
+                                                <h2 class="semibold-style">자막</h2>
+                                                <p class="terms-content medium-style">
+                                                    얘기하면 결정하는 감각이라고 좁혀야 된다고 생각하거든요 
+                                                    그 얘기는 뭐냐면 논리적인 거에 반대말인 거죠 그러니까 
+                                                    논리적으로 결정해야 되는 것들은 어떻게 하면 이자를 더 받을 
+                                                    수 있는지는 계산해서 결정해야지 감각으로 결정하면 안 되는 
+                                                    거죠 근데 논리가 통하지 않는 것들에 대해서는 직관으로 결정해야
+                                                    되거든요 그 능력을 저는 감각이라고 정의하는 게 맞고 그거를 
+                                                    좀 말로 편하게 풀면 선명하게 결정하는 능력이라고 저는 
+                                                    생각을 해요 그러니까 감각이라고 하면 우리가 아까도 말씀하셨듯이
+                                                    좀 반짝반짝하는 발산시키는 행위를 저 같은 경우에 좀 더 떠올랐던
+                                                    것 같은데 지금 수용님께서 말씀해주신 거는 조금 더 수렴시키는 
+                                                    쪽에 가깝다는 느낌이 드는 것 같아요. 그렇죠. 결국에는 무언가를 
+                                                    결정한다는 거는 그거랑 같은 무게로 무언가를 결정하지 않는 
+                                                    거거든요. 그렇잖아요. 두 개 중에서 이걸 결정한다는 거는 거꾸로 
+                                                    말하면 얘를 결정하지 않는 거이기도 한 거죠. 그러니까 감각이라는
+                                                    거는 양이 많이
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="projectV-right">
+                                            <div class="upload-info ai-review-bg template-100">
+                                                <h2 class="semibold-style">영상 업로드 정보</h2>
+                                                <ul class="upload-info-title">
+                                                    <h3 class="semiboldS-style">제목</h3>
+                                                    <p class="h-56 terms-content medium-style">000</p>
+                                                </ul>
+                                                <ul class="upload-info-category">
+                                                    <h3 class="semiboldS-style">카테고리</h3>
+                                                    <p class="h-56 terms-content medium-style"></p>
+                                                </ul>
+                                                <ul class="upload-info-ex">
+                                                    <h3 class="semiboldS-style">설명</h3>
+                                                    <p class="h-120 terms-content medium-style">000000<br>000000<br>00000<br>000000<br>0000000000000000000000000</p>
+                                                </ul>
+                                                <div class="templateBtn-wrap">
+                                                    <button type="button" class="templaeteBtn" id="openModal">생성하기</button>
+                                                </div>
+                                                <!-- 모달 -->
+                                                <div class="subscribe-modal" id="subscribeModal">
+                                                    <div class="modal-content">
+                                                        <button type="button" class="close-btn" id="closeModal">×</button>
+                                                        <h2 class="semibold-50">숏폼의 퀄리티를<br> 더 높여보세요.</h2>
+                                                        <p class="medium-16">바이럴 유료 플랜을 구독하여 다음 기능들을 이용해 보세요.</p>
+                                                        <div class="subscribe-content">
+                                                            <div class="flex-100">
+                                                                <div class="subscribe-bg">더 많은<br>
+                                                                    <span class="text-purple">변환 횟수</span>
+                                                                </div>
+                                                                <div class="subscribe-bg"><span class="text-purple">워터마크</span><br>
+                                                                    제거
+                                                                </div>
+                                                            </div>
+                                                            <div class="flex-100">
+                                                                <div class="subscribe-bg">AI 영상 업로드<br>
+                                                                    정보 제공
+                                                                </div>
+                                                                <div class="subscribe-bg">영상 배경<br>
+                                                                    업로드 지원
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="templateBtn-wrap">
+                                                            <button type="button" class="radius-10 templaeteBtn" id="openModal" onclick="location.href='/subscribe-year.html'">자세히 알아보기</button>
+                                                        </div>
+
+                                                    </div>
+                                                </div>  
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </main>
+
+        <footer id="footer" class="footer">
+            <div class="content">
+                <div class="footer-info01 footer-info">
+                    <div class="inner">
+                        <div class="company-info">
+                            <ul class="info info01">
+                                <li>(주)바이럴</li>
+                                <li>대표 : 가나다</li>
+                                <li class="info-mg">주소 : 서울특별시 서울구 서울로 123 가나다라타워 3층 바이럴</li>
+                                <li>사업자등록번호 : 000 - 00 - 00000</li>
+                                <li class="info-mg">통신판매업 신고번호 : 제 0000 - 서울서울 - 0000호</li>
+                                <li>
+                                    abcdefg@gmail.com
+                                    <span>010-0101-0101</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="site-map">
+                            <ul class="site">
+                                <li>
+                                    <a href="#">프로젝트</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 영상</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 카드뉴스</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">비디오 템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">카드뉴스 템플릿</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">구독하기</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">공지사항</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">고객센터</a>
+                                </li>
+                            </ul>
+                        </ul><!-- //partner-site -->
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="footer-info02 footer-info">
+                    <div class="inner">
+                        <div class="left-content">
+                            <div class="footer-logo">
+                                <img src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </div>
+                            <div class="support-links">
+                                <div class="link" id="terms-btn">
+                                    <a href="#">이용약관</a>
+                                </div>
+                                <div class="link" id="privacy-btn">
+                                    <a href="#">개인정보처리방침</a>
+                                </div>
+                            </div><!-- //support-links -->
+                        </div>
+                        <div class="copyright">
+                            ©Viral 2025 All rights reserved.
+                        </div>
+                    </div>
+                </div><!-- //footer-info01 -->
+            </div>
+            
+        </footer>
+    </section>
+
+    <script src="js/script.js"></script>
+
+    
+    <script>
+        // 썸네일 슬라이드바
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('thumb-slide-contain');
+            let isMouseDown = false;
+            let startX, scrollLeft;
+
+            // 마우스 버튼 누를 때
+            container.addEventListener('mousedown', (e) => {
+                isMouseDown = true;
+                startX = e.pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+                container.style.cursor = 'grabbing'; // 마우스를 잡았을 때 커서 변경
+            });
+
+            // 마우스 떼면
+            container.addEventListener('mouseup', () => {
+                isMouseDown = false;
+                container.style.cursor = 'grab'; // 마우스를 떼면 커서 변경
+            });
+
+            // 마우스 이동할 때
+            container.addEventListener('mousemove', (e) => {
+                if (!isMouseDown) return; // 마우스를 누르고 있을 때만 이동
+                const x = e.pageX - container.offsetLeft;
+                const walk = (x - startX) * 3; // 이동 속도 조절
+                container.scrollLeft = scrollLeft - walk;
+            });
+
+            // 터치 스크린에서의 반응
+            container.addEventListener('touchstart', (e) => {
+                isMouseDown = true;
+                startX = e.touches[0].pageX - container.offsetLeft;
+                scrollLeft = container.scrollLeft;
+            });
+
+            container.addEventListener('touchend', () => {
+                isMouseDown = false;
+            });
+
+            container.addEventListener('touchmove', (e) => {
+                if (!isMouseDown) return;
+                const x = e.touches[0].pageX - container.offsetLeft;
+                const walk = (x - startX) * 3;
+                container.scrollLeft = scrollLeft - walk;
+            });
+        });
+        
+
+        // 구독 모달
+        document.addEventListener("DOMContentLoaded", function () {
+            const openModalBtn = document.getElementById("openModal"); // 모달 여는 버튼
+            const closeModalBtn = document.getElementById("closeModal"); // 닫기 버튼
+            const modal = document.getElementById("subscribeModal"); // 모달 창
+
+            if (!openModalBtn || !closeModalBtn || !modal) {
+                console.error("모달 요소를 찾을 수 없습니다.");
+                return;
+            }
+
+            // "생성하기" 버튼 클릭 시 모달 열기
+            openModalBtn.addEventListener("click", function () {
+                modal.classList.add("show"); // 모달 표시
+            });
+
+            // 닫기 버튼 클릭 시 모달 닫기
+            closeModalBtn.addEventListener("click", function () {
+                modal.classList.remove("show"); // 모달 숨기기
+            });
+
+            // 모달 바깥 영역 클릭 시 닫기
+            window.addEventListener("click", function (e) {
+                if (e.target === modal) {
+                    modal.classList.remove("show"); // 모달 숨기기
+                }
+            });
+        });
+    </script>
+</body>
+</html>
