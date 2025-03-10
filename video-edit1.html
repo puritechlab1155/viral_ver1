@@ -388,25 +388,46 @@
                                 </div>
                             </div>
                         </div>
-
+                    </article>
+                    
+                    <article class="reprodct-area m-top50">
                         <div class="reprodct-control">
-                            <div class="video-time flex">
-                                <div class="flex">
-                                    <span>00:00</span>
-                                    <span>/</span>
-                                    <span>00:21</span>
+                            <div class="video-time flex justify-between">
+                                <div class="video-time-text flex">
+                                    <span class="video-time-item start-time">00:00</span>
+                                    <span class="video-time-item">/</span>
+                                    <span class="video-time-item">00:21</span>
                                 </div>
-                                <div class="control-btn-wrap">
-                                    <div class="speed-">
-                                        <button type="button">
-                                            <img src="" alt="배속 버튼 아이콘">1.0배속
+                                <div class="control-btn-wrap flex">
+                                    <div class="speed-btn-container">
+                                        <button class="speedBtn reprodctBtn flex" type="button">
+                                            <img src="img/edit/speed-btn.svg" alt="배속 버튼 아이콘">1.0배속
                                         </button>
                                     </div>
-                                    <div class="reprodct-btn-conteiner">
-                                        <button class="reprodctBtn" type="button">
-                                            <img src="" alt="재생/멈춤 버튼">
+                                    <div class="reprodct-btn-container">
+                                        <button class="playBtn reprodctBtn flex" type="button">
+                                            <img src="img/edit/play-btn.svg" alt="재생/멈춤 버튼">
                                         </button>
                                     </div>
+                                </div>
+                                <div class="video-edit-control">
+                                    <ul class="controls">
+                                        <li class="controls-item">
+                                            <button type="button" class="controlsBtn">
+                                                <img src="img/edit/revert-btn.svg" alt="되돌리기 버튼"> 되돌리기
+                                            </button>
+                                        </li>
+                                        <li class="controls-item">
+                                            <button type="button" class="controlsBtn">
+                                                <img src="img/edit/cut-btn.svg" alt="자르기 버튼"> 자르기
+                                            </button>
+                                        </li>
+                                        <li class="controls-item">
+                                            <button type="button" class="controlsBtn">
+                                                <img src="img/edit/delete-btn-black.svg" alt="삭제 버튼"> 삭제
+                                            </button>
+                                        </li>
+                                    </ul>
                                 </div>
                             </div>
                         </div>
@@ -674,6 +695,20 @@
 
             rangeInput.addEventListener("input", updateRangeStyle);
             updateRangeStyle(); // 초기화
+
+
+
+            //--- 재생/멈춤 버튼 클릭 시 이미지 경로 변경
+            document.querySelector(".playBtn").addEventListener("click", (event) => {
+                const img = event.currentTarget.querySelector("img");
+                
+                // 현재 버튼 이미지가 재생 버튼인 경우
+                if (img.src.includes("play-btn.svg")) {
+                    img.src = "img/edit/pause-btn.svg"; // 멈춤 버튼 이미지로 변경
+                } else {
+                    img.src = "img/edit/play-btn.svg"; // 재생 버튼 이미지로 변경
+                }
+            });
         });
 
 
