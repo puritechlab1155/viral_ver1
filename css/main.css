@@ -128,6 +128,11 @@ ol {
   }
 }
 
+#home input[type="password"]::-ms-reveal,
+#home input[type="password"]::-ms-clear {
+  display: none;
+}
+
 #home input::-webkit-contacts-auto-fill-button {
   visibility: hidden !important;
   display: none !important;
@@ -858,6 +863,10 @@ ol {
   height: 468px;
   position: relative;
 }
+#home .content-area .edit1-mockup-img {
+  width: 308px;
+  height: 640px;
+}
 
 #home .content-area .past-wrap .img-item {
   width: 100%;
@@ -874,6 +883,10 @@ ol {
   background: #292929;
 }
 
+#home .content-area .edit1-item .img-item {
+  border-radius: 47px;
+}
+
 #home .mockup-content {
   width: 210px;
   height: 456px;
@@ -883,6 +896,10 @@ ol {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+#home .edit1-mockup {
+  width: 286px;
+  height: 618px;
 }
 
 #home .mockup-content .title {
@@ -1362,9 +1379,12 @@ ol {
 
 #home .mockup-content .user-title {
   color: #fafafa;
+  font-size: 26px;
+  font-weight: 700;
 }
 
 #home .mockup-content .user-subtitle {
+  font-size: 20px;
   line-height: 160%;
   text-align: center;
 }
@@ -1408,11 +1428,54 @@ ol {
 
 #home .effectWrod {
   /* 바운스 효과 시 */
-  font-size: 22px;
+  font-size: 28px !important;
   color: #2fff00;
 }
 
-/*  */
+#home .watermark-img {
+  width: fit-content;
+  position: absolute;
+  top: 25%;
+  right: 16px;
+  z-index: 30;
+}
+
+#home .watermark-d-container {
+  width: fit-content;
+  text-align: center;
+  position: absolute;
+  top: 24px;
+  right: 24px;
+}
+
+#home .watermark-deleteBtn {
+  padding: 10px;
+  text-align: center;
+  background: #5228F4;
+  border: none;
+}
+
+#home .watermark-d-img {
+  float: left;
+}
+
+#home .watermark-delete-text {
+  width: 72px;
+  display: block;
+  color: #fff;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.1s linear;
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#home .watermark-d-container:hover .watermark-delete-text {
+  opacity: 1;
+}
+
 #home .reprodct-area {
   background: #FEFEFE;
   border-top: 1px solid;
