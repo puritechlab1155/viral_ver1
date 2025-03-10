@@ -77,6 +77,9 @@ margin: 0;
 #home .flex {
   display: flex;
 }
+#home .wrap {
+  flex-wrap: wrap;
+}
 #home .font-IBM {
   font-family: "IBM Plex Sans KR" !important;
 }
@@ -108,6 +111,12 @@ margin: 0;
 #home .color-picker::-webkit-color-swatch {
   border: 2px solid #eee;
   border-radius: 50%;
+}
+
+#home  .number-input::-webkit-outer-spin-button,
+#home  .number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 @media (max-width: 767px) {
@@ -828,7 +837,6 @@ margin: 0;
   gap: 20px 30px;
 }
 #home .content-area .subtitle-wrap {
-  overflow: hidden;
   flex: 1;
   background: #eee;
   border-radius: 20px;
@@ -847,7 +855,7 @@ margin: 0;
 }
 #home .content-area .subtitle-effect-wrap {
   display: flex;
-  gap: 0 24px;
+  gap: 0 53px;
   justify-content: space-around;
 }
 #home .content-area .subtitle-effect-item {
@@ -869,7 +877,12 @@ margin: 0;
 }
 #home .content-area .subtitle-edit-wrap {
   padding: 20px 30px;
-  background-color: lightseagreen;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  background: #ddd;
+}
+#home .content-area .font-edit-wrap {
+  flex: 1;
 }
 #home .content-area .color-picker {
   width: 26px;
@@ -877,6 +890,9 @@ margin: 0;
   border-color: #ccc;
   border-radius: 50px;
   cursor: pointer;
+}
+#home .content-area .edit-wrap {
+  flex: 1;
 }
 #home .content-area .select-container {
   flex: 0 0 350px;
@@ -930,47 +946,132 @@ margin: 0;
   color: #fff;
 }
 #home .content-area .number-container {
-  background: lightblue;
+  flex: 0 0 200px;
+}
+#home .content-area .number-wrap {
+  position: relative;
+}
+#home .content-area  .number-input {
+  font-size: 16px;
+  padding: 8px;
+  border: none;
+  border-radius: 3px;
+}
+#home .content-area  .number-input:focus {
+  outline: 1px solid #C5B6FF;
+}
+#home .content-area .numberBtn {
+  width: 30px;
+  height: 17.5px;
+  box-sizing: border-box;
+  line-height: 18px;
+  cursor: pointer;
+  border: none;
+  border-left: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  border-radius: 0px;
+  position: absolute;
+  right: 0;
+}
+#home .content-area .upBtn {
+  top: 0;
+  border-top: none;
+  border-top-right-radius: 3px;
+}
+#home .content-area .downBtn {
+  bottom: 0;
+  border-bottom-right-radius: 3px;
+}
+#home .content-area .range-container {
+  flex:  0 0 200px;
+  margin-top: -3px;
+}
+#home .content-area .range-text {
+  justify-content: space-between;
+  font-size: 13px;
+}
+#home .content-area .range-input {
+  width: 100%;
+}
+#home .range-input {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+}
+#home .range-input::-webkit-slider-runnable-track { /* 트랙(게이지 바) 스타일 */
+  height: 8px;
+  background: linear-gradient(to right, #5228F4 var(--progress, 50%), #ddd var(--progress, 50%));
+  border-radius: 5px;
+  transition: background 0.2s;
+}
+#home .range-input::-webkit-slider-thumb { /* 엄지 버튼(슬라이더 핸들) 스타일 */
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  background: #5228F4;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -4px;
+  transition: transform 0.2s;
+}
+#home .range-input::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+#home .range-input::-moz-range-track { /* Firefox용 */
+  height: 8px;
+  background: #ddd;
+  border-radius: 5px;
+}
+#home .range-input::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  background: #5228F4;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#home .content-area .edit-menu {
+  display: none;
+  width: 108px;
+  padding: 5px 8px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin: 0;
+}
+#home .content-area .edit-menu-item {
+  cursor: pointer;
+}
+#home .content-area .subtitle-container .word {
+  cursor: pointer;
+  margin-right: 2px;
+  outline: none;
+}
+#home .content-area .edit-picker {
+  margin-top: 2px;
+  width: 22px;
+  height: 22px;
+  border: none;
+}
+#home .content-area .edit-picker::-webkit-color-swatch {
+  border: none;
+}
+#home .content-area .selected {
+  cursor: text;
 }
 #home .mockup-content .user-title {
   color: #fafafa;
 }
 #home .mockup-content .user-subtitle {
   color: #fafafa;
-}
-
-/*!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 자막 편집 !!!!!!!!!!!!!!!!!!!*/
-.edit-menu {
-  list-style-type: none;
-  display: none; /* 처음에는 숨김 */
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: #fff;
-  border: 1px solid #ccc;
-  padding: 5px;
-  margin: 0;
-}
-
-.subtitle-container .word {
-  cursor: pointer;
-  margin-right: 2px;
-}
-
-.color-panel {
-  margin-top: 10px;
-}
-
-.selected {
-  cursor: text;
-}
-
-.color-change .color-chip {
-  width: 20px;
-  height: 20px;
-  display: inline-block;
-  cursor: pointer;
-  border: 1px solid #ccc;
 }
 
 @media (max-width: 1538px) {

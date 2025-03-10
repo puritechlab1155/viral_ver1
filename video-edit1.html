@@ -202,9 +202,9 @@
                                         <!-- 편집 선택 박스 -->
                                         <div class="edit-item-wrap">
                                             <!-- 자막효과 -->
-                                            <div class="edit-item flex">
+                                            <div class="edit-item flex wrap">
                                                 <h4 class="subtitle-edit-title">자막 효과</h4>
-                                                <ul class="subtitle-effect-wrap m-top10">
+                                                <ul class="subtitle-effect-wrap wrap m-top10">
                                                     <li class="subtitle-effect-item">
                                                         <button type="button" class="effectBtn b-show">
                                                             <img src="img/edit/none-icon.svg" alt="효과없음">
@@ -226,7 +226,7 @@
                                                 </ul>
                                             </div>
                                             <!-- 효과색상 -->
-                                            <div class="edit-item m-top20 flex">
+                                            <div class="edit-item m-top20 flex wrap">
                                                 <h4 class="subtitle-edit-title">효과 색상</h4>
                                                 <div class="picker-container">
                                                     <label for="effect-color-picker" class="none">자막 색상 선택</label>
@@ -234,9 +234,9 @@
                                                 </div>
                                             </div>
                                             <!-- 폰트 -->
-                                            <div class="edit-item m-top20 flex">
+                                            <div class="edit-item m-top20 flex wrap">
                                                 <h4 class="subtitle-edit-title">폰트</h4>
-                                                <div class="flex">
+                                                <div class="flex font-edit-wrap wrap">
                                                     <div class="select-container">
                                                         <div class="select-wrap">
                                                             <div class="select-view">
@@ -249,13 +249,17 @@
                                                         </div>
                                                     </div>
                                                     <div class="number-container">
-                                                        <label class="none">폰트 사이즈</label>
-                                                        <input class="num" type="number" placeholder="16">
+                                                        <div class="number-wrap">
+                                                            <label class="none">폰트 사이즈</label>
+                                                            <input class="number-input" type="number" placeholder="16">
+                                                            <button class="downBtn numberBtn"> - </button>
+                                                            <button class="upBtn numberBtn"> + </button>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <!-- 폰트 컬러 -->
-                                            <div class="edit-item m-top20 flex">
+                                            <div class="edit-item m-top20 flex wrap">
                                                 <h4 class="subtitle-edit-title">폰트 컬러</h4>
                                                 <div class="picker-container">
                                                     <label for="font-color-picker" class="none">자막 색상 선택:</label>
@@ -263,7 +267,7 @@
                                                 </div>
                                             </div>
                                             <!-- 테두리 -->
-                                            <div class="edit-item m-top20 flex">
+                                            <div class="edit-item m-top20 flex wrap">
                                                 <h4 class="subtitle-edit-title">테두리</h4>
                                                 <div class="select-container">
                                                     <div class="select-wrap">
@@ -278,7 +282,7 @@
                                                 </div>
                                             </div>
                                             <!-- 자막 단위 -->
-                                            <div class="edit-item m-top20 flex">
+                                            <div class="edit-item m-top20 flex wrap">
                                                 <h4 class="subtitle-edit-title">자막 단위</h4>
                                                 <div class="select-container">
                                                     <div class="select-wrap">
@@ -293,9 +297,9 @@
                                                 </div>
                                             </div>
                                             <!-- 자막 위치 -->
-                                            <div class="edit-item m-top20 flex">
+                                            <div class="edit-item m-top20 flex wrap">
                                                 <h4 class="subtitle-edit-title">자막 위치</h4>
-                                                <div class="edit-container flex">
+                                                <div class="edit-wrap flex wrap">
                                                     <div class="select-container">
                                                         <div class="select-wrap">
                                                             <div class="select-view">
@@ -308,10 +312,12 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="m-top10 flex">
-                                                        <span>아래</span>
-                                                        <input type="range" id="subtitle-range" min="0" max="100" value="50">
-                                                        <span>위</span>
+                                                    <div class="range-container m-top10">
+                                                        <input class="range-input" type="range" id="subtitle-range" min="0" max="100" value="50">
+                                                        <div class="range-text flex">
+                                                            <span>아래</span>
+                                                            <span>위</span>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -320,13 +326,17 @@
                                         <div class="subtitle-edit-wrap m-top20">
                                             <div class="subtitle-container">
                                                 <ul class="edit-menu">
-                                                    <li class="edit">편집</li>
-                                                    <li class="delete">삭제</li>
-                                                    <li class="color-change">
+                                                    <li class="edit edit-menu-item">
+                                                        <img src="img/edit/edit-btn.svg" alt="자막 편집 버튼">
+                                                    </li>
+                                                    <li class="delete edit-menu-item">
+                                                        <img src="img/edit/delet-btn.svg" alt="자막 삭제 버튼">
+                                                    </li>
+                                                    <li class="color-change edit-menu-item">
                                                         <!-- 기본 컬러칩 (색상 선택을 표시) -->
                                                         <div class="color-panel">
                                                             <label for="color-picker" class="none">자막 색상 선택:</label>
-                                                            <input class="color-picker" type="color" id="color-picker" name="color">
+                                                            <input class="color-picker edit-picker" type="color" id="color-picker" name="color">
                                                         </div>
                                                     </li>
                                                 </ul>
@@ -477,6 +487,19 @@
         
     <script>
         document.addEventListener("DOMContentLoaded", () => {
+            //--- 자막 효과 버튼 클릭시 포커스 효과
+            document.querySelectorAll(".effectBtn").forEach((button) => {
+                button.addEventListener("click", (event) => {
+                    // 모든 버튼에서 b-show 제거
+                    document.querySelectorAll(".effectBtn").forEach((btn) => {
+                        btn.classList.remove("b-show");
+                    });
+
+                    // 클릭한 버튼에만 b-show 추가
+                    event.currentTarget.classList.add("b-show");
+                });
+            });
+            //--- 자막 편집
             const wordWrap = document.querySelector(".word-wrap");
             const editMenu = document.querySelector(".edit-menu");
             const colorPicker = document.getElementById("color-picker");
@@ -488,10 +511,12 @@
                 if (event.target.classList.contains("word")) {
                     if (selectedWord) {
                         selectedWord.classList.remove("selected");
+                        selectedWord.style.borderBottom = "none"; // 기존 효과 제거
                     }
 
                     selectedWord = event.target;
                     selectedWord.classList.add("selected");
+                    selectedWord.style.borderBottom = "2px solid #C5B6FF"; // 포커스 효과 추가
 
                     // 선택된 단어의 현재 색상을 컬러 선택기에 반영
                     let currentColor = window.getComputedStyle(selectedWord).color;
@@ -499,8 +524,8 @@
 
                     // 편집 메뉴 위치 조정
                     const rect = selectedWord.getBoundingClientRect();
-                    editMenu.style.display = "block";
-                    editMenu.style.top = `${window.scrollY + rect.bottom}px`;
+                    editMenu.style.display = "flex";
+                    editMenu.style.top = `${window.scrollY + rect.bottom + 4}px`;
                     editMenu.style.left = `${window.scrollX + rect.left}px`;
                 }
             });
@@ -510,8 +535,23 @@
                 if (selectedWord) {
                     selectedWord.contentEditable = true;
                     selectedWord.focus();
+
+                    // Enter 키 입력 시 편집 종료
+                    selectedWord.addEventListener("keydown", handleEnterKey);
                 }
             });
+
+            // Enter 키 이벤트 처리
+            function handleEnterKey(event) {
+                if (event.key === "Enter") {
+                    event.preventDefault(); // 문단 나눠지는 기본 동작 방지
+                    selectedWord.contentEditable = false;
+                    selectedWord.classList.remove("selected");
+                    selectedWord.style.borderBottom = "none"; // 포커스 효과 제거
+                    selectedWord.removeEventListener("keydown", handleEnterKey); // 이벤트 제거
+                    editMenu.style.display = "none"; // 편집 메뉴 숨기기
+                }
+            }
 
             // 삭제 버튼 클릭 시 단어 삭제
             document.querySelector(".delete").addEventListener("click", () => {
@@ -532,6 +572,12 @@
             // 외부 클릭 시 메뉴 숨기기
             document.addEventListener("click", (event) => {
                 if (!editMenu.contains(event.target) && !wordWrap.contains(event.target)) {
+                    if (selectedWord) {
+                        selectedWord.contentEditable = false;
+                        selectedWord.classList.remove("selected");
+                        selectedWord.style.borderBottom = "none"; // 포커스 효과 제거
+                        selectedWord.removeEventListener("keydown", handleEnterKey); // 이벤트 제거
+                    }
                     editMenu.style.display = "none";
                 }
             });
@@ -544,7 +590,7 @@
 
 
 
-            // 셀렉트 박스
+            //--- 셀렉트 박스
             const selectWraps = document.querySelectorAll(".select-wrap");
 
             selectWraps.forEach((wrap) => {
@@ -580,6 +626,36 @@
                 dropdown.classList.add("selectNone");
                 });
             });
+
+
+
+            //--- 넘버 박스
+            document.querySelector(".upBtn").addEventListener("click", function () {
+                let input = document.querySelector(".number-input");
+                input.value = parseInt(input.value) + 1;
+            });
+
+            document.querySelector(".downBtn").addEventListener("click", function () {
+                let input = document.querySelector(".number-input");
+                input.value = Math.max(0, parseInt(input.value) - 1);
+            });
+
+
+
+            //---랜지 인풋 게이지
+            const rangeInput = document.querySelector(".range-input");
+
+            function updateRangeStyle() {
+                const min = rangeInput.min;
+                const max = rangeInput.max;
+                const val = rangeInput.value;
+
+                const percentage = ((val - min) / (max - min)) * 100;
+                rangeInput.style.setProperty("--progress", `${percentage}%`);
+            }
+
+            rangeInput.addEventListener("input", updateRangeStyle);
+            updateRangeStyle(); // 초기화
         });
 
 
