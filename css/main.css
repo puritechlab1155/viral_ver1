@@ -777,7 +777,7 @@ ol {
   padding: 30px 0;
   border-radius: 20px;
   background: #FEFEFE;
-  box-shadow: 0px 4px 10px #00000070;
+  box-shadow: 0px 8px 10px #30303043;
 }
 
 #home .content-area .layout-wrap {
@@ -1195,9 +1195,12 @@ ol {
 }
 
 #home .content-area .option:hover {
-  background: #C5B6FF;
+  background: #e4ddff;
 }
 
+#home .content-area .option.view-option {
+  background: #e4ddff;
+} 
 #home .content-area .number-container {
   flex: 0 0 200px;
 }

@@ -231,14 +231,14 @@
                                                 <div class="select-container">
                                                     <div class="select-wrap">
                                                         <div class="select-view">
-                                                            하얀색 <img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">
+                                                            연두색 <img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">
                                                         </div>
                                                         <div class="select selectNone">
                                                             <!-- 선택되는 값 effectWrod 클래스 컬러 변경 -->
                                                             <div class="option">하얀색</div>
                                                             <div class="option">노란색</div>
                                                             <div class="option">빨간색</div>
-                                                            <div class="option m-btm0">연두색</div>
+                                                            <div class="option m-btm0 view-option">연두색</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -257,7 +257,7 @@
                                                                 pretendard <img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">
                                                             </div>
                                                             <div class="select selectNone">
-                                                                <div class="option">pretendard</div>
+                                                                <div class="option view-option">pretendard</div>
                                                                 <div class="option m-btm0">BMJua</div>
                                                             </div>
                                                         </div>
@@ -278,12 +278,12 @@
                                                 <div class="select-container">
                                                     <div class="select-wrap">
                                                         <div class="select-view">
-                                                            하얀색 <img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">
+                                                            노란색 <img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">
                                                         </div>
                                                         <div class="select selectNone">
                                                             <!-- 선택되는 값 font-color 클래스 컬러 변경 -->
                                                             <div class="option">하얀색</div>
-                                                            <div class="option">노란색</div>
+                                                            <div class="option view-option">노란색</div>
                                                             <div class="option">빨간색</div>
                                                             <div class="option m-btm0">연두색</div>
                                                         </div>
@@ -303,7 +303,7 @@
                                                             있음<img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">
                                                         </div>
                                                         <div class="select selectNone">
-                                                            <div class="option">있음</div>
+                                                            <div class="option view-option">있음</div>
                                                             <div class="option m-btm0">없음</div>
                                                         </div>
                                                     </div>
@@ -318,7 +318,7 @@
                                                             긴 자막<img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">
                                                         </div>
                                                         <div class="select selectNone">
-                                                            <div class="option">긴 자막</div>
+                                                            <div class="option view-option">긴 자막</div>
                                                             <div class="option m-btm0">짧은 자막</div>
                                                         </div>
                                                     </div>
@@ -336,7 +336,7 @@
                                                             <div class="select selectNone">
                                                                 <div class="option">상단</div>
                                                                 <div class="option">중단</div>
-                                                                <div class="option m-btm0">하단</div>
+                                                                <div class="option m-btm0 view-option">하단</div>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -782,34 +782,46 @@
                 const selectDropdown = wrap.querySelector(".select");
 
                 selectView.addEventListener("click", (event) => {
-                event.stopPropagation(); // 클릭 이벤트 전파 방지
+                    event.stopPropagation(); // 클릭 이벤트 전파 방지
 
-                // 모든 드롭다운 닫기 (현재 선택한 드롭다운 제외)
-                document.querySelectorAll(".select").forEach((dropdown) => {
-                    if (dropdown !== selectDropdown) {
-                    dropdown.classList.add("selectNone");
-                    }
-                });
+                    // 모든 드롭다운 닫기 (현재 선택한 드롭다운 제외)
+                    document.querySelectorAll(".select").forEach((dropdown) => {
+                        if (dropdown !== selectDropdown) {
+                            dropdown.classList.add("selectNone");
+                        }
+                    });
 
-                // 클릭한 드롭다운만 토글
-                selectDropdown.classList.toggle("selectNone");
+                    // 클릭한 드롭다운만 토글
+                    selectDropdown.classList.toggle("selectNone");
                 });
 
                 // 옵션 선택 시 드롭다운 닫기
                 selectDropdown.querySelectorAll(".option").forEach((option) => {
-                option.addEventListener("click", () => {
-                    selectView.innerHTML = `${option.textContent} <img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">`;
-                    selectDropdown.classList.add("selectNone");
-                });
+                    option.addEventListener("click", () => {
+                        // 이전에 선택된 옵션에서 .view-option 클래스 제거
+                        selectDropdown.querySelectorAll(".option").forEach((opt) => {
+                            opt.classList.remove("view-option");
+                        });
+
+                        // 새로운 옵션에 .view-option 클래스 추가
+                        option.classList.add("view-option");
+
+                        // select-view의 텍스트를 선택된 옵션으로 업데이트
+                        selectView.innerHTML = `${option.textContent} <img class="drop-icon" src="img/drop-icon.svg" alt="드롭 아이콘">`;
+
+                        // 드롭다운 닫기
+                        selectDropdown.classList.add("selectNone");
+                    });
                 });
             });
 
-            // 다른 곳을 클릭하면 모든 드롭다운 닫기
-            document.addEventListener("click", () => {
-                document.querySelectorAll(".select").forEach((dropdown) => {
-                dropdown.classList.add("selectNone");
-                });
-            });
+// 다른 곳을 클릭하면 모든 드롭다운 닫기
+document.addEventListener("click", () => {
+    document.querySelectorAll(".select").forEach((dropdown) => {
+        dropdown.classList.add("selectNone");
+    });
+});
+
 
 
 
