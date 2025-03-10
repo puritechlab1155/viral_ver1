@@ -493,7 +493,8 @@
                                                             -->
                                                             <video class="user-video" src="img/videos/sample-video.mp4" autoplay muted loop></video>
                                                         </div>
-                                                        <div class="mock-subTitle mockup-content-item">
+                                                        <div class="mock-subTitle mockup-content-item bottom-subTitle">
+                                                            <!-- 자막위치: 상단 시 top-subTitle / 중단 시 middle-subTitle / 하단 시 bottom-subTitle -->
                                                             <div class="user-subtitle long-subtitle font-color">
                                                             <!-- 짧은 자막 시 short-subtitle / 긴 자막 시 long-subtitle / 폰트 컬러 선택 시 font-color -->
                                                                 <span class="word stokeWrod effectWrod">안녕하세요,</span>
@@ -515,28 +516,28 @@
                         </div>
                     </article>
                     
-                    <!-- 영상 재생 영역 -->
+                    <!-- 영상 재생 영역 >> !! 주석 처리 부분 : 추후 추가 될 기능 -->
                     <article class="reprodct-area m-top50">
                         <div class="reprodct-control">
-                            <div class="video-time flex justify-between">
-                                <div class="video-time-text flex">
+                            <div class="video-time flex justify-center"> 
+                                <!-- <div class="video-time-text flex">
                                     <span class="video-time-item start-time">00:00</span>
                                     <span class="video-time-item">/</span>
                                     <span class="video-time-item length-time">00:21</span>
-                                </div>
+                                </div> -->
                                 <div class="control-btn-wrap flex">
-                                    <div class="speed-btn-container">
+                                    <!-- <div class="speed-btn-container">
                                         <button class="speedBtn reprodctBtn flex" type="button">
                                             <img src="img/edit/speed-btn.svg" alt="배속 버튼 아이콘">1.0 배속
                                         </button>
-                                    </div>
+                                    </div> -->
                                     <div class="reprodct-btn-container">
                                         <button class="playBtn reprodctBtn flex" type="button">
                                             <img src="img/edit/play-btn.svg" alt="재생/멈춤 버튼">
                                         </button>
                                     </div>
                                 </div>
-                                <div class="video-edit-control">
+                                <!-- <div class="video-edit-control">
                                     <ul class="controls">
                                         <li class="controls-item">
                                             <button type="button" class="controlsBtn">
@@ -554,7 +555,7 @@
                                             </button>
                                         </li>
                                     </ul>
-                                </div>
+                                </div> -->
                             </div>
                         </div>
                     </article>
@@ -699,7 +700,7 @@
 
                     selectedWord = event.target;
                     selectedWord.classList.add("selected");
-                    selectedWord.style.borderBottom = "2px solid #C5B6FF"; // 포커스 효과 추가
+                    selectedWord.style.borderBottom = "2px solid #523baf"; // 포커스 효과 추가
 
                     // 선택된 단어의 현재 색상을 컬러 선택기에 반영
                     let currentColor = window.getComputedStyle(selectedWord).color;
