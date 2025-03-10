@@ -888,7 +888,7 @@ margin: 0;
 }
 #home .content-area .subtitle-effect-wrap {
   display: flex;
-  gap: 0 53px;
+  gap: 20px 53px;
   justify-content: space-around;
 }
 #home .content-area .subtitle-effect-item {
@@ -1111,6 +1111,14 @@ margin: 0;
 }
 #home .mockup-content .user-subtitle {
   color: #fafafa;
+  line-height: 160%;
+  text-align: center;
+}
+#home .mockup-content .long-subtitle { /* 긴 자막 시 */
+  width: 100%;
+}
+#home .mockup-content .short-subtitle { /* 짧은 자막 시 */
+  width: 60%;
 }
 #home .reprodct-area {
   background: #FEFEFE;
