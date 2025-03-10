@@ -511,7 +511,7 @@
 
                                                     <!-- 워터마크 제거 버튼 -->
                                                     <div class="watermark-d-container">
-                                                        <button class="watermark-deleteBtn" type="button">
+                                                        <button class="watermark-deleteBtn" id="openSubscribeModal" type="button">
                                                             <img class="watermark-d-img" src="img/edit/watermark.svg" alt="워터마크 제거 버튼">
                                                         </button>
                                                         <span class="watermark-delete-text">워터마크 제거</span>
@@ -577,7 +577,7 @@
             </div>
         </main>
 
-        <!-- 새로고침 클릭 확인 모달창 hide-pop -->
+        <!-- 새로고침 클릭 확인 모달창 -->
         <div class="refresh-check-pop pop-wrap hide-pop">
             <div class="pop-inner">
                 <p class="pop-text">
@@ -594,6 +594,36 @@
                 </div>
             </div>
         </div>
+
+        <!-- 구독 모달 -->
+        <div class="subscribe-modal" id="subscribeModal">
+            <div class="modal-content">
+                <button type="button" class="close-btn" id="closeModal">×</button>
+                <h2 class="semibold-50">숏폼의 퀄리티를<br> 더 높여보세요.</h2>
+                <p class="medium-16">바이럴 유료 플랜을 구독하여 다음 기능들을 이용해 보세요.</p>
+                <div class="subscribe-content">
+                    <div class="flex-100">
+                        <div class="subscribe-bg">더 많은<br>
+                            <span class="text-purple">변환 횟수</span>
+                        </div>
+                        <div class="subscribe-bg"><span class="text-purple">워터마크</span><br>
+                            제거
+                        </div>
+                    </div>
+                    <div class="flex-100">
+                        <div class="subscribe-bg">AI 영상 업로드<br>
+                            정보 제공
+                        </div>
+                        <div class="subscribe-bg">영상 배경<br>
+                            업로드 지원
+                        </div>
+                    </div>
+                </div>
+                <div class="templateBtn-wrap">
+                    <button type="button" class="radius-10 templaeteBtn" id="openModal" onclick="location.href='/subscribe-year.html'">자세히 알아보기</button>
+                </div>
+            </div>
+        </div>  
 
         <footer id="footer" class="footer">
             <div class="content">
@@ -885,7 +915,7 @@
 
 
 
-            //--- 모달 팝업
+            //--- 새로고침 모달 팝업
             // 삭제 버튼 클릭 시, 삭제 확인 모달 열기
             document.querySelectorAll('.refreshBtn').forEach(button => {
                 button.addEventListener('click', function() {
@@ -902,6 +932,31 @@
             // 삭제 확인 모달에서 '아니오' 버튼 클릭 시 모달 닫기
             document.querySelector('.refresh-check-pop .noBtn').addEventListener('click', function() {
                 document.querySelector('.refresh-check-pop').classList.add('hide-pop');
+            });
+
+
+
+
+            //--- 구독 모달 팝업
+            const openModalBtn = document.getElementById("openSubscribeModal"); // 워터마크 제거 버튼
+            const closeModalBtn = document.getElementById("closeModal"); // 닫기 버튼
+            const modal = document.getElementById("subscribeModal"); // 모달창
+
+            // 워터마크 제거 버튼 클릭 시 모달 열기
+            openModalBtn.addEventListener("click", function () {
+                modal.style.display = "block";
+            });
+
+            // 닫기 버튼 클릭 시 모달 닫기
+            closeModalBtn.addEventListener("click", function () {
+                modal.style.display = "none";
+            });
+
+            // 모달 바깥 영역 클릭 시 닫기
+            window.addEventListener("click", function (event) {
+                if (event.target === modal) {
+                    modal.style.display = "none";
+                }
             });
         });
     </script>

@@ -999,11 +999,11 @@ ol {
   margin-top: 80px;
 }
 
-#home .content-area .preview-wrap .templateBtn-wrap {
+#home .preview-wrap .templateBtn-wrap {
   margin-top: 62px;
 }
 
-#home .content-area .templateBtn-wrap .templaeteBtn {
+#home .templateBtn-wrap .templaeteBtn {
   width: 100%;
   padding: 20px 0;
   border-radius: 90px;
@@ -2303,8 +2303,7 @@ ol {
 
 /* 모달이 보일 때 */
 #home .subscribe-modal.show {
-  /* 공백 제거 */
-  display: flex !important;
+  display: block !important;
 }
 
 /* 모달 창 */
@@ -2315,6 +2314,9 @@ ol {
   width: 480px;
   text-align: center;
   position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 #home .subscribe-modal .modal-content .semibold-50 {
@@ -2372,7 +2374,7 @@ ol {
 }
 
 /* 자세히보기 버튼 */
-#home .content-area .templateBtn-wrap .radius-10 {
+#home .templateBtn-wrap .radius-10 {
   border-radius: 10px;
   width: 204px;
   height: 56px;
