@@ -47,11 +47,17 @@ margin: 0;
   background: #fefefe;
   border-radius: 10px;
 }
+#home .font-IBM {
+  font-family: "IBM Plex Sans KR" !important;
+}
 #home .inner {
   width: 100%;
   max-width: 1248px;
   padding: 0 24px;
   margin: 0 auto;
+}
+#home .w-fit {
+  width: fit-content;
 }
 #home .m-top10 {
   margin-top: 10px;
@@ -88,9 +94,6 @@ margin: 0;
 }
 #home .justify-start {
   justify-content: start !important;
-}
-#home .font-IBM {
-  font-family: "IBM Plex Sans KR" !important;
 }
 @supports (-webkit-appearance:none) {
     input {
@@ -661,6 +664,12 @@ margin: 0;
 #home .content-area .subtitle-wrap {
   flex: 1;
   min-width: 540px;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: start;
+  background: #eee;
+  border-radius: 20px;
 }
 #home .content-area .layout-box {
   display: flex;
@@ -812,6 +821,9 @@ margin: 0;
   margin: 0 auto;
   margin-top: 80px;
 }
+#home .content-area .preview-wrap .templateBtn-wrap {
+  margin-top: 62px;
+} 
 #home .content-area .templateBtn-wrap .templaeteBtn {
   width: 100%;
   padding: 20px 0;
@@ -857,16 +869,13 @@ margin: 0;
 }
 #home .content-area .edit-content {
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
   gap: 20px 30px;
 }
-#home .content-area .subtitle-wrap {
-  flex: 1;
-  background: #eee;
-  border-radius: 20px;
-}
 #home .content-area .edit-item-wrap {
-  padding: 60px 30px 0px;
+  width: 100%;
+  padding: 0 30px;
+  padding-top: 30px;
 }
 #home .content-area .edit-title {
   font-size: 22px;
@@ -900,6 +909,9 @@ margin: 0;
   gap: 20px;
 }
 #home .content-area .subtitle-edit-wrap {
+  width: 100%;
+  height: 200px;
+  overflow-y: auto;
   padding: 20px 30px;
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
@@ -1074,7 +1086,10 @@ margin: 0;
 #home .content-area .edit-menu-item {
   cursor: pointer;
 }
-#home .content-area .subtitle-container .word {
+#home .subtitle-container .word-wrap {
+  line-height: 160%;
+}
+#home .subtitle-container .word {
   cursor: pointer;
   margin-right: 2px;
   outline: none;
@@ -1148,6 +1163,11 @@ margin: 0;
     flex-wrap: wrap;
   }
 }
+@media (max-width: 1624px) {
+  #home .content-area .edit-content {
+    justify-content: center;
+  }
+}
 @media (max-width: 1098px) {
   #home .video-inner .template-item {
     flex-wrap: wrap;
@@ -1190,6 +1210,16 @@ margin: 0;
 #home .pop-text {
   font-size: 20px;
   font-weight: 500;
+}
+#home .refresh-check-pop .pop-text {
+  text-align: center;
+}
+#home .pop-text-caption {
+  display: block;
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #868686;
 }
 #home .pop-input {
   margin-top: 24px;
