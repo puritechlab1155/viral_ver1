@@ -202,24 +202,24 @@
                                         <!-- 편집 선택 박스 -->
                                         <div class="edit-item-wrap">
                                             <!-- 자막효과 -->
-                                            <div class="edit-item">
+                                            <div class="edit-item flex">
                                                 <h4 class="subtitle-edit-title">자막 효과</h4>
                                                 <ul class="subtitle-effect-wrap m-top10">
                                                     <li class="subtitle-effect-item">
                                                         <button type="button" class="effectBtn b-show">
-                                                            <img src="" alt="효과없음">
+                                                            <img src="img/edit/none-icon.svg" alt="효과없음">
                                                         </button>
                                                         <span class="effectBtn-text">효과없음</span>
                                                     </li>
                                                     <li class="subtitle-effect-item">
                                                         <button type="button" class="effectBtn">
-                                                            <img src="" alt="바운스">
+                                                            <img src="img/edit/bounce-icon.svg" alt="바운스">
                                                         </button>
                                                         <span class="effectBtn-text">바운스</span>
                                                     </li>
                                                     <li class="subtitle-effect-item">
                                                         <button type="button" class="effectBtn">
-                                                            <img src="" alt="팝">
+                                                            <img src="img/edit/pop-icon.svg" alt="팝">
                                                         </button>
                                                         <span class="effectBtn-text">팝</span>
                                                     </li>
@@ -229,7 +229,7 @@
                                             <div class="edit-item m-top20 flex">
                                                 <h4 class="subtitle-edit-title">효과 색상</h4>
                                                 <div class="picker-container">
-                                                    <label for="effect-color-picker" class="none">자막 색상 선택:</label>
+                                                    <label for="effect-color-picker" class="none">자막 색상 선택</label>
                                                     <input class="color-picker" type="color" id="effect-color-picker" name="color">
                                                 </div>
                                             </div>
@@ -248,9 +248,9 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="">
+                                                    <div class="number-container">
                                                         <label class="none">폰트 사이즈</label>
-                                                        <input type="number" placeholder="16">
+                                                        <input class="num" type="number" placeholder="16">
                                                     </div>
                                                 </div>
                                             </div>
@@ -544,7 +544,7 @@
 
 
 
-
+            // 셀렉트 박스
             const selectWraps = document.querySelectorAll(".select-wrap");
 
             selectWraps.forEach((wrap) => {

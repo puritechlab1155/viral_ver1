@@ -106,7 +106,7 @@ margin: 0;
 }
 
 #home .color-picker::-webkit-color-swatch {
-  border: none;
+  border: 2px solid #eee;
   border-radius: 50%;
 }
 
@@ -847,7 +847,7 @@ margin: 0;
 }
 #home .content-area .subtitle-effect-wrap {
   display: flex;
-  gap: 0 16px;
+  gap: 0 24px;
   justify-content: space-around;
 }
 #home .content-area .subtitle-effect-item {
@@ -855,7 +855,7 @@ margin: 0;
 }
 #home .content-area .effectBtn {
   width: 150px;
-  padding: 24px 0;
+  height: 80px;
   background: #fafafa;
   border: 2px solid transparent;
 }
@@ -874,7 +874,7 @@ margin: 0;
 #home .content-area .color-picker {
   width: 26px;
   height: 26px;
-  border: 1px solid #eee;
+  border-color: #ccc;
   border-radius: 50px;
   cursor: pointer;
 }
@@ -928,6 +928,9 @@ margin: 0;
 #home .content-area .option:hover {
   background: #333;
   color: #fff;
+}
+#home .content-area .number-container {
+  background: lightblue;
 }
 #home .mockup-content .user-title {
   color: #fafafa;
