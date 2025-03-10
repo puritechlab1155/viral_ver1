@@ -920,6 +920,18 @@ ol {
   transform: translateX(-50%);
   z-index: 2;
 }
+#home .edit1-mockup .mock-title {
+  font-size: 18px;
+}
+#home .edit1-mockup .mock-subTitle {
+  font-size: 18px;
+}
+#home .projectV-mockup .mock-title {
+  font-size: 14px;
+}
+#home .projectV-mockup .mock-subTitle {
+  font-size: 14px;
+}
 
 #home .mockup-content .mock-ratio {
   width: 100%;
@@ -1379,12 +1391,12 @@ ol {
 
 #home .mockup-content .user-title {
   color: #fafafa;
-  font-size: 26px;
+  font-size: 1.4em;
   font-weight: 700;
 }
 
 #home .mockup-content .user-subtitle {
-  font-size: 20px;
+  font-size: 1.2em;
   line-height: 160%;
   text-align: center;
 }
@@ -1428,7 +1440,7 @@ ol {
 
 #home .effectWrod {
   /* 바운스 효과 시 */
-  font-size: 28px !important;
+  font-size: 1.6em !important;
   color: #2fff00;
 }
 
