@@ -227,7 +227,7 @@
                         </div>
 
                         <div class="templateBtn-wrap">
-                            <button type="button" class="templaeteBtn" onclick="location.href='video-making.html'">템플릿 추가하기</button>
+                            <button type="button" class="templaeteBtn">템플릿 추가하기</button>
                         </div>
                     </article>
                 </section>
@@ -235,7 +235,7 @@
         </main>
 
         <!-- 삭제 클릭 확인 모달창 -->
-        <div class="delet-check-pop pop-wrap">
+        <div class="delet-check-pop pop-wrap hide-pop">
             <div class="pop-inner">
                 <p class="pop-text">선택하신 컨텐츠를 정말로 삭제하시겠습니까?</p>
                 <div class="popBtn-wrap">
@@ -250,7 +250,7 @@
         </div>
 
         <!--  템플릿 추가 이름 생성 모달창 -->
-        <div class="templaete-add pop-wrap">
+        <div class="templaete-add-pop pop-wrap hide-pop">
             <div class="pop-inner">
                 <label class="pop-text">템플릿 이름 생성</label>
                 <div class="pop-input">
@@ -261,7 +261,7 @@
                         <button class="noBtn" type="button">취소하기</button>
                     </div>
                     <div class="popBtn02 popBtn-item ">
-                        <button class="yesBtn" type="button">생성하기</button>
+                        <button class="yesBtn" type="button" onclick="window.location.href='video-making.html'">생성하기</button>
                     </div>
                 </div>
             </div>
@@ -357,65 +357,35 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const deleteButtons = document.querySelectorAll(".deletBtn");
-            const deleteModal = document.querySelector(".delet-check-pop.pop-wrap"); // 삭제 모달
-            const templateAddModal = document.querySelector(".templaete-add.pop-wrap"); // 템플릿 추가 모달
-            const addButton = document.querySelector(".template-addBtn button"); // 템플릿 추가 버튼
-
-            const noButtonDelete = deleteModal.querySelector(".noBtn");
-            const yesButtonDelete = deleteModal.querySelector(".yesBtn");
-            const noButtonAdd = templateAddModal.querySelector(".noBtn");
-
-            let currentDeleteButton = null; // 현재 클릭한 삭제 버튼 저장
-
-            // 화면에서 보이는 템플릿 개수를 세는 함수
-            function getVisibleTemplateCount() {
-                return [...document.querySelectorAll(".template-wrap, .past-item")].filter(
-                    item => item.style.display !== "none"
-                ).length;
-            }
-
-            // 삭제 버튼 클릭 시 삭제 모달창 보이기
-            deleteButtons.forEach(button => {
-                button.addEventListener("click", function () {
-                    if (getVisibleTemplateCount() > 1) {
-                        currentDeleteButton = button; // 현재 클릭한 삭제 버튼 저장
-                        deleteModal.style.display = "flex"; // 삭제 모달 표시
-                    } else {
-                        alert("마지막 템플릿은 삭제할 수 없습니다."); // 1개만 남으면 경고
-                    }
+            // 삭제 버튼 클릭 시, 삭제 확인 모달 열기
+            document.querySelectorAll('.deletBtn').forEach(button => {
+                button.addEventListener('click', function() {
+                    document.querySelector('.delet-check-pop').classList.remove('hide-pop');
                 });
             });
 
-            // "아니오" 버튼 클릭 시 삭제 모달 숨기기
-            noButtonDelete.addEventListener("click", function () {
-                deleteModal.style.display = "none";
+            // 삭제 확인 모달에서 '아니오' 버튼 클릭 시 삭제 로직 실행
+            document.querySelector('.delet-check-pop .noBtn').addEventListener('click', function() {
+                // 모달 닫기
+                document.querySelector('.delet-check-pop').classList.add('hide-pop');
             });
 
-            // 템플릿 추가 버튼 클릭 시 추가 모달창 보이기
-            addButton.addEventListener("click", function () {
-                templateAddModal.style.display = "flex";
+            // 삭제 확인 모달에서 '아니오' 버튼 클릭 시 모달 닫기
+            document.querySelector('.delet-check-pop .noBtn').addEventListener('click', function() {
+                document.querySelector('.delet-check-pop').classList.add('hide-pop');
             });
 
-            // "아니오" 버튼 클릭 시 추가 모달 숨기기
-            noButtonAdd.addEventListener("click", function () {
-                templateAddModal.style.display = "none";
+            // 템플릿 추가 버튼 클릭 시, 템플릿 추가 모달 열기
+            document.querySelector('.templaeteBtn').addEventListener('click', function() {
+                document.querySelector('.templaete-add-pop').classList.remove('hide-pop');
             });
 
-            // 모달 바깥 클릭 시 닫기 (삭제 모달)
-            deleteModal.addEventListener("click", function (event) {
-                if (event.target === deleteModal) {
-                    deleteModal.style.display = "none";
-                }
-            });
-
-            // 모달 바깥 클릭 시 닫기 (템플릿 추가 모달)
-            templateAddModal.addEventListener("click", function (event) {
-                if (event.target === templateAddModal) {
-                    templateAddModal.style.display = "none";
-                }
+            // 템플릿 추가 모달에서 '취소' 버튼 클릭 시 모달 닫기
+            document.querySelector('.templaete-add-pop .noBtn').addEventListener('click', function() {
+                document.querySelector('.templaete-add-pop').classList.add('hide-pop');
             });
         });
+
     </script>
 </body>
 </html>
