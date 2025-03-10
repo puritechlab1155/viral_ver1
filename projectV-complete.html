@@ -26,7 +26,7 @@
             width: 30%;
             margin-right: 20px;
             max-height: 180px;
-            height: auto;
+            /* height: auto; */
             aspect-ratio: 16 / 9;
             background-color: #FEFEFE;
             display: flex;
@@ -36,15 +36,18 @@
             border-radius: 20px;
             padding: 10px;
             box-sizing: border-box;
-            border: 1px solid #EFEFEF;
+            border: 2px solid #EFEFEF;
         }
         #home .content-area .click-border-2 {
             border: 2px solid #5228F4;
         }
 
         #home .content-area .thumb-slide-box .projectV-thumb {
-            width: 140px;
-            height: 140px;
+            max-width: 140px;
+            max-height: 140px;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
         }
         #home .content-area .thumb-slide-box .thumbnail {
             width: 100%;
@@ -108,7 +111,7 @@
             box-shadow: none;
         }
         #home .ai-review-contain {
-            min-width: 800px;
+            /* min-width: 800px; */
             width: 100%;
             /* height: 430px; */
             height: auto;
@@ -247,6 +250,54 @@
             border-radius: 10px;
             width: 204px;
             height: 56px;
+        }
+        /* 데스크탑 기준 반응형 */
+        @media (max-width: 1199px) {
+            #home .ai-review-contain {
+                display: none;
+            }
+        }
+        @media (max-width: 850px) {
+            #home .semibold-style {
+                font-size: 14px;
+            }
+            #home .thumb-slide-contain .semiboldS-style {
+                margin-top: 3px;
+            }
+            #home .semiboldS-style {
+                font-size: 12px;
+            }
+            #home .thumb-slide-contain .projectV-info .star-ranking {
+                margin-top: -10px;
+            }
+            #home .thumb-slide-contain .projectV-info .star-ranking .star-img {
+                width: 50%;
+            }
+        }
+        @media (max-width: 767px) {
+            #home .content-area .thumb-slide-box {
+                flex-wrap: wrap;
+            }
+            #home .thumb-slide-contain .projectV-info .star-ranking .star-img {
+                width: 30%;
+            }
+        }
+        @media (max-width: 480px) {
+            /* #home .content-area .thumb-slide-box {
+                flex-wrap: wrap;
+            } */
+            #home .thumb-slide-contain .projectV-info .star-ranking {
+                margin-top: -20px;
+            }
+            #home .thumb-slide-contain .projectV-info .star-ranking .star-img {
+                width: 30%;
+            }
+            #home .content-area .projectV-preview {
+                justify-content: initial;
+                margin-left: 5%;
+                margin-top: 20px;
+            }
+            
         }
     </style>
 
@@ -396,29 +447,29 @@
                 <section class="content-area">
                     <article class="content-wrap">
                         <div class="content-inner content-inner-m making-inner">
-                            <!-- 썸네일 슬라이드바 -->
+                        <!-- 썸네일 슬라이드바 -->
                             <div class="thumb-slide-contain" id="thumb-slide-contain">
-                                <div class="click-border-2 thumb-slide-box projectV-flex-box">
+                                <div class="click-border-2 thumb-slide-box projectV-flex-box"> <!-- click-border-2 : 클릭했을때 추가되는 틀래스 -->
                                     <div class="projectV-thumb">
-                                        <img class="thumbnail" src="img/template/example-img-16_9.png" alt="숏폼 변환 썸네일" style="background: plum;">
+                                        <img class="thumbnail" src="img/template/example-img-16_9.png" alt="숏폼 변환 썸네일">
                                     </div>
                                     <div class="projectV-info">
                                         <h2 class="semibold-style">숏폼이 자동 생성한 제목</h2>
                                         <h3 class="semiboldS-style">01:03 </h3>
                                         <div class="star-ranking">
-                                            <img class="star-five" src="/img/projectV/star-five.svg" alt="별5개개">
+                                            <img class="star-five star-img" src="/img/projectV/star-five.svg" alt="별5개">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="thumb-slide-box projectV-flex-box">
                                     <div class="projectV-thumb">
-                                        <img class="thumbnail" src="img/template/example-img-16_9.png" alt="숏폼 변환 썸네일" style="background: plum;">
+                                        <img class="thumbnail" src="img/template/example-img-16_9.png" alt="숏폼 변환 썸네일">
                                     </div>
                                     <div class="projectV-info">
                                         <h2 class="semibold-style">숏폼이 자동 생성한 제목</h2>
                                         <h3 class="semiboldS-style projectV-time">00:49 </h3>
                                         <div class="star-ranking">
-                                            <img class="star-five" src="/img/projectV/star-four.svg" alt="별5개개">
+                                            <img class="star-five star-img" src="/img/projectV/star-four.svg" alt="별5개">
                                         </div>
                                     </div>
                                 </div>                                
@@ -457,9 +508,9 @@
                                             <span class="projectV-time center">01:03</span>
                                         </div>
                                         <div class="projectV-down">
-                                            <button type="button" class="border-none projectV-download">
+                                            <a id="downloadBtn" class="border-none projectV-download" href="/videos/sample-video.mp4" download="video.mp4">
                                                 <img src="/img/projectV/download.svg" alt="다운로드버튼 이미지">
-                                            </button>
+                                            </a>
                                         </div>
                                         <div class="projectV-edit">
                                             <button type="button" class="border-none" onclick="location.href='/video-edit1.html'">
@@ -508,7 +559,7 @@
                                                 <h2 class="semibold-style">영상 업로드 정보</h2>
                                                 <ul class="upload-info-title">
                                                     <h3 class="semiboldS-style">제목</h3>
-                                                    <p class="h-56 terms-content medium-style">000</p>
+                                                    <p class="h-56 terms-content medium-style"></p>
                                                 </ul>
                                                 <ul class="upload-info-category">
                                                     <h3 class="semiboldS-style">카테고리</h3>
@@ -516,7 +567,7 @@
                                                 </ul>
                                                 <ul class="upload-info-ex">
                                                     <h3 class="semiboldS-style">설명</h3>
-                                                    <p class="h-120 terms-content medium-style">000000<br>000000<br>00000<br>000000<br>0000000000000000000000000</p>
+                                                    <p class="h-120 terms-content medium-style"></p>
                                                 </ul>
                                                 <div class="templateBtn-wrap">
                                                     <button type="button" class="templaeteBtn" id="openModal">생성하기</button>
