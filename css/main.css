@@ -80,6 +80,15 @@ margin: 0;
 #home .wrap {
   flex-wrap: wrap;
 }
+#home .justify-center {
+  justify-content: center !important;
+}
+#home .justify-between {
+  justify-content: space-between !important;
+}
+#home .justify-start {
+  justify-content: start !important;
+}
 #home .font-IBM {
   font-family: "IBM Plex Sans KR" !important;
 }
@@ -296,6 +305,9 @@ margin: 0;
 @media (max-width: 767px) {
   #home .header .content {
     height: 48px;
+  }
+  #home .content-inner-m {
+    padding: 0 24px !important;
   }
   #home .header .content .left-content .offcanvas-open {
     width: 20px;
