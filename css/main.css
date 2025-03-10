@@ -734,10 +734,9 @@ margin: 0;
   border-radius: 33px;
   background: #292929;
 }
-#home .content-area .mockup-content {
+#home .mockup-content {
   width: 210px;
   height: 456px;
-  padding: 0 7px;
   overflow: hidden;
   border-radius: 30px;
   position: absolute;
@@ -745,14 +744,14 @@ margin: 0;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-#home .content-area .mockup-content .title {
+#home .mockup-content .title {
   font-size: 28px;
 }
-#home .content-area .mockup-content .mockup-contentImg {
+#home .mockup-content .mockup-content-item {
   position: absolute;
   left: 50%;
 }
-#home .content-area .mockup-content .mock-title {
+#home .mockup-content .mock-title {
   width: 100%;
   display: flex;
   align-items: center;
@@ -761,7 +760,7 @@ margin: 0;
   transform: translateX(-50%);
   z-index: 2;
 }
-#home .content-area .mockup-content .mock-ratio {
+#home .mockup-content .mock-ratio {
   width: 100%;
   overflow: hidden;
   background: lightgoldenrodyellow;
@@ -770,21 +769,28 @@ margin: 0;
   transform: translate(-50%, -50%);
   z-index: 1;
 }
-#home .content-area .mockup-content .mock-ratio .exampleImg {
+#home .mockup-content .exampleImg {
   float: left;
 }
+#home .mockup-content .mockup-content-video {
+  position: relative;
+}
+#home .user-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 /* 비율에 맞게 이미지가 변경되는 값 */
-#home .content-area .mockup-content .ratio16-img {
-  height: 118px;
+#home .mockup-content .ratio16-item {
+  aspect-ratio: 16 / 9;
 }
-#home .content-area .mockup-content .ratio1-img { 
-  height: 210px;
+#home .mockup-content .ratio1-item { 
+  aspect-ratio: 1 / 1;
 }
-#home .content-area .mockup-content .ratio9-img {
-  height: 456px;
+#home .mockup-content .ratio9-item {
+  aspect-ratio: 9 / 16;
 }
 /* // 비율에 맞게 이미지가 변경되는 값 */
-
 #home .content-area .mockup-content .mock-subTitle {
   width: 100%;
   display: flex;
@@ -1094,6 +1100,9 @@ margin: 0;
   margin-right: 2px;
   outline: none;
 }
+#home .user-subtitle .word {
+  font-weight: 700;
+}
 #home .content-area .edit-picker {
   margin-top: 2px;
   width: 22px;
@@ -1110,15 +1119,25 @@ margin: 0;
   color: #fafafa;
 }
 #home .mockup-content .user-subtitle {
-  color: #fafafa;
   line-height: 160%;
   text-align: center;
+}
+/* !! 설정값에 따라 적용되는 클래스명 */
+#home .mockup-content .font-color { /* 선택한 폰트 컬러 적용 */
+  color: #ffe100;
 }
 #home .mockup-content .long-subtitle { /* 긴 자막 시 */
   width: 100%;
 }
 #home .mockup-content .short-subtitle { /* 짧은 자막 시 */
-  width: 60%;
+  width: 74%;
+}
+#home .stokeWrod { /* 테두리 있음 시  vs 없음 시 클래스 제거*/
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px  1px 0 #000, 1px  1px 0 #000;
+}
+#home .effectWrod { /* 바운스 효과 시 */
+  font-size: 22px;
+  color: #2fff00;
 }
 #home .reprodct-area {
   background: #FEFEFE;

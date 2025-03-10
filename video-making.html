@@ -183,13 +183,13 @@
                                                 <img class="img-item" src="img/template/iphone-mockup.png" alt="아이폰 목업">
                                                 <!-- 제목, 선택한 레이아웃 비율, 자막 컨텐츠 -->
                                                 <div class="mockup-content">
-                                                    <div class="mock-title mockup-contentImg">
+                                                    <div class="mock-title mockup-content-item">
                                                         <img class="titleImg" src="img/template/example-title.svg" alt="레이아웃 예시 타이틀">
                                                     </div>
-                                                    <div class="mock-ratio mockup-contentImg">
-                                                        <img class="exampleImg ratio16-img" src="img/template/example-img-16_9.png" alt="레이아웃 예시 이미지">
+                                                    <div class="mock-ratio mockup-content-item">
+                                                        <img class="exampleImg ratio16-item" src="img/template/example-img-16_9.png" alt="레이아웃 예시 이미지">
                                                     </div>
-                                                    <div class="mock-subTitle mockup-contentImg">
+                                                    <div class="mock-subTitle mockup-content-item">
                                                         <img class="sub-titleImg" src="img/template/example-subtitle.svg" alt="레이아웃 예시 타이틀">
                                                     </div>
                                                 </div>
@@ -369,17 +369,17 @@
                     button.classList.add("b-show");
                     
                     if (button.classList.contains("ratio-16")) {
-                        updateMockup(exampleImg, "img/template/example-img-16_9.png", "ratio16-img");
+                        updateMockup(exampleImg, "img/template/example-img-16_9.png", "ratio16-item");
                     } else if (button.classList.contains("ratio-1")) {
-                        updateMockup(exampleImg, "img/template/example-img-1_1.png", "ratio1-img");
+                        updateMockup(exampleImg, "img/template/example-img-1_1.png", "ratio1-item");
                     } else if (button.classList.contains("ratio-9")) {
-                        updateMockup(exampleImg, "img/template/example-img-9_16.png", "ratio9-img");
+                        updateMockup(exampleImg, "img/template/example-img-9_16.png", "ratio9-item");
                     }
                 });
             });
 
             function updateMockup(imgElement, newSrc, newClass) {
-                imgElement.classList.remove("ratio16-img", "ratio1-img", "ratio9-img");
+                imgElement.classList.remove("ratio16-item", "ratio1-item", "ratio9-item");
                 imgElement.classList.add(newClass);
                 imgElement.src = newSrc;
             }
