@@ -208,6 +208,19 @@
                                                             <span class="word">여러분!</span>
                                                         </div>
                                                     </div>
+
+                                                    <!-- 워터마크 -->
+                                                    <div class="watermark-img">
+                                                        <img src="img/watermark.svg" alt="워터마크 이미지">
+                                                    </div>
+                                                </div>
+
+                                                <!-- 워터마크 제거 버튼 -->
+                                                <div class="watermark-d-container">
+                                                    <button class="watermark-deleteBtn" id="openSubscribeModal" type="button">
+                                                        <img class="watermark-d-img" src="img/edit/watermark.svg" alt="워터마크 제거 버튼">
+                                                    </button>
+                                                    <span class="watermark-delete-text">워터마크 제거</span>
                                                 </div>
                                             </div>
                                         </div>
@@ -464,34 +477,36 @@
         });
         
 
-        // 구독 모달
+        // -- 구독 모달
         document.addEventListener("DOMContentLoaded", function () {
-            const openModalBtn = document.getElementById("openModal"); // 모달 여는 버튼
-            const closeModalBtn = document.getElementById("closeModal"); // 닫기 버튼
             const modal = document.getElementById("subscribeModal"); // 모달 창
+            const closeModalBtn = document.getElementById("closeModal"); // 닫기 버튼
 
-            if (!openModalBtn || !closeModalBtn || !modal) {
+            if (!modal || !closeModalBtn) {
                 console.error("모달 요소를 찾을 수 없습니다.");
                 return;
             }
 
-            // "생성하기" 버튼 클릭 시 모달 열기
-            openModalBtn.addEventListener("click", function () {
-                modal.classList.add("show"); // 모달 표시
+            // 여러 개의 모달 열기 버튼 처리 (openModal, openSubscribeModal)
+            document.querySelectorAll("#openModal, #openSubscribeModal").forEach(button => {
+                button.addEventListener("click", function () {
+                    modal.classList.add("show"); // 모달 표시
+                });
             });
 
             // 닫기 버튼 클릭 시 모달 닫기
             closeModalBtn.addEventListener("click", function () {
-                modal.classList.remove("show"); // 모달 숨기기
+                modal.classList.remove("show");
             });
 
             // 모달 바깥 영역 클릭 시 닫기
             window.addEventListener("click", function (e) {
                 if (e.target === modal) {
-                    modal.classList.remove("show"); // 모달 숨기기
+                    modal.classList.remove("show");
                 }
             });
         });
+
     </script>
 </body>
 </html>

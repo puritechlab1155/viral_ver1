@@ -942,22 +942,23 @@
             const closeModalBtn = document.getElementById("closeModal"); // 닫기 버튼
             const modal = document.getElementById("subscribeModal"); // 모달창
 
-            // 워터마크 제거 버튼 클릭 시 모달 열기
+            // 모달 열기
             openModalBtn.addEventListener("click", function () {
-                modal.style.display = "block";
+                modal.classList.add("show");
             });
 
-            // 닫기 버튼 클릭 시 모달 닫기
+            // 모달 닫기
             closeModalBtn.addEventListener("click", function () {
-                modal.style.display = "none";
+                modal.classList.remove("show");
             });
 
             // 모달 바깥 영역 클릭 시 닫기
             window.addEventListener("click", function (event) {
                 if (event.target === modal) {
-                    modal.style.display = "none";
+                    modal.classList.remove("show");
                 }
             });
+
         });
     </script>
 </body>
