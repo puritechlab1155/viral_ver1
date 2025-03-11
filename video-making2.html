@@ -7,7 +7,6 @@
     <title>Viral | 비디오 생성</title>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
-
 </head>
 <body>
     <section id="home">
@@ -154,31 +153,31 @@
                     <article class="content-wrap">
                         <div class="content-inner making2-inner">
                             <!-- 비디오 재생 및 해상도 선택 -->
-                            <div class="media-frame">
+                            <div class="media-frame flex">
                                 <div class="vedio-thum media-item">
                                     <video class="user-video" src="img/videos/sample-video.mp4"></video>
                                 </div>
                                 <div class="resolution-container media-item">
-                                    <ul class="resolution-wrap">
-                                        <li class="sdBtn resolutionBtn" type="button">
+                                    <ul class="resolution-wrap flex">
+                                        <li class="sdBtn resolutionBtn flex b2-show" type="button">
                                             <span class="font-IBM">SD</span>
                                             <div class="resolution-text">
-                                                <span class="resolution-numb">360p</span>
-                                                <span class="resolution-cap">표준화질, 빠른 변환</span>
+                                                <span class="resolution-numb block">360p</span>
+                                                <span class="resolution-cap block">표준화질, 빠른 변환</span>
                                             </div>
                                         </li>
-                                        <li class="sdBtn resolutionBtn" type="button">
+                                        <li class="sdBtn resolutionBtn flex" type="button">
                                             <span class="font-IBM">HD</span>
                                             <div class="resolution-text">
-                                                <span class="resolution-numb">720p</span>
-                                                <span class="resolution-cap">고화질, 더 선명한 영상</span>
+                                                <span class="resolution-numb block">720p</span>
+                                                <span class="resolution-cap block">고화질, 더 선명한 영상</span>
                                             </div>
                                         </li>
-                                        <li class="sdBtn resolutionBtn" type="button">
+                                        <li class="sdBtn resolutionBtn flex" type="button">
                                             <span class="font-IBM">FHD</span>
                                             <div class="resolution-text">
-                                                <span class="resolution-numb">1080p</span>
-                                                <span class="resolution-cap">최고화질 (구독 서비스)</span>
+                                                <span class="resolution-numb block">1080p</span>
+                                                <span class="resolution-cap block">최고화질 (<b class="bold">구독 서비스</b>)</span>
                                             </div>
                                         </li>
                                     </ul> 
@@ -186,10 +185,56 @@
                             </div>
 
                             <!-- AI 자르기 / 셀프 자르기 -->
+                            <div class="cut-wrap">
+                                <!-- 자르기 방법 선택 -->
+                                <div class="cut-way-wrap flex">
+                                    <div class="cut-ai cut-item flex b2-show">
+                                        <span class="cut-icon">
+                                            <img src="img/videoMaking/cut-ai.svg" alt="AI 자르기">
+                                        </span>
+                                        <ul class="cut-text">
+                                            <li class="cut-title">AI 자르기</li>
+                                            <li class="cut-cap">시청자의 관심을 살 수 있는 구간을 AI가 찾아내어 편집합니다.</li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="cut-slef cut-item flex">
+                                        <span class="cut-icon">
+                                            <img src="img/videoMaking/cut-self.svg" alt="셀프 자르기">
+                                        </span>
+                                        <ul class="cut-text">
+                                            <li class="cut-title">셀프 자르기</li>
+                                            <li class="cut-cap">시청자에게 보일 내용을 목적에 맞게 구간을 설정시킵니다. (최대 5개)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- 변환구간 // 추후 진행 예정 -->
+                                <div class="cut-panel-wrap">
+                                    <div class="pannel-title">
+                                        변환 구간
+                                        <span class="block">숏폼으로 변환시킬 영상의 시간을 설정해주세요.</span>
+                                    </div>
+                                    <div class="pannel-container">
+                                        <div class="pannel-box slef-pannel">
+                                            <p class="time-limit">최소 5분 이상의 구간을 설정해주세요.</p>
+                                            <div class="pannel-time">
+                                                <span class="time-start">01:41</span>
+                                                <span class="time-end">02:06</span>
+                                            </div>
+                                            <div class="pannel-range">
+                                                <input class="start-range range-input" type="range" min="0" max="600" value="101" id="start-range">
+                                                <input class="end-range range-input" type="range" min="0" max="600" value="126" id="end-range">
+                                                <div class="progress-bar"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="templateBtn-wrap">
-                            <button type="button" class="templaeteBtn">템플릿 추가하기</button>
+                            <button type="button" class="templaeteBtn">다음</button>
                         </div>
                     </article>
                 </section>
@@ -319,33 +364,42 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            // 삭제 버튼 클릭 시, 삭제 확인 모달 열기
-            document.querySelectorAll('.deletBtn').forEach(button => {
-                button.addEventListener('click', function() {
-                    document.querySelector('.delet-check-pop').classList.remove('hide-pop');
-                });
-            });
+            const startRange = document.getElementById("start-range");
+            const endRange = document.getElementById("end-range");
+            const progressBar = document.querySelector(".progress-bar");
+            const startTimeDisplay = document.querySelector(".start-time");
+            const endTimeDisplay = document.querySelector(".end-time");
 
-            // 삭제 확인 모달에서 '아니오' 버튼 클릭 시 삭제 로직 실행
-            document.querySelector('.delet-check-pop .noBtn').addEventListener('click', function() {
-                // 모달 닫기
-                document.querySelector('.delet-check-pop').classList.add('hide-pop');
-            });
+            function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = seconds % 60;
+            return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+            }
 
-            // 삭제 확인 모달에서 '아니오' 버튼 클릭 시 모달 닫기
-            document.querySelector('.delet-check-pop .noBtn').addEventListener('click', function() {
-                document.querySelector('.delet-check-pop').classList.add('hide-pop');
-            });
+            function updateSlider() {
+            const minValue = parseInt(startRange.min);
+            const maxValue = parseInt(startRange.max);
+            const startValue = parseInt(startRange.value);
+            const endValue = parseInt(endRange.value);
 
-            // 템플릿 추가 버튼 클릭 시, 템플릿 추가 모달 열기
-            document.querySelector('.templaeteBtn').addEventListener('click', function() {
-                document.querySelector('.templaete-add-pop').classList.remove('hide-pop');
-            });
+            if (endValue - startValue < 300) { // 최소 5분(300초) 조건
+                startRange.value = endValue - 300;
+            }
 
-            // 템플릿 추가 모달에서 '취소' 버튼 클릭 시 모달 닫기
-            document.querySelector('.templaete-add-pop .noBtn').addEventListener('click', function() {
-                document.querySelector('.templaete-add-pop').classList.add('hide-pop');
-            });
+            const leftPercent = ((startValue - minValue) / (maxValue - minValue)) * 100;
+            const rightPercent = 100 - ((endValue - minValue) / (maxValue - minValue)) * 100;
+
+            progressBar.style.left = `${leftPercent}%`;
+            progressBar.style.right = `${rightPercent}%`;
+
+            startTimeDisplay.textContent = formatTime(startRange.value);
+            endTimeDisplay.textContent = formatTime(endRange.value);
+            }
+
+            startRange.addEventListener("input", updateSlider);
+            endRange.addEventListener("input", updateSlider);
+
+            updateSlider(); // 초기 설정
         });
 
     </script>
