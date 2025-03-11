@@ -283,29 +283,22 @@
                             </div>
 
                             <!-- 내가 만든 템플릿 -->
-                            <div class="past-wrap template-wrap">
+                            <div class="past-wrap template-wrap none">
                                 <div class="past-container">
                                     <div class="title">내가 만든 템플릿</div>
-                                    <!-- 지난 템플릿1 -->
+                                    <!-- 템플릿1 -->
                                     <div class="past-item template-box">
-                                        <span class="date-view">25. 03. 04</span>
                                         <a href="#" class="template-edit template-100">
                                             <div class="templaete-inner">
                                                 <div class="templaete-img">
-                                                    <img class="img-item" src="img/template/past-img1.png" alt="지난 템플릿1">
+                                                    <img class="img-item" src="img/template/recent-img.png" alt="지난 템플릿1">
                                                 </div>
                                             </div>
                                         </a>
-                                        <div class="bottom-item" "="">
-                                            <div class="template-title">Dance battle</div>
-                                            <button class="deletBtn">
-                                                <img src="img/template/delet-btn.svg" alt="휴지통 아이콘">
-                                            </button>
-                                        </div>
+                                        <div class="my-template-title">Dance battle</div>
                                     </div>
-                                    <!-- 지난 템플릿2 -->
+                                    <!-- 템플릿2 -->
                                     <div class="past-item template-box">
-                                        <span class="date-view">25. 03. 04</span>
                                         <a href="#" class="template-edit template-100">
                                             <div class="templaete-inner">
                                                 <div class="templaete-img">
@@ -313,19 +306,25 @@
                                                 </div>
                                             </div>
                                         </a>
-                                        <div class="bottom-item">
-                                            <div class="template-title">Dance battle</div>
-                                            <button class="deletBtn">
-                                                <img src="img/template/delet-btn.svg" alt="휴지통 아이콘">
-                                            </button>
-                                        </div>
+                                        <div class="my-template-title">Dance battle</div>
+                                    </div>
+                                    <!-- 템플릿3 -->
+                                    <div class="past-item template-box">
+                                        <a href="#" class="template-edit template-100">
+                                            <div class="templaete-inner">
+                                                <div class="templaete-img">
+                                                    <img class="img-item" src="img/template/past-img2.png" alt="지난 템플릿2">
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="my-template-title">Dance battle</div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="templateBtn-wrap">
-                            <button type="button" class="templaeteBtn">다음</button>
+                            <button type="button" class="templaeteBtn nextBtn">다음</button>
                         </div>
                     </article>
                 </section>
@@ -508,6 +507,17 @@
             // 셀프 자르기 클릭 시
             cutSelfBtn.addEventListener("click", function () {
                 switchPanel(cutSelfBtn, cutAiBtn, selfPannel, aiPannel);
+            });
+
+
+
+            const nextBtn = document.querySelector(".templaeteBtn.nextBtn");
+            const cutWrap = document.querySelector(".cut-wrap");
+            const pastWrap = document.querySelector(".making2-inner .past-wrap");
+
+            nextBtn.addEventListener("click", function () {
+                cutWrap.classList.add("none");  // cut-wrap 숨기기
+                pastWrap.classList.remove("none");  // past-wrap 보이기
             });
         });
 

@@ -1832,14 +1832,50 @@ ol {
 }
 
 #home .making2-inner .past-wrap {
-  width: 100%;
+  margin-top: clamp(60px, 6vw, 130px);
   max-width: none;
   padding: 0;
-  background: lightcoral;
+  background: #FEFEFE;
+  border: 1px solid #EFEFEF;
+  border-radius: 20px;
+}
+
+#home .making2-inner .past-container {
+  max-width: none;
 }
 
 #home .making2-inner .template-wrap .title {
-  background: lightblue;
+  padding: 16px 0;
+  justify-content: center;
+  border-bottom: 2px solid #5228F4;
+  color: #5228F4;
+  font-weight: 400;
+}
+
+#home .making2-inner .past-container {
+  gap: 20px;
+  padding-bottom: 30px;
+}
+
+#home .making2-inner .past-container .past-item {
+  flex: 0 0 240px;
+}
+
+#home .making2-inner .template-wrap .template-edit {
+  text-align: center;
+  padding: 10px 0;
+}
+
+#home .making2-inner .past-wrap .templaete-img {
+  width: 120px;
+  margin: 0 auto;
+}
+
+#home .my-template-title {
+  margin-top: 10px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
 }
 
 @media (max-width: 1538px) {
