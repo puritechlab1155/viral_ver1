@@ -1589,6 +1589,25 @@ ol {
   background: #5228F4;
 }
 
+#home .making2-inner {
+  width: 100%;
+  max-width: 876px;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 0;
+}
+
+#home .media-frame {
+  padding: 30px;
+  display: flex;
+  border-radius: 20px;
+  background: #ccc;
+}
+
+#home .media-item {
+  flex: 1;
+}
+
 @media (max-width: 1538px) {
   #home .content-area .video-title {
     left: 0;
@@ -1718,7 +1737,7 @@ ol {
   color: #fff;
 }
 
-
+/* 유저 계정 및 정보 관련 페이지  */ 
 #home .user-auth .user-auth-wrap {
   width: 100%;
   max-width: 580px;
