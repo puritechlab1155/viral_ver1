@@ -209,24 +209,115 @@
                                     </div>
                                 </div>
 
-                                <!-- 변환구간 // 추후 진행 예정 -->
+                                <!-- 변환구간 -->
                                 <div class="cut-panel-wrap">
                                     <div class="pannel-title">
                                         변환 구간
                                         <span class="block">숏폼으로 변환시킬 영상의 시간을 설정해주세요.</span>
                                     </div>
                                     <div class="pannel-container">
-                                        <div class="pannel-box slef-pannel">
+                                        <!-- ai 자르기 변환 구간 -->
+                                        <div class="pannel-box ai-pannel">
                                             <p class="time-limit">최소 5분 이상의 구간을 설정해주세요.</p>
                                             <div class="pannel-time">
                                                 <span class="time-start">01:41</span>
                                                 <span class="time-end">02:06</span>
                                             </div>
                                             <div class="pannel-range">
-                                                <input class="start-range range-input" type="range" min="0" max="600" value="101" id="start-range">
-                                                <input class="end-range range-input" type="range" min="0" max="600" value="126" id="end-range">
+                                                <input class="start-range range-input" type="range" min="0" max="600" value="101" id="start-range1">
+                                                <input class="end-range range-input" type="range" min="0" max="600" value="126" id="end-range1">
                                                 <div class="progress-bar"></div>
                                             </div>
+                                        </div>
+
+                                        <!-- 셀프 자르기 변환 구간 -->
+                                        <div class="slef-pannel none">
+                                            <div class="pannel-box">
+                                                <p class="time-limit">
+                                                    3분 미만의 시간을 설정해 주세요.
+                                                    <span class="pannel-delete">
+                                                        <img src="img/delete-icon.svg" alt="닫기">
+                                                    </span>
+                                                </p>
+                                                <div class="pannel-time">
+                                                    <span class="time-start">01:41</span>
+                                                    <span class="time-end">02:06</span>
+                                                </div>
+                                                <div class="pannel-range">
+                                                    <input class="start-range range-input" type="range" min="0" max="600" value="101" id="start-range2">
+                                                    <input class="end-range range-input" type="range" min="0" max="600" value="126" id="end-range2">
+                                                    <div class="progress-bar"></div>
+                                                </div>
+                                            </div>
+
+                                            <div class="pannel-box">
+                                                <p class="time-limit">
+                                                    3분 미만의 시간을 설정해 주세요.
+                                                    <span class="pannel-delete">
+                                                        <img src="img/delete-icon.svg" alt="닫기">
+                                                    </span>
+                                                </p>
+                                                <div class="pannel-time">
+                                                    <span class="time-start">01:41</span>
+                                                    <span class="time-end">02:06</span>
+                                                </div>
+                                                <div class="pannel-range">
+                                                    <input class="start-range range-input" type="range" min="0" max="600" value="101" id="start-range2">
+                                                    <input class="end-range range-input" type="range" min="0" max="600" value="126" id="end-range2">
+                                                    <div class="progress-bar"></div>
+                                                </div>
+                                            </div>
+
+                                            <!-- 설정 추가하기 버튼 // 클릭시 pannel-box가 나타남-->
+                                            <div class="addBtn-container">
+                                                <button class="addBtn b2-show flex" type="button">
+                                                    <span>
+                                                        <img src="img/add-icon.svg" alt="추가하기 아이콘">
+                                                    </span>
+                                                    설정 추가하기
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 내가 만든 템플릿 -->
+                            <div class="past-wrap template-wrap">
+                                <div class="past-container">
+                                    <div class="title">내가 만든 템플릿</div>
+                                    <!-- 지난 템플릿1 -->
+                                    <div class="past-item template-box">
+                                        <span class="date-view">25. 03. 04</span>
+                                        <a href="#" class="template-edit template-100">
+                                            <div class="templaete-inner">
+                                                <div class="templaete-img">
+                                                    <img class="img-item" src="img/template/past-img1.png" alt="지난 템플릿1">
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="bottom-item" "="">
+                                            <div class="template-title">Dance battle</div>
+                                            <button class="deletBtn">
+                                                <img src="img/template/delet-btn.svg" alt="휴지통 아이콘">
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- 지난 템플릿2 -->
+                                    <div class="past-item template-box">
+                                        <span class="date-view">25. 03. 04</span>
+                                        <a href="#" class="template-edit template-100">
+                                            <div class="templaete-inner">
+                                                <div class="templaete-img">
+                                                    <img class="img-item" src="img/template/past-img2.png" alt="지난 템플릿2">
+                                                </div>
+                                            </div>
+                                        </a>
+                                        <div class="bottom-item">
+                                            <div class="template-title">Dance battle</div>
+                                            <button class="deletBtn">
+                                                <img src="img/template/delet-btn.svg" alt="휴지통 아이콘">
+                                            </button>
                                         </div>
                                     </div>
                                 </div>
@@ -241,23 +332,8 @@
             </div>
         </main>
 
-        <!-- 삭제 클릭 확인 모달창 -->
-        <div class="delet-check-pop pop-wrap hide-pop">
-            <div class="pop-inner">
-                <p class="pop-text">선택하신 컨텐츠를 정말로 삭제하시겠습니까?</p>
-                <div class="popBtn-wrap">
-                    <div class="popBtn01 popBtn-item">
-                        <button class="noBtn" type="button">아니오</button>
-                    </div>
-                    <div class="popBtn02 popBtn-item ">
-                        <button class="yesBtn" type="button">예</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <!--  템플릿 추가 이름 생성 모달창 -->
-        <div class="templaete-add-pop pop-wrap hide-pop">
+        <!-- <div class="templaete-add-pop pop-wrap hide-pop">
             <div class="pop-inner">
                 <label class="pop-text">템플릿 이름 생성</label>
                 <div class="pop-input">
@@ -272,7 +348,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
 
         <footer id="footer" class="footer">
             <div class="content">
@@ -364,38 +440,75 @@
 
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            const startRange = document.getElementById("start-range");
-            const endRange = document.getElementById("end-range");
-            const progressBar = document.querySelector(".progress-bar");
-            const startTimeDisplay = document.querySelector(".start-time");
-            const endTimeDisplay = document.querySelector(".end-time");
+            //--- 변환 구간 설정 range
+            document.querySelectorAll(".pannel-box").forEach((pannel) => {
+                const rangeStart = pannel.querySelector(".start-range");
+                const rangeEnd = pannel.querySelector(".end-range");
+                const progressBar = pannel.querySelector(".progress-bar");
+                const startTimeDisplay = pannel.querySelector(".time-start");
+                const endTimeDisplay = pannel.querySelector(".time-end");
 
-            function formatTime(seconds) {
-            const mins = Math.floor(seconds / 60);
-            const secs = seconds % 60;
-            return `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+                const minGap = 5 * 60; // 최소 간격 (5분 = 300초)
+
+                function updateSlider(event) {
+                    let startValue = parseInt(rangeStart.value);
+                    let endValue = parseInt(rangeEnd.value);
+
+                    startValue = parseInt(rangeStart.value);
+                    endValue = parseInt(rangeEnd.value);
+
+                    // progress bar 업데이트
+                    let percentStart = (startValue / rangeStart.max) * 100;
+                    let percentEnd = (endValue / rangeEnd.max) * 100;
+
+                    progressBar.style.left = percentStart + "%";
+                    progressBar.style.right = (100 - percentEnd) + "%";
+
+                    // 시간 표시 업데이트
+                    startTimeDisplay.textContent = formatTime(startValue);
+                    endTimeDisplay.textContent = formatTime(endValue);
+                }
+
+                function formatTime(seconds) {
+                    let minutes = Math.floor(seconds / 60);
+                    let secs = seconds % 60;
+                    return `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+                }
+
+                rangeStart.addEventListener("input", updateSlider);
+                rangeEnd.addEventListener("input", updateSlider);
+
+                // 초기 설정
+                updateSlider();
+            });
+
+
+            //--- ai자르기 / slef 자르기 클릭시 나타나느 변환구간
+            const cutAiBtn = document.querySelector(".cut-ai");
+            const cutSelfBtn = document.querySelector(".cut-slef");
+
+            const aiPannel = document.querySelector(".ai-pannel");
+            const selfPannel = document.querySelector(".slef-pannel");
+
+            function switchPanel(activeBtn, inactiveBtn, showPanel, hidePanel) {
+                // 활성화된 버튼에 'b2-show' 클래스 추가, 비활성화 버튼에서는 제거
+                activeBtn.classList.add("b2-show");
+                inactiveBtn.classList.remove("b2-show");
+
+                // 선택된 패널 표시, 다른 패널 숨기기
+                showPanel.classList.remove("none");
+                hidePanel.classList.add("none");
             }
 
-            function updateSlider() {
-            const minValue = parseInt(startRange.min);
-            const maxValue = parseInt(startRange.max);
-            const startValue = parseInt(startRange.value);
-            const endValue = parseInt(endRange.value);
+            // AI 자르기 클릭 시
+            cutAiBtn.addEventListener("click", function () {
+                switchPanel(cutAiBtn, cutSelfBtn, aiPannel, selfPannel);
+            });
 
-            const leftPercent = ((startValue - minValue) / (maxValue - minValue)) * 100;
-            const rightPercent = 100 - ((endValue - minValue) / (maxValue - minValue)) * 100;
-
-            progressBar.style.left = `${leftPercent}%`;
-            progressBar.style.right = `${rightPercent}%`;
-
-            startTimeDisplay.textContent = formatTime(startRange.value);
-            endTimeDisplay.textContent = formatTime(endRange.value);
-            }
-
-            startRange.addEventListener("input", updateSlider);
-            endRange.addEventListener("input", updateSlider);
-
-            updateSlider(); // 초기 설정
+            // 셀프 자르기 클릭 시
+            cutSelfBtn.addEventListener("click", function () {
+                switchPanel(cutSelfBtn, cutAiBtn, selfPannel, aiPannel);
+            });
         });
 
     </script>
