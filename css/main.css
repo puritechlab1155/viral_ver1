@@ -600,9 +600,12 @@ ol {
 }
 
 #home .main .menu-area {
-  flex: 0 0 256px;
-  overflow: hidden;
-  float: left;
+  width: 256px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
   background: #FEFEFE;
   border-right: 2px solid #efefef;
   transition: transform 0.5s ease-in-out;
@@ -614,7 +617,7 @@ ol {
 
 @media (max-width: 1025px) {
   #home .main .menu-area {
-    flex: 0 0 210px;
+    flex: 0 0 210px; 
   }
   #home .menu-area .gnb-item .gnb-txt {
     font-size: 20px;
@@ -628,10 +631,6 @@ ol {
   #home .main .menu-area {
     width: 180px;
     height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
   }
 
   #home .gnb .guide-gnb {
