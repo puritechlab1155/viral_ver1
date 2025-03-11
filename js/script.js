@@ -12,25 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     // 초기 상태
-    offcanvas.classList.toggle('active');
+    // offcanvas.classList.toggle('active');
     offcanvasWrap.style.height = offcanvas.classList.contains('active') ? '100vh' : 'auto';
     offcanvas.style.transform = offcanvas.classList.contains('active') ? 'translateX(0%)' : 'translateX(-100%)';
     menuArea.style.transform = offcanvas.classList.contains('active') ? 'translateX(0%)' : 'translateX(-100%)';
-    menuArea.style.display = "block";
-
-    // window.addEventListener("scroll", function () {
-    //     var alertBox = document.querySelector("#home .content-area .content-wrap .alert");
-    //     var scrollTop = window.scrollY || document.documentElement.scrollTop;
-
-    //     if (scrollTop > 0) {
-    //         alertBox.classList.add("fixed-alert"); // 스크롤이 발생하면 fixed 적용
-    //         alertBox.style.top = "60px";
-            
-    //     } else {
-    //         alertBox.classList.remove("fixed-alert"); 
-    //         alertBox.style.top = "0";
-    //     }
-    // });
+    menuArea.style.display = "none";
 
     if (offcanvasOpen && offcanvas && offcanvasWrap) {
         offcanvasOpen.addEventListener('click', function () {
