@@ -382,9 +382,9 @@
             const startValue = parseInt(startRange.value);
             const endValue = parseInt(endRange.value);
 
-            if (endValue - startValue < 300) { // 최소 5분(300초) 조건
-                startRange.value = endValue - 300;
-            }
+            // if (endValue - startValue < 300) { // 최소 5분(300초) 조건
+            //     startRange.value = endValue - 300;
+            // }
 
             const leftPercent = ((startValue - minValue) / (maxValue - minValue)) * 100;
             const rightPercent = 100 - ((endValue - minValue) / (maxValue - minValue)) * 100;

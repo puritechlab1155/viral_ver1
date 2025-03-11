@@ -1745,11 +1745,11 @@ ol {
 
 #home .pannel-range .progress-bar {
   position: absolute;
-  height: 6px;
+  height: 8px;
   background: #5a48ff;
   border-radius: 3px;
-  left: 20%;
-  right: 30%;
+  left: 0%;
+  /* right: 30%; */
 }
 
 #home .pannel-range .range-input {
@@ -1757,7 +1757,13 @@ ol {
   background: none;
   pointer-events: none;
   position: absolute;
+  background: transparent !important;
+}
+#home .pannel-range .start-range {
   left: 0;
+}
+#home .pannel-range .end-range {
+  right: 0;
 }
 
 #home .pannel-range .range-input::-webkit-slider-thumb {
@@ -2392,17 +2398,6 @@ ol {
 
 
 /* ----- 나래님 작업 소스 projectV-complete : 생성한 영상 ----- */
-/* Safari에서 aspect-ratio가 적용되지 않는 경우 */
-@supports not (aspect-ratio: 16 / 9) {
-  .thumb-slide-box {
-      position: relative;
-      width: 30%;
-      height: 0;
-      padding-top: 56.25%; /* 16:9 비율 유지 */
-  }
-}
-
-
 /* 썸네일 슬라이드바 */
 #home .content-area .thumb-slide-contain {
   display: flex;
@@ -2414,19 +2409,10 @@ ol {
   /* 드래그 커서 */
 }
 
-#home  .thumb-slide-box > * {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
 #home .content-area .thumb-slide-box {
   flex: 0 0 auto;
   max-width: 380px;
   width: 30%;
-  height: auto;
   margin-right: 20px;
   max-height: 180px;
   /* height: auto; */
