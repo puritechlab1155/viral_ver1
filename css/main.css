@@ -605,7 +605,7 @@ ol {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 100;
+  z-index: 90;
   background: #FEFEFE;
   border-right: 2px solid #efefef;
   transition: transform 0.5s ease-in-out;
@@ -679,9 +679,10 @@ ol {
 }
 
 #home .content-area .content-wrap .fixed-alert {
+  /* 스크롤 시 fixed로 변경되면서 상단에 붙음 */ 
   position: fixed !important;
-  left: 44.76%;
-  /*36.8%*/
+  left: 50%;
+  transform: translate(-50%);
 }
 
 #home .content-inner {
@@ -1631,6 +1632,7 @@ ol {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  z-index: 100;
   background: #00000081;
   border: 1px solid #ddd;
 }
