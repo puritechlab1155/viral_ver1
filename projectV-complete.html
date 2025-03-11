@@ -194,34 +194,42 @@
                                         <div class="template-fit">
                                             <div class="mockup-img">
                                                 <img class="img-item" src="img/template/iphone-mockup.png" alt="아이폰 목업">
+                                
                                                 <!-- 목업 : 제목, 선택한 레이아웃 비율, 자막 컨텐츠 -->
                                                 <div class="mockup-content projectV-mockup">
                                                     <div class="mock-title mockup-content-item">
                                                         <div class="user-title">로우하이 -- vs -- 큐지</div>
                                                     </div>
-                                                    <div class="mock-ratio mockup-content-item mockup-content-video ratio16-item">
-                                                        <video class="user-video" src="img/videos/sample-video.mp4" autoplay muted loop></video>
+                                
+                                                    <div class="mock-ratio mockup-content-item mockup-content-video ratio16-item video-container">
+                                                        <video class="user-video video-player" src="img/videos/sample-video.mp4" autoplay muted loop></video>
+                                                        
+                                                        <!-- 커스텀 재생/정지 버튼 -->
+                                                        <div class="video-play-btn">
+                                                            <img class="video-play-icon" src="img/projectV/play-icon.svg" alt="재생 아이콘">
+                                                        </div>
                                                     </div>
+                                
                                                     <div class="mock-subTitle mockup-content-item bottom-subTitle">
                                                         <div class="user-subtitle long-subtitle font-color">
                                                             <span class="word stokeWrod effectWrod">안녕하세요,</span>
                                                             <span class="word">여러분!</span>
                                                         </div>
                                                     </div>
-
+                                
                                                     <!-- 워터마크 -->
                                                     <div class="watermark-img">
-                                                        <img src="img/watermark.svg" alt="워터마크 이미지">
+                                                        <img class="watermark-viral" src="img/watermark.svg" alt="워터마크 이미지">
                                                     </div>
                                                 </div>
 
                                                 <!-- 워터마크 제거 버튼 -->
-                                                <div class="watermark-d-container">
+                                                <!-- <div class="watermark-d-container">
                                                     <button class="watermark-deleteBtn" id="openSubscribeModal" type="button">
                                                         <img class="watermark-d-img" src="img/edit/watermark.svg" alt="워터마크 제거 버튼">
                                                     </button>
                                                     <span class="watermark-delete-text">워터마크 제거</span>
-                                                </div>
+                                                </div> -->
                                             </div>
                                         </div>
                                     </div>
@@ -475,7 +483,33 @@
                 container.scrollLeft = scrollLeft - walk;
             });
         });
-        
+
+        // -- 비디오 재생/정지
+        document.addEventListener('DOMContentLoaded', function () {
+            const videoContainers = document.querySelectorAll('.video-container');
+
+            videoContainers.forEach(container => {
+                const video = container.querySelector('.video-player');
+                const playBtn = container.querySelector('.video-play-btn');
+                const playIcon = container.querySelector('.video-play-icon');
+
+                playBtn.addEventListener('click', function () {
+                    if (video.paused) {
+                        video.play();
+                        playIcon.src = 'img/projectV/pause-icon.svg'; // 정지 아이콘으로 변경
+                    } else {
+                        video.pause();
+                        playIcon.src = 'img/projectV/play-icon.svg'; // 재생 아이콘으로 변경
+                    }
+                    playBtn.classList.add('hidden'); // 클릭 후 버튼 사라지게 함
+                });
+
+                // 비디오가 멈추면 다시 버튼 보이게 함
+                video.addEventListener('pause', function () {
+                    playBtn.classList.remove('hidden');
+                });
+            });
+        });
 
         // -- 구독 모달
         document.addEventListener("DOMContentLoaded", function () {
