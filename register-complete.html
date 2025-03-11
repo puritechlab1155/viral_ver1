@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
-    <title>Viral | 아이디/비밀번호 찾기</title>
+    <title>Viral | 회원가입 완료</title>
     <script src="https://code.jquery.com/jquery-latest.min.js"></script>
     <link rel="stylesheet" href="css/main.css">
+    <style>
+       
+    </style>
 
 </head>
 <body>
@@ -35,33 +38,23 @@
         </header>
 
         <main id="main" class="user-auth">
-            <div class= "inner"> 
-                <div class="user-auth-wrap find-wrap">
-                    <h3 class="main-title font-IBM">아이디 / 비밀번호 찾기</h3>
-                    <ul class="tab-view">
-                        <li class="tab-active">아이디 찾기</li>
-                        <li class="tab-disb">비밀번호 찾기</li> 
-                    </ul>
-                    <div class="guide-title">
-                        등록된 휴대폰 번호로 찾기
-                        <span>가입 당시 입력한 휴대번호를 통해<br class="mob-br"> 인증 후 아이디를 찾아주세요.</span>
+            <div class= "inner register-finish"> 
+                <div class="user-auth-wrap login-wrap">
+                    <h3 class="main-title font-IBM">회원가입 완료</h3>
+                    <div class="img_wrap">
+                        <img class="img" src="img/user-auth/register.png" alt="바이럴 로고2">
                     </div>
-                    <div class="input_wrap">
-                        <div class="input_container">
-                            <label for="phone" class="input_title">
-                                <input type="tel" id="phone" placeholder="휴대전화">
-                            </label>
-                            <button class="codeBtn focusBtn" type="button">인증번호 전송</button>
-                        </div>
-                        <div class="input_container m-top20">
-                            <label for="code" class="password_container">
-                                <input id="code" type="text" placeholder="인증번호">
-                            </label>
-                            <button class="n-focusBtn" type="button">확인</button>
-                        </div>
+                    <div class="textContainer">
+                        회원가입이 완료되었습니다 <br>
+                        바이럴 서비스를 이용해보세요
                     </div>
                     <div class="btn_wrap">
-                        <button type="button" class="finishBtn" onclick="location.href='find-id-complete.html'">아이디 찾기</button>
+                        <div class="btn-container">
+                            <button type="button" class="homeBtn" onclick="location.href='home-after.html'">홈으로</button>
+                        </div>
+                        <div class="btn-container">
+                            <button type="button" class="finishBtn" onclick="location.href='login.html'">로그인</button>
+                        </div>                           
                     </div>
                 </div>
             </div>
@@ -155,81 +148,6 @@
 
     <script src="js/script.js"></script>
 
-    <script>
-        //-- 인증번호 전송 버튼 클릭 이벤트
-        let countdowns = new Map();
-
-        document.querySelectorAll(".codeBtn").forEach((btn) => {
-            btn.addEventListener("click", function() {
-                if (countdowns.has(btn)) return;
-
-                alert("인증번호가 전송되었습니다.");
-
-                let timeLeft = 180;
-                btn.disabled = true;
-                btn.textContent = `남은 시간 : ${timeLeft}초`;
-
-                // 개별 버튼의 카운트다운 실행
-                let countdown = setInterval(function() {
-                    timeLeft--;
-                    btn.textContent = `남은 시간 : ${timeLeft}초`;
-
-                    if (timeLeft <= 0) {
-                        clearInterval(countdown);
-                        btn.disabled = false;
-                        btn.textContent = "인증번호 받기";
-                        countdowns.delete(btn);
-
-                        // 타이머 종료 후 .checkBtn 스타일 원래대로 복구 (선택 사항)
-                        if (checkBtn) {
-                            checkBtn.classList.remove("codeBtn");
-                        }
-                    }
-                }, 1000);
-
-                countdowns.set(btn, countdown);
-            });
-        });
-
-        // -- 인증번호 입력란 포커스 시 확인 버튼 활성화 스타일
-        const NfocusBtn = document.querySelector(".n-focusBtn");
-        const codeInput = document.querySelector("#code");
-
-        codeInput.addEventListener("focus", function() {
-            NfocusBtn.style.borderColor = "#5228F4";
-            NfocusBtn.style.color = "#5228F4";
-            NfocusBtn.style.background = "#FAFAFA";
-        });
-
-        codeInput.addEventListener("blur", function() {
-            if (codeInput.value.length === 0) {
-                NfocusBtn.style.borderColor = ""; // 기본값으로 되돌리기
-                NfocusBtn.style.color = ""; 
-                NfocusBtn.style.background = "";
-            }
-        });
-
-        // -- 인증번호 입력 시 확인 버튼 스타일 변경
-        codeInput.addEventListener("input", function() {
-            if (codeInput.value.length > 0) {
-                checkBtn.style.borderColor = "#5228F4";
-                checkBtn.style.color = "#5228F4";
-                checkBtn.style.background = "#FAFAFA";
-            } else {
-                checkBtn.style.borderColor = "";
-                checkBtn.style.color = "";
-                checkBtn.style.background = "";
-            }
-        });
-
-        // -- 휴대전화, 인증번호 인풋 숫자만 입력
-        document.querySelectorAll("#phone, #code").forEach((input) => {
-            input.addEventListener("input", function () {
-                this.value = this.value.replace(/[^0-9]/g, ""); // 숫자만 입력 가능
-            });
-        });
-
-
-    </script>
+    
 </body>
 </html>

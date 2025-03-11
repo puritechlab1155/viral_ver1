@@ -2030,6 +2030,51 @@ ol {
   margin-top: 0;
 }
 
+#home .register-finish .main-title {
+  font-size: clamp(28px, 4vw, 50px);
+  font-weight: 600;
+  letter-spacing: -0.36px;
+  font-style: normal;
+  text-align: center;
+  margin-bottom: clamp(20px, 5vw, 40px);
+}
+
+#home .register-finish .img_wrap{
+  width: 100%;
+  max-width: 250px;
+  margin: clamp(20px, 5vw, 40px) auto;
+}
+
+#home .register-finish .img {
+  width: 100%;
+  height: auto; 
+  display: block;
+}
+
+#home .register-finish .textContainer {
+  margin: 30px auto 50px;
+  font-size: clamp(18px, 1vw, 22px);
+  line-height: 1.5;
+  text-align: center;
+}
+
+#home .register-finish .btn_wrap {
+  display: flex;
+  gap: 20px;
+}
+
+#home .register-finish .btn-container {
+  flex: 1;
+}
+
+#home .register-finish .homeBtn {
+  width: 100%;
+  padding: 17.5px 0;
+  margin-bottom: 12px;
+  color: #5228F4;
+  background: #fafafa;
+}
+
 @media (max-width: 767px) {
   #home .user-auth .user-auth-wrap {
     margin-bottom: 120px;
@@ -2088,6 +2133,10 @@ ol {
     margin: 30px 0;
   }
 
+  #home .user-auth .user-auth-wrap .guide-title .mob-br {
+    display: block;
+  }
+
   #home .find-result-wrap .id-result {
     font-size: 14px;
   }
@@ -2106,6 +2155,22 @@ ol {
 
   #home .user-auth-wrap .separate-agree .drop-icon img {
     transform: scale(0.8);
+  }
+
+  #home .register-finish .img_wrap{
+    width: 100%;
+    max-width: 180px;
+  }
+
+  #home .register-finish .textContainer {
+    margin: 10px auto 30px;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+  }
+
+  #home .register-finish .btn_wrap {
+    gap: 10px;
   }
 }
 
