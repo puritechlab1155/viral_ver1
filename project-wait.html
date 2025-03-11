@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Viral | 변환 중</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <section id="home">
+        <header id="header" class="header sub-header">
+            <div class="inner">
+                <div class="content">
+                    <div class="left-content">
+                        <!-- offcanvas-open 로그인 후 보여짐 -->
+                        <button type="button" class="offcanvas-open"> 
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <h1 class="logo">
+                            <a href="index.html">
+                                <img class="logo-img" src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </a>
+                        </h1>
+                        <span class="beta-badge">Beta</span>
+                    </div>
+
+                    <!-- log-befor 로그인 전 보여짐 -->
+                    <ul class="right-content log-befor">
+                        <li>
+                            <a class="loginBtn" href="login.html">로그인</a>
+                        </li> 
+                        <li>
+                            <a class="signupBtn" href="register-hp.html">회원가입</a>
+                        </li>
+                    </ul>
+                    <!-- log-after 로그인 후 보여짐 -->
+                    <ul class="right-content log-after">
+                        <li>
+                            <a class="guideBtn after-item" href="guide.html">
+                                <img src="img/hd-guide.svg" alt="사용가이드 아이콘"> 사용 가이드
+                            </a>
+                        </li> 
+                        <li>
+                            <a class="countBadge after-item" href="#">
+                                <img src="img/time-count.svg" alt="무료 횟수 카운트"> 5/5
+                            </a>
+                        </li>
+                        <li class="add-icon">
+                            <div class="circle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="add-item">
+                                <div class="item">
+                                    <a href="subscrib-info.html">구독정보</a>
+                                </div>
+                                <div class="item">
+                                    <a href="info.html">내 정보</a>
+                                </div>
+                                <div class="item">
+                                    <a href="index.html">로그아웃</a>
+                                </div>
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main id="main" class="main user-auth">
+            <div class= "inner"> 
+                <!-- 메뉴 영역 -->
+                <section class="menu-area">
+                    <div class="content">
+                        <div class="offcanvas-wrap">
+                            <div class="offcanvas">
+                                <div class="offcanvas-body">
+                                    <nav id="nav">
+                                        <ul class="gnb">
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/my-project.svg" alt="내 프로젝트">내 프로젝트
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item gnb-training">
+                                                <a href="#" class="focusGnb">
+                                                    <span class="gnb-txt-cont">
+                                                        <div class="gnb-txt gnb-focus-txt">
+                                                            <img src="img/menu/template-atv.svg" alt="템플릿"> 템플릿
+                                                        </div>
+                                                        <div class="drop-arrow">
+                                                            <span class="drop-left"></span>
+                                                            <span class="drop-right"></span>
+                                                        </div>
+                                                    </span>
+                                                </a>
+                                                <ul class="gnb-sub">
+                                                    <li class="gnb-sub-item">
+                                                        <a href="#" class="focus-sub">비디오 템플릿</a>
+                                                    </li>
+                                                    <li class="gnb-sub-item">
+                                                        <a href="#">카드뉴스 템플릿</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/subscribe.svg" alt="구독하기">구독하기
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/notice.svg" alt="공지사항">공지사항
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/service-center.svg" alt="고객센터">고객센터
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item guide-gnb">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/guide-icon.svg" alt="사용 가이드">사용 가이드
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 컨텐츠 영역 -->
+                <section class="content-area">
+                    <article class="content-wrap">
+                        <div class= "inner wait-inner"> 
+                            <div class="user-auth-wrap agree-wrap">
+                                <div class="project-wait-img">
+                                    <img class="img-item" src="img/projectV/wait-img.png" alt="비디오 변환 중">
+                                </div>
+                                <h3 class="main-title font-IBM">예상 소요 시간은</h3>
+                                <h3 class="main-title font-IBM">
+                                    <span class="highlight-time">0분 00초</span>입니다
+                                </h3>
+                                <div class="guide-title">
+                                    <span>이용자 대기순번에 따라 소요 시간이 바뀔 수 있습니다.</span>
+                                </div>
+                                <div class="btn_wrap">
+                                    <button type="button" class="finishBtn" onclick="location.href='login.html'">내 프로젝트로 이동</button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </main> 
+        
+        <footer id="footer" class="footer">
+            <div class="content">
+                <div class="footer-info01 footer-info">
+                    <div class="inner">
+                        <div class="company-info">
+                            <ul class="info info01">
+                                <li>(주)바이럴</li>
+                                <li>대표 : 가나다</li>
+                                <li class="info-mg">주소 : 서울특별시 서울구 서울로 123 가나다라타워 3층 바이럴</li>
+                                <li>사업자등록번호 : 000 - 00 - 00000</li>
+                                <li class="info-mg">통신판매업 신고번호 : 제 0000 - 서울서울 - 0000호</li>
+                                <li>
+                                    abcdefg@gmail.com
+                                    <span>010-0101-0101</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="site-map">
+                            <ul class="site">
+                                <li>
+                                    <a href="#">프로젝트</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 영상</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 카드뉴스</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">비디오 템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">카드뉴스 템플릿</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">구독하기</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">공지사항</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">고객센터</a>
+                                </li>
+                            </ul>
+                        </ul><!-- //partner-site -->
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="footer-info02 footer-info">
+                    <div class="inner">
+                        <div class="left-content">
+                            <div class="footer-logo">
+                                <img src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </div>
+                            <div class="support-links">
+                                <div class="link" id="terms-btn">
+                                    <a href="#">이용약관</a>
+                                </div>
+                                <div class="link" id="privacy-btn">
+                                    <a href="#">개인정보처리방침</a>
+                                </div>
+                            </div><!-- //support-links -->
+                        </div>
+                        <div class="copyright">
+                            ©Viral 2025 All rights reserved.
+                        </div>
+                    </div>
+                </div><!-- //footer-info01 -->
+            </div>
+            
+        </footer>
+
+        <script src="js/script.js"></script>
+</body>
+</html>
