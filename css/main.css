@@ -1746,21 +1746,18 @@ ol {
 #home .pannel-range .progress-bar {
   position: absolute;
   height: 6px;
-  background: #48fff3;
+  background: #5a48ff;
   border-radius: 3px;
   left: 20%;
   right: 30%;
 }
 
 #home .pannel-range .range-input {
-  position: absolute;
   width: 100%;
   background: none;
   pointer-events: none;
-}
-
-.start-range {
-  background: blueviolet;
+  position: absolute;
+  left: 0;
 }
 
 #home .pannel-range .range-input::-webkit-slider-thumb {
