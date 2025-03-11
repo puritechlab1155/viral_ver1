@@ -2657,6 +2657,7 @@ ol {
   border-radius: 20px;
 }
 #home .wait-inner .highlight-time {
+  display: block;
   color: #5228F4;
   font-weight: 800;
   font-size: 1.3em;
