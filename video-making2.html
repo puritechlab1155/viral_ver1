@@ -288,43 +288,48 @@
                                     <div class="title">내가 만든 템플릿</div>
                                     <!-- 템플릿1 -->
                                     <div class="past-item template-box">
-                                        <a href="#" class="template-edit template-100">
+                                        <div class="template-edit template-100 b2-show">
                                             <div class="templaete-inner">
                                                 <div class="templaete-img">
                                                     <img class="img-item" src="img/template/recent-img.png" alt="지난 템플릿1">
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                         <div class="my-template-title">Dance battle</div>
                                     </div>
                                     <!-- 템플릿2 -->
                                     <div class="past-item template-box">
-                                        <a href="#" class="template-edit template-100">
+                                        <div class="template-edit template-100">
                                             <div class="templaete-inner">
                                                 <div class="templaete-img">
                                                     <img class="img-item" src="img/template/past-img2.png" alt="지난 템플릿2">
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                         <div class="my-template-title">Dance battle</div>
                                     </div>
                                     <!-- 템플릿3 -->
                                     <div class="past-item template-box">
-                                        <a href="#" class="template-edit template-100">
+                                        <div class="template-edit template-100">
                                             <div class="templaete-inner">
                                                 <div class="templaete-img">
                                                     <img class="img-item" src="img/template/past-img2.png" alt="지난 템플릿2">
                                                 </div>
                                             </div>
-                                        </a>
+                                        </div>
                                         <div class="my-template-title">Dance battle</div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="templateBtn-wrap">
-                            <button type="button" class="templaeteBtn nextBtn">다음</button>
+                            <div class="templateBtn-wrap flex">
+                                <div class="templateBtn-item none">
+                                    <button type="button" class="templaeteBtn backBtn">이전</button>
+                                </div>
+                                <div class="templateBtn-item">
+                                    <button type="button" class="templaeteBtn nextBtn">다음</button>
+                                </div>
+                            </div>
                         </div>
                     </article>
                 </section>
@@ -510,15 +515,61 @@
             });
 
 
-
+            //--- 이전, 다음 클릭시 나타나는 박스
             const nextBtn = document.querySelector(".templaeteBtn.nextBtn");
+            const backBtn = document.querySelector(".templateBtn-item .backBtn");
             const cutWrap = document.querySelector(".cut-wrap");
             const pastWrap = document.querySelector(".making2-inner .past-wrap");
+            const backBtnContainer = document.querySelector(".templateBtn-item"); 
 
             nextBtn.addEventListener("click", function () {
-                cutWrap.classList.add("none");  // cut-wrap 숨기기
-                pastWrap.classList.remove("none");  // past-wrap 보이기
+                if (nextBtn.textContent === "생성하기") {
+                    window.location.href = "making-wait.html"; 
+                }
+
+                cutWrap.classList.add("none");  
+                pastWrap.classList.remove("none"); 
+                backBtnContainer.classList.remove("none"); 
+
+                // 다음 버튼의 텍스트를 '생성하기'로 변경
+                nextBtn.textContent = "생성하기";
             });
+
+            backBtn.addEventListener("click", function () {
+                cutWrap.classList.remove("none"); 
+                pastWrap.classList.add("none"); 
+                backBtnContainer.classList.add("none"); 
+
+                nextBtn.textContent = "다음";
+            });
+
+            
+            //--- 해상도 버튼 클릭 시 포커스 효과
+            const resolutionBtns = document.querySelectorAll(".resolutionBtn");
+
+            resolutionBtns.forEach(btn => {
+                btn.addEventListener("click", function () {
+                    // 모든 resolutionBtn에서 b2-show 클래스 제거
+                    resolutionBtns.forEach(b => b.classList.remove("b2-show"));
+
+                    // 클릭한 resolutionBtn에 b2-show 클래스 추가
+                    this.classList.add("b2-show");
+                });
+            });
+
+            //--- 내가 만든 템플릿 클릭 시 포커스 효과
+            const pastItems = document.querySelectorAll(".template-edit");
+
+            pastItems.forEach(item => {
+                item.addEventListener("click", function () {
+                    // 모든 past-item에서 b2-show 클래스 제거
+                    pastItems.forEach(i => i.classList.remove("b2-show"));
+
+                    // 클릭한 past-item에 b2-show 클래스 추가
+                    this.classList.add("b2-show");
+                });
+            });
+
         });
 
     </script>

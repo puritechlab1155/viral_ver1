@@ -853,7 +853,7 @@ ol {
   transition: all 0.1s linear;
 }
 
-#home .content-area .template-wrap .template-edit:hover {
+#home .video-inner .template-wrap .template-edit:hover {
   border-color: #5228F4;
 }
 
@@ -928,7 +928,7 @@ ol {
 }
 
 #home .content-area .b2-show {
-  border: 2px solid #5228F4;
+  border: 2px solid #5228F4 !important;
 }
 
 #home .content-area .recent-wrap .templaete-img {
@@ -1864,6 +1864,7 @@ ol {
 #home .making2-inner .template-wrap .template-edit {
   text-align: center;
   padding: 10px 0;
+  background: #fff;
 }
 
 #home .making2-inner .past-wrap .templaete-img {
@@ -1876,6 +1877,20 @@ ol {
   text-align: center;
   font-size: 18px;
   font-weight: 600;
+}
+
+#home .making2-inner .templateBtn-wrap {
+  gap: 20px;
+}
+
+#home .templateBtn-item {
+  flex: 1;
+}
+
+#home .backBtn {
+  background: #fafafa !important;
+  color: #5228F4 !important;
+  border: 2px solid #5228F4 !important;
 }
 
 @media (max-width: 1538px) {
