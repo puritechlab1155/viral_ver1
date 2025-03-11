@@ -1360,7 +1360,7 @@ ol {
   cursor: pointer;
 }
 
-#home .range-input::-webkit-slider-runnable-track {
+#home .edit1-item .range-input::-webkit-slider-runnable-track {
   /* 트랙(게이지 바) 스타일 */
   height: 8px;
   background: linear-gradient(to right, #5228F4 var(--progress, 50%), #ddd var(--progress, 50%));
@@ -1749,7 +1749,7 @@ ol {
   background: #5a48ff;
   border-radius: 3px;
   left: 0%;
-  /* right: 30%; */
+  z-index: 1;
 }
 
 #home .pannel-range .range-input {
@@ -1757,7 +1757,7 @@ ol {
   background: none;
   pointer-events: none;
   position: absolute;
-  background: transparent !important;
+  z-index: 2;
 }
 #home .pannel-range .start-range {
   left: 0;
@@ -1769,8 +1769,9 @@ ol {
 #home .pannel-range .range-input::-webkit-slider-thumb {
   width: 14px;
   height: 14px;
+  margin-top: 1px;
   background: white;
-  border: 2px solid #ff4848;
+  border: 2px solid #5a48ff;
   border-radius: 50%;
   cursor: pointer;
   pointer-events: auto;
@@ -1779,8 +1780,9 @@ ol {
 #home .pannel-range .range-input::-moz-range-thumb {
   width: 14px;
   height: 14px;
+  margin-top: 1px;
   background: white;
-  border: 2px solid #ff4848;
+  border: 2px solid #5a48ff;
   border-radius: 50%;
   cursor: pointer;
   pointer-events: auto;
@@ -2437,12 +2439,12 @@ ol {
   max-height: 140px;
   overflow: hidden;
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
 }
 
 #home .content-area .thumb-slide-box .thumbnail {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   object-fit: cover;
   object-position: center;
   border-radius: 10px;
