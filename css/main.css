@@ -63,6 +63,7 @@ ol {
   object-fit: cover; /* 비디오가 꽉 차도록 설정 */
 
   /* iOS의 자동 확대 & 컨트롤 버튼 비활성화 */
+  user-select: none;
   -webkit-user-select: none; /* 텍스트 선택 방지 */
   -webkit-touch-callout: none; /* 길게 눌렀을 때 메뉴 비활성화 */
   -webkit-tap-highlight-color: transparent; /* 탭할 때 하이라이트 효과 제거 */
@@ -623,7 +624,6 @@ ol {
   display: flex;
   max-width: none;
   padding: 0;
-  background: lightblue;
   position: relative;
 }
 
@@ -2403,6 +2403,121 @@ ol {
   background: #fafafa;
 }
 
+#home .info .title{
+  font-size: 50px;
+  font-weight: 600;
+}
+#home .info .main-text{
+  font-size: 20px;
+}
+#home .info .gray-text{
+  display: block;
+  line-height: 160%;
+  margin-top: 14px;
+  color: #868686;
+  font-size: 16px;
+}
+#home .info .quitBtn {
+  background: #FAF9FE;
+  border-color: #5228F4;
+  color: #5228F4;
+  width: 90%;
+  padding: 17.5px 0;
+}
+#home .info .changeBtn {
+  background: #5228F4;
+  border-color: #FAF9FE;
+  color: #FAF9FE;
+  width: 100%;
+  padding: 17.5px 0;
+}
+
+#home .info .input_wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+#home .info .input_container {
+  width: 95%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+}
+
+#home .info .input_container span {
+  width: 15%; 
+  margin-right: 5px; 
+  text-align: right; 
+}
+
+#home .info .input_container .input_title input {
+  width: 100%; /* input은 남은 공간을 채우도록 설정 */
+  padding: 15px;
+  box-sizing: border-box; /* padding이 너비에 포함되도록 설정 */
+}
+
+
+@media (max-width: 480px) {
+#home .info{
+  width: 90%;
+}
+#home .info .changeBtn {
+  padding: 15px 0;
+}
+#home .info .title{
+  font-size: 28px;
+}   
+#home .info .main-text{
+  font-size: 15px;
+}
+#home .info .gray-text{
+  font-size: 14px;
+}
+#home .info .main-text .mob-br {
+  display: block;
+}
+#home .info .pop-text{
+  margin-top: 20px;
+  font-size: 15px;
+}
+#home .info .quitModal .pop-inner{
+  width: 80%;
+  padding: 10px 30px;
+}
+#home .info .changeModal .pop-inner{
+  width: 80%;
+  padding: 10px 20px;
+}
+#home .info .quitModal .mob-br{
+  display: block;
+}
+#home .info .quitModal .quit-text{
+  font-size: 12px;
+}
+#home .info .popBtn-wrap{
+  margin-top: 20px;
+  gap: 10px;
+}
+#home .info .quitModal button{
+  border-radius: 10px;
+  padding: 5px 8x;
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+#home .info .catagory{
+  font-size: 14px;
+}
+#home .info .input_container {
+  gap: 10px;
+}
+#home .info .input_container span {
+  margin-right: 0px; 
+}
+
+
+}
+
 @media (max-width: 767px) {
   #home .user-auth .user-auth-wrap {
     margin-bottom: 120px;
@@ -2453,7 +2568,7 @@ ol {
   }
 
   #home .user-auth .input_container button {
-    width: 114px;
+    width: 102px;
   }
 
   #home .user-auth .user-auth-wrap .guide-title {

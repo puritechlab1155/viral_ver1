@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
+    <title>Viral | 내정보</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+
+
+        
+    </style>
+
+</head>
+<body>
+    <section id="home">
+        <header id="header" class="header sub-header">
+            <div class="inner">
+                <div class="content">
+                    <div class="left-content">
+                        <!-- offcanvas-open 로그인 후 보여짐 -->
+                        <button type="button" class="offcanvas-open"> 
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <h1 class="logo">
+                            <a href="index.html">
+                                <img class="logo-img" src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </a>
+                        </h1>
+                        <span class="beta-badge">Beta</span>
+                    </div>
+
+                    <!-- log-befor 로그인 전 보여짐 -->
+                    <ul class="right-content log-befor">
+                        <li>
+                            <a class="loginBtn" href="login.html">로그인</a>
+                        </li> 
+                        <li>
+                            <a class="signupBtn" href="register-hp.html">회원가입</a>
+                        </li>
+                    </ul>
+                    <!-- log-after 로그인 후 보여짐 -->
+                    <ul class="right-content log-after">
+                        <li>
+                            <a class="guideBtn after-item" href="guide.html">
+                                <img src="img/hd-guide.svg" alt="사용가이드 아이콘"> 사용 가이드
+                            </a>
+                        </li> 
+                        <li>
+                            <a class="countBadge after-item" href="#">
+                                <img src="img/time-count.svg" alt="무료 횟수 카운트"> 5/5
+                            </a>
+                        </li>
+                        <li class="add-icon">
+                            <div class="circle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="add-item">
+                                <div class="item">
+                                    <a href="subscrib-info.html">구독정보</a>
+                                </div>
+                                <div class="item">
+                                    <a href="info.html">내 정보</a>
+                                </div>
+                                <div class="item">
+                                    <a href="index.html">로그아웃</a>
+                                </div>
+                                
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        
+        <main id="main" class="main user-auth">
+            <div class= "inner info"> 
+                <!-- 메뉴 영역 -->
+                <section class="menu-area">
+                    <div class="content">
+                        <div class="offcanvas-wrap">
+                            <div class="offcanvas">
+                                <div class="offcanvas-body">
+                                    <nav id="nav">
+                                        <ul class="gnb">
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/my-project.svg" alt="내 프로젝트">내 프로젝트
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item gnb-training">
+                                                <a href="#" class="focusGnb">
+                                                    <span class="gnb-txt-cont">
+                                                        <div class="gnb-txt gnb-focus-txt">
+                                                            <img src="img/menu/template-atv.svg" alt="템플릿"> 템플릿
+                                                        </div>
+                                                        <div class="drop-arrow">
+                                                            <span class="drop-left"></span>
+                                                            <span class="drop-right"></span>
+                                                        </div>
+                                                    </span>
+                                                </a>
+                                                <ul class="gnb-sub">
+                                                    <li class="gnb-sub-item">
+                                                        <a href="#" class="focus-sub">비디오 템플릿</a>
+                                                    </li>
+                                                    <li class="gnb-sub-item">
+                                                        <a href="#">카드뉴스 템플릿</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/subscribe.svg" alt="구독하기">구독하기
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/notice.svg" alt="공지사항">공지사항
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/service-center.svg" alt="고객센터">고객센터
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item guide-gnb">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/guide-icon.svg" alt="사용 가이드">사용 가이드
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 컨텐츠 영역 -->
+                <section class="content-area">
+                    <article class="content-wrap">
+                        <div class="user-auth-wrap find-wrap">
+                            <h3 class="title font-IBM">내정보</h3>
+                            <div class="main-text m-top20">
+                                수정할 정보를 선택해주세요
+                                <span class="gray-text m-top20">회원님의 개인정보 보호를 위하여 <br class="mob-br"> 비밀번호를 한번 더 입력해주세요.</span>
+                            </div>
+                            <div class="input_wrap m-top40">
+                                <div class="input_container">
+                                    <span class="catagory">닉네임</span>
+                                    <label for="nickname" class="input_title">
+                                        <input type="text" id="nickname">
+                                    </label>
+                                    <button class="changeBtn" type="button" onclick="showModal('changeModal')">변경하기</button>
+                                </div>
+                                <div class="input_container m-top20">
+                                    <span class="catagory">아이디</span>
+                                    <label for="id" class="input_title">
+                                        <input type="text" id="id">
+                                    </label>
+                                    <button class="changeBtn" type="button" onclick="showModal('changeModal')">변경하기</button>
+                                </div>
+                                <div class="input_container m-top20">
+                                    <span class="catagory">비밀번호</span>
+                                    <label for="pw" class="input_title">
+                                        <input type="password" id="pw">
+                                    </label>
+                                    <button class="changeBtn" type="button" onclick="showModal('changeModal')">변경하기</button>
+                                </div>
+                            </div>
+                            <div class="input_container m-top20"></div>
+                            <div class="btn_wrap">
+                                <button type="button" class="quitBtn" onclick="showModal('quitModal')">탈퇴하기</button>
+                            </div>
+                        </div>
+                        <!-- 탈퇴하기 클릭 확인 모달창 -->
+                            <div class="refresh-check-pop pop-wrap hide-pop quitModal">
+                                <div class="pop-inner">
+                                    <p class="pop-text">
+                                        탈퇴하시겠습니까?
+                                        <span class="pop-text-caption quit-text">탈퇴하시면 진행중인 <br class="mob-br">모든 소스가 사라집니다.</span>
+                                    </p>
+                                    <div class="popBtn-wrap">
+                                        <div class="popBtn01 popBtn-item">
+                                            <button class="noBtn" type="button" onclick="closeModal()">돌아가기</button>
+                                        </div>
+                                        <div class="popBtn02 popBtn-item">
+                                            <button class="yesBtn" type="button">탈퇴하기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 변경하기 클릭 확인 모달창 -->
+                            <div class="refresh-check-pop pop-wrap hide-pop changeModal">
+                                <div class="pop-inner">
+                                    <p class="pop-text">
+                                        비밀번호 확인
+                                    </p>
+                                    <div class="input_container m-top40">
+                                    <label for="pw" class="input_title">
+                                        <input type="password" id="pw" placeholder="기존 비밀번호 입력">
+                                    </label>
+                                    </div>
+                                    <div class="popBtn-wrap">
+                                        <div class="popBtn02 popBtn-item">
+                                            <button class="yesBtn" type="button" onclick="closeModal()">확인</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </article>
+                </section>
+            </div>
+        </main>
+
+        <footer id="footer" class="footer">
+            <div class="content">
+                <div class="footer-info01 footer-info">
+                    <div class="inner">
+                        <div class="company-info">
+                            <ul class="info info01">
+                                <li>(주)바이럴</li>
+                                <li>대표 : 가나다</li>
+                                <li class="info-mg">주소 : 서울특별시 서울구 서울로 123 가나다라타워 3층 바이럴</li>
+                                <li>사업자등록번호 : 000 - 00 - 00000</li>
+                                <li class="info-mg">통신판매업 신고번호 : 제 0000 - 서울서울 - 0000호</li>
+                                <li>
+                                    abcdefg@gmail.com
+                                    <span>010-0101-0101</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="site-map">
+                            <ul class="site">
+                                <li>
+                                    <a href="#">프로젝트</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 영상</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 카드뉴스</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">비디오 템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">카드뉴스 템플릿</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">구독하기</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">공지사항</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">고객센터</a>
+                                </li>
+                            </ul>
+                        </ul><!-- //partner-site -->
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="footer-info02 footer-info">
+                    <div class="inner">
+                        <div class="left-content">
+                            <div class="footer-logo">
+                                <img src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </div>
+                            <div class="support-links">
+                                <div class="link" id="terms-btn">
+                                    <a href="#">이용약관</a>
+                                </div>
+                                <div class="link" id="privacy-btn">
+                                    <a href="#">개인정보처리방침</a>
+                                </div>
+                            </div><!-- //support-links -->
+                        </div>
+                        <div class="copyright">
+                            ©Viral 2025 All rights reserved.
+                        </div>
+                    </div>
+                </div><!-- //footer-info01 -->
+            </div>
+            
+        </footer>
+
+    </section>
+
+    <script src="js/script.js"></script>
+
+    <script>
+        // 각 input 필드를 선택
+        const inputs = document.querySelectorAll('.input_title input');
+
+        // input 필드에 focus 이벤트 추가
+        inputs.forEach((input) => {
+        input.addEventListener('focus', function() {
+            // 입력란에 값이 있을 경우, 클릭 시에만 값 삭제
+            if (this.value === this.defaultValue) {
+            this.value = '';
+            this.style.backgroundColor = '';
+            }
+        });
+        
+        // input 필드에 blur 이벤트 추가
+        input.addEventListener('blur', function() {
+        // 입력란에 값이 없으면 기본값을 다시 설정
+        if (this.value === '') {
+            this.value = this.defaultValue;
+            this.style.backgroundColor = ''; // 배경색 초기화
+        } else if (this.value !== this.defaultValue) {
+            this.style.backgroundColor = '#EFEAFF'; // 값이 변경되었을 때 배경색을 옅은 보라색으로 설정
+        }
+        });
+        });
+        
+        // 모달 열기
+        function showModal(modalClass) {
+            // 모든 모달을 닫고, 해당 class를 가진 모달만 열기
+            document.querySelectorAll('.refresh-check-pop').forEach(modal => {
+                modal.classList.add('hide-pop');
+            });
+            
+            // 전달받은 class를 가진 모달을 열기
+            document.querySelector(`.${modalClass}`).classList.remove('hide-pop');
+        }
+
+        // 모달 닫기
+        function closeModal() {
+            // 모든 모달을 닫기
+            document.querySelectorAll('.refresh-check-pop').forEach(modal => {
+                modal.classList.add('hide-pop');
+            });
+        }
+
+    </script>
+</body>
+</html>
