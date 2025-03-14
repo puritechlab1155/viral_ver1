@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" as="style" crossorigin
+        href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/variable/pretendardvariable.css" />
+    <title>Viral | 가이드</title>
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+
+        #home .guide .m-top140 {
+            margin-top: 9vw !important;
+        }
+
+        #home .guide .bg {
+            background: url(img/guide/bg.png) no-repeat;
+            background-position: bottom right;
+            background-size: cover;
+        }
+
+        #home .guide .title-real .main-title {
+            font-size: clamp(16px, 5vw, 60px);
+            font-weight: 600;
+            line-height: 120%;
+            font-style: normal;
+            text-align: center;
+        }
+
+        #home .guide .title-container {
+            width: 100%;
+            max-width: 1017px;
+            display: block;
+            margin: 0 auto;
+            margin-top: 11vw;
+        }
+
+        #home .guide .title-real {
+            width: 100%;
+            height: auto;
+            background-color: #fefefe;
+            border-color: #EFEAFF;
+            border-style: solid;
+            border-width: 4px;
+            padding: 1.8vw 0;
+            border-radius: 130px;
+            margin: 0 auto;
+            box-shadow: 0px 9px 34px 0px rgba(82, 40, 244, 0.2);
+        }
+
+        #home .guide .main-title .highlight-time {
+            color: #5228F4;
+        }
+
+        #home .guide .second-title-area {
+            width: 100%;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        #home .guide .second-title-area .sub-title {
+            font-size: clamp(22px, 7vw, 50px);
+            text-align: center;
+            font-weight: 500;
+        }
+
+        #home .guide .title-container .image-area {
+            margin: 0 auto;
+            width: 42%;
+        }
+
+        #home .guide .title-container .img-item {
+            width: 100%;
+            height: auto;
+        }
+
+        #home .guide .padding-group {
+            padding: 0 72px;
+            margin: 0 auto;
+        }
+
+        #home .guide .youtube-ai-container {
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+            color: #5228F4;
+            font-size: clamp(16px, 3vw, 22px);
+            font-weight: 500;
+        }
+
+        #home .guide .youtube-ai-container .image-area {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 3vw;
+        }
+
+        #home .guide .youtube-ai-container .content {
+            text-align: center;
+            font-size: 18px;
+            font-weight: normal;
+            color: #868686;
+            width: 100%;
+            max-width: 426px;
+            line-height: 140%;
+        }
+
+        #home .guide .youtube-ai-container .content .text {
+            margin-top: 1vw;
+            line-height: 160%;
+            font-size: clamp(14px, 2.5vw, 18px);
+        }
+
+        #home .guide .youtube-ai-container .img-item {
+            width: 100%;
+            height: auto;
+        }
+
+        #home .guide .star-score-container {
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+            color: #5228F4;
+            font-size: clamp(16px, 3vw, 22px);
+            font-weight: 500;
+        }
+
+        #home .guide .star-score-container .content {
+            text-align: center;
+            font-size: clamp(14px, 2.5vw, 18px);
+            color: #868686;
+            font-weight: normal;
+            width: 100%;
+            max-width: 876px;
+            margin: 0 auto;
+            line-height: 140%;
+        }
+
+        #home .guide .star-score-container .img-item {
+            margin-top: 40px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        #home .guide .template-container {
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+            color: #5228F4;
+            font-size: clamp(16px, 3vw, 22px);
+            font-weight: 500;
+        }
+
+        #home .guide .template-container .content {
+            text-align: center;
+            font-size: clamp(14px, 2.5vw, 18px);
+            color: #868686;
+            font-weight: normal;
+            width: 100%;
+            max-width: 876px;
+            margin: 0 auto;
+            line-height: 140%;
+        }
+
+        #home .guide .template-container .img-item {
+            margin-top: 40px;
+            margin-bottom: 30px;
+            width: 100%;
+        }
+
+        #home .guide .end-bg {
+            background: url(img/guide/part-end.png) no-repeat;
+            background-position: bottom right;
+            background-size: cover;
+            width: 100%;
+            height: auto;
+        }
+
+        #home .guide .ending-container {
+            margin: 0 auto;
+            display: block;
+            text-align: center;
+            font-size: clamp(16px, 3vw, 22px);
+            font-weight: 500;
+            color: #292929;
+            line-height: 140%;
+
+        }
+
+        #home .guide .ending-container .bluetext {
+            color: #5228F4;
+            margin-bottom: 10px;
+        }
+
+        #home .guide .ending-container .finishBtn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            padding: 15px 34px;
+            font-size: 16px;
+            line-height: 160%;
+            border: none;
+            border-radius: 10px;
+            color: #fefefe;
+            background-color: #5228F4;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        #home .guide .responsive-br {
+            display: none;
+        }
+
+        @media (max-width: 544px) {
+            #home .guide .responsive-br {
+                display: inline;
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <section id="home">
+        <header id="header" class="header sub-header">
+            <div class="inner">
+                <div class="content">
+                    <div class="left-content">
+                        <!-- offcanvas-open 로그인 후 보여짐 -->
+                        <button type="button" class="offcanvas-open">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </button>
+
+                        <h1 class="logo">
+                            <a href="index.html">
+                                <img class="logo-img" src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </a>
+                        </h1>
+                        <span class="beta-badge">Beta</span>
+                    </div>
+
+                    <!-- log-befor 로그인 전 보여짐 -->
+                    <ul class="right-content log-befor">
+                        <li>
+                            <a class="loginBtn" href="login.html">로그인</a>
+                        </li>
+                        <li>
+                            <a class="signupBtn" href="register-hp.html">회원가입</a>
+                        </li>
+                    </ul>
+                    <!-- log-after 로그인 후 보여짐 -->
+                    <ul class="right-content log-after">
+                        <li>
+                            <a class="guideBtn" href="login.html">
+                                <img src="img/menu/guide-icon-atv.svg" alt="사용가이드 아이콘">
+                                사용 가이드
+                            </a>
+                        </li>
+                        <li>
+                            <a class="countBadge" href="#">
+                                <img src="img/time-count.svg" alt="무료 횟수 카운트"> 5/5
+                            </a>
+                        </li>
+                        <li class="add-icon">
+                            <div class="circle">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                            </div>
+                            <div class="add-item">
+                                <div>
+                                    <a href="#">구독정보</a>
+                                </div>
+                                <div>
+                                    <a href="#">내 정보</a>
+                                </div>
+                                <div>
+                                    <a href="#">로그아웃</a>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+
+        <main id="main" class="main">
+            <div class="inner">
+                <!-- 메뉴 영역 -->
+                <section class="menu-area">
+                    <div class="content">
+                        <div class="offcanvas-wrap">
+                            <div class="offcanvas">
+                                <div class="offcanvas-body">
+                                    <nav id="nav">
+                                        <ul class="gnb">
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/my-project.svg" alt="내 프로젝트">내 프로젝트
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item gnb-training">
+                                                <a href="#" class="focusGnb">
+                                                    <span class="gnb-txt-cont">
+                                                        <div class="gnb-txt gnb-focus-txt">
+                                                            <img src="img/menu/template-atv.svg" alt="템플릿"> 템플릿
+                                                        </div>
+                                                        <div class="drop-arrow">
+                                                            <span class="drop-left"></span>
+                                                            <span class="drop-right"></span>
+                                                        </div>
+                                                    </span>
+                                                </a>
+                                                <ul class="gnb-sub">
+                                                    <li class="gnb-sub-item">
+                                                        <a href="#" class="focus-sub">비디오 템플릿</a>
+                                                    </li>
+                                                    <li class="gnb-sub-item">
+                                                        <a href="#">카드뉴스 템플릿</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/subscribe.svg" alt="구독하기">구독하기
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/notice.svg" alt="공지사항">공지사항
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/service-center.svg" alt="고객센터">고객센터
+                                                    </span>
+                                                </a>
+                                            </li>
+                                            <li class="gnb-item guide-gnb">
+                                                <a href="#">
+                                                    <span class="gnb-txt">
+                                                        <img src="img/menu/guide-icon.svg" alt="사용 가이드">사용 가이드
+                                                    </span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 컨텐츠 영역 -->
+                <section class="content-area">
+                    <article class="content-wrap">
+                        <div class="content-inner content-inner-m guide making-inner">
+                            <div class="title-container">
+                                <div class="title-real">
+                                    <h3 class="main-title font-IBM">
+                                        <span class="highlight-time font-IBM">AI</span>를 통해,
+                                    </h3>
+                                    <h3 class="main-title font-IBM">
+                                        <span class="highlight-time font-IBM">간단</span>하고
+                                        <span class="highlight-time font-IBM">빠르게 </span>만들어요.
+                                    </h3>
+                                </div>
+                                <div class="second-title-area m-top140">
+                                    <h3 class="sub-title font-IBM">차례차례 훑어볼까요?</h3>
+                                </div>
+                                <div class="image-area">
+                                    <img class="img-item" src="img/guide/part-letslook.png" alt="훑어보기">
+                                </div>
+                            </div>
+
+                            <div class="youtube-ai-container m-top140">
+                                <p class="body-title">유튜브 링크를 복사 붙여넣고, AI로 잘라요.</p>
+                                <div class="image-area">
+                                    <div class="content">
+                                        <img class="img-item" src="img/guide/part-youtubelink.png" alt="유튜브 링크 복붙">
+                                        <p class="text">URL을 복사해 붙여주세요.</p>
+                                    </div>
+                                    <div class="content">
+                                        <img class="img-item" src="img/guide/part-aicut.png" alt="AI 컷">
+                                        <p class="text">흥미를 이끌 여러 구간을<span class="responsive-br"><br></span> AI가 보여줄
+                                            거예요.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="star-score-container m-top140">
+                                <p class="body-title">더 효과적인 선택을 할 수 있어요.</p>
+                                <div class="content">
+                                    <img class="img-item" src="img/guide/part-starscore.png" alt="별점">
+                                    <p class="text">높은 별점을 받은 영상을 선택하고,<span class="responsive-br"><br></span> 제목과 자막을
+                                        꾸며보세요.</p>
+                                </div>
+                            </div>
+                            <div class="template-container m-top140">
+                                <p class="body-title">템플릿 커스터마이징이 가능해요.</p>
+                                <div class="content">
+                                    <img class="img-item" src="img/guide/part-templete.png" alt="템플릿">
+                                    <p class="text">
+                                        자주 사용할 템플릿을 만들어,<span class="responsive-br"><br></span> 더 효율적인 작업을 할 수 있어요.
+                                    </p>
+                                </div>
+                            </div>
+
+
+                            <div class="ending-container m-top140">
+                                <div class="bluetext">
+                                    <p class="text-1">차별화된 숏폼을 쉽게 만들 수 있습니다.</p>
+                                </div>
+                                <p class="text-2">바이럴. 지금 사용해 볼까요?</p>
+                                <div class="btn_wrap">
+                                    <button type="button" class="finishBtn" onclick="location.href='my-project.html'">
+                                        사용해 보기
+                                        <img class="icon" src="img/guide/go.svg" alt="아이콘">
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </main>
+
+        <footer id="footer" class="footer">
+            <div class="content">
+                <div class="footer-info01 footer-info">
+                    <div class="inner">
+                        <div class="company-info">
+                            <ul class="info info01">
+                                <li>(주)바이럴</li>
+                                <li>대표 : 가나다</li>
+                                <li class="info-mg">주소 : 서울특별시 서울구 서울로 123 가나다라타워 3층 바이럴</li>
+                                <li>사업자등록번호 : 000 - 00 - 00000</li>
+                                <li class="info-mg">통신판매업 신고번호 : 제 0000 - 서울서울 - 0000호</li>
+                                <li>
+                                    abcdefg@gmail.com
+                                    <span>010-0101-0101</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <ul class="site-map">
+                            <ul class="site">
+                                <li>
+                                    <a href="#">프로젝트</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 영상</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">생성한 카드뉴스</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">비디오 템플릿</a>
+                                </li>
+                                <li class="sub-site">
+                                    <a href="#">카드뉴스 템플릿</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">구독하기</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">공지사항</a>
+                                </li>
+                            </ul>
+                            <ul class="site">
+                                <li>
+                                    <a href="#">고객센터</a>
+                                </li>
+                            </ul>
+                        </ul><!-- //partner-site -->
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="footer-info02 footer-info">
+                    <div class="inner">
+                        <div class="left-content">
+                            <div class="footer-logo">
+                                <img src="img/offcanvas-logo.svg" alt="viral-main-logo">
+                            </div>
+                            <div class="support-links">
+                                <div class="link" id="terms-btn">
+                                    <a href="#">이용약관</a>
+                                </div>
+                                <div class="link" id="privacy-btn">
+                                    <a href="#">개인정보처리방침</a>
+                                </div>
+                            </div><!-- //support-links -->
+                        </div>
+                        <div class="copyright">
+                            ©Viral 2025 All rights reserved.
+                        </div>
+                    </div>
+                </div><!-- //footer-info01 -->
+            </div>
+
+        </footer>
+    </section>
+
+    <script src="js/script.js"></script>
+
+    <script>
+    </script>
+</body>
+
+</html>
