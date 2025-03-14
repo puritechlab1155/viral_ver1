@@ -114,6 +114,10 @@ ol {
   margin-top: 50px;
 }
 
+#home .m-top140 {
+  margin-top: 9vw !important;
+}
+
 #home .m-btm0 {
   margin-bottom: 0px !important;
 }
@@ -3085,10 +3089,6 @@ ol {
   color: #5228F4;
   font-weight: 800;
   font-size: 1.3em;
-}
-
-#home .guide .m-top140 {
-  margin-top: 9vw !important;
 }
 
 #home .guide .bg {

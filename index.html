@@ -38,10 +38,6 @@
         background-position: bottom left;
         background-size: cover;
     }
-    #home .intro .sec2 {
-        height: 800px;
-        /* background-color: #DDEEFF;  */
-    }
 
     #home .intro .sec3 {
         height: 1000px;
@@ -146,7 +142,7 @@
         justify-content: center;
         align-items: center; 
         gap: 5px; 
-        transition: all 0.3s ease;
+        transition: color 0.1s ease, background-color 0.1s ease;
     }
     #home .intro .sec1 .cont2 button svg{
         margin-bottom: 1px;
@@ -155,7 +151,7 @@
     }
     #home .intro .sec1 .cont2 button:hover {
     color: #FAF9FE; 
-    background: #5228F4; 
+    background-color: #5228F4; 
     border: 1px solid #FAF9FE; 
     box-shadow: 0 4px 10px rgba(82, 40, 244, 0.3); 
     opacity: 0.9;
@@ -506,7 +502,7 @@
     }
     #home .intro .sec5 .custom-box {
         width: 100%;
-        background-image: url(img/main/bg5.png);
+        background-image: url(img/main/bg.png);
         margin-top: 50px;
         border-radius: 20px;
         background-size: cover;
@@ -1021,8 +1017,13 @@
             margin-top: 20px;
             font-size: 14px;
             color: #FAF9FE; 
-            background-color: #7551FF;
+            background-color: #5228F4;
             border: 1px solid #FAF9FE;
+            box-shadow: 2px 2px 6px #0000006a;
+        }
+        #home .intro .sec1 .cont2 button:hover {
+            border-color:#5228F4;
+            box-shadow: 2px 2px 6px #0000006a;
         }
         #home .intro .sec1 .cont2 button svg{
             fill: #ffffff;
@@ -1156,13 +1157,6 @@
             <div class="inner">
                 <div class="content">
                     <div class="left-content">
-                        <!-- offcanvas-open 로그인 후 보여짐 -->
-                        <button type="button" class="offcanvas-open">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </button>
-
                         <h1 class="logo">
                             <a href="index.html">
                                 <img class="logo-img" src="img/offcanvas-logo.svg" alt="viral-main-logo">
@@ -1170,48 +1164,13 @@
                         </h1>
                         <span class="beta-badge">Beta</span>
                     </div>
-
-                    <!-- log-befor 로그인 전 보여짐 -->
-                    <ul class="right-content log-befor">
+                    <ul class="right-content">
                         <li>
                             <a class="loginBtn" href="login.html">로그인</a>
-                        </li>
+                        </li> 
                         <li>
                             <a class="signupBtn" href="register-hp.html">회원가입</a>
-                        </li>
-                    </ul>
-                    <!-- log-after 로그인 후 보여짐 -->
-                    <ul class="right-content log-after">
-                        <li>
-                            <a class="guideBtn" href="login.html">
-                                <img src="img/menu/guide-icon-atv.svg" alt="사용가이드 아이콘">
-                                사용 가이드
-                            </a>
-                        </li>
-                        <li>
-                            <a class="countBadge" href="#">
-                                <img src="img/time-count.svg" alt="무료 횟수 카운트"> 5/5
-                            </a>
-                        </li>
-                        <li class="add-icon">
-                            <div class="circle">
-                                <span></span>
-                                <span></span>
-                                <span></span>
-                            </div>
-                            <div class="add-item">
-                                <div>
-                                    <a href="#">구독정보</a>
-                                </div>
-                                <div>
-                                    <a href="#">내 정보</a>
-                                </div>
-                                <div>
-                                    <a href="#">로그아웃</a>
-                                </div>
-
-                            </div>
-                        </li>
+                        </li> 
                     </ul>
                 </div>
             </div>
@@ -1219,78 +1178,6 @@
 
         <main id="main" class="main">
             <div class= "inner"> 
-                <!-- 메뉴 영역 -->
-                <section class="menu-area">
-                    <div class="content">
-                        <div class="offcanvas-wrap">
-                            <div class="offcanvas">
-                                <div class="offcanvas-body">
-                                    <nav id="nav">
-                                        <ul class="gnb">
-                                            <li class="gnb-item">
-                                                <a href="#">
-                                                    <span class="gnb-txt">
-                                                        <img src="img/menu/my-project.svg" alt="내 프로젝트">내 프로젝트
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="gnb-item gnb-training">
-                                                <a href="#" class="focusGnb">
-                                                    <span class="gnb-txt-cont">
-                                                        <div class="gnb-txt gnb-focus-txt">
-                                                            <img src="img/menu/template-atv.svg" alt="템플릿"> 템플릿
-                                                        </div>
-                                                        <div class="drop-arrow">
-                                                            <span class="drop-left"></span>
-                                                            <span class="drop-right"></span>
-                                                        </div>
-                                                    </span>
-                                                </a>
-                                                <ul class="gnb-sub">
-                                                    <li class="gnb-sub-item">
-                                                        <a href="#" class="focus-sub">비디오 템플릿</a>
-                                                    </li>
-                                                    <li class="gnb-sub-item">
-                                                        <a href="#">카드뉴스 템플릿</a>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                            <li class="gnb-item">
-                                                <a href="#">
-                                                    <span class="gnb-txt">
-                                                        <img src="img/menu/subscribe.svg" alt="구독하기">구독하기
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="gnb-item">
-                                                <a href="#">
-                                                    <span class="gnb-txt">
-                                                        <img src="img/menu/notice.svg" alt="공지사항">공지사항
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="gnb-item">
-                                                <a href="#">
-                                                    <span class="gnb-txt">
-                                                        <img src="img/menu/service-center.svg" alt="고객센터">고객센터
-                                                    </span>
-                                                </a>
-                                            </li>
-                                            <li class="gnb-item guide-gnb">
-                                                <a href="#">
-                                                    <span class="gnb-txt">
-                                                        <img src="img/menu/guide-icon.svg" alt="사용 가이드">사용 가이드
-                                                    </span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </nav>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
                 <!-- 컨텐츠 영역 -->
                 <section class="content-area">
                     <article class="content-wrap">
@@ -1311,9 +1198,9 @@
                                         </div>
                                     </div>
                                 </section>
-                                <section class="section sec2">
+                                <section class="section sec2 m-top140">
                                     <div class="img-wrapper">
-                                        <!-- <img src="img/main/section02.png" alt="샘플 이미지"> -->
+                                        <img src="img/main/sec02.png" alt="샘플 이미지">
                                     </div>
                                 </section>
                                 <section class="section sec3">
